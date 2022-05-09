@@ -7,28 +7,40 @@ using Valve.VR.InteractionSystem;
 public class InteractableFunctionality : MonoBehaviour
 {
     [SerializeField]
+    private List<string> riddlesNames;
+    [SerializeField]
+    private List<bool> riddlesBool;
+
+    [SerializeField]
+    private GameObject RemoteControl;
+    [SerializeField]
     private List<GameObject> TVs;
 
+
+
     private RaycastHit hitInfo;
-
     private GameObject child;
-
-
     //TouchPad listener
     public SteamVR_Action_Boolean TouchpadAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TouchpadPressed");
 
+
+
     private void Start()
     {
-        if (this.transform.childCount > 1)
+        if (RemoteControl.transform.childCount > 1)
         {
-            child = this.transform.GetChild(1).gameObject;
+            child = RemoteControl.transform.GetChild(1).gameObject;
         }
-        
     }
 
-    public void DeactivateRigidbodyConstraints()
+    public void DeactivateRigidbodyConstraints(GameObject obj)
     {
-        this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+    }
+
+    public void DeactivateGravity(GameObject obj)
+    {
+        obj.GetComponent<Rigidbody>().useGravity = false;
     }
 
     public void UpdateRemoteControl()
@@ -38,7 +50,7 @@ public class InteractableFunctionality : MonoBehaviour
         {
             foreach (var tv in TVs)
             {
-                if (Physics.Raycast(this.transform.position, (child.transform.position - this.transform.position).normalized, out hitInfo))
+                if (Physics.Raycast(RemoteControl.transform.position, (child.transform.position - RemoteControl.transform.position).normalized, out hitInfo))
                 {
                     //if remote control points to a tv
                     if (hitInfo.collider.name == tv.name)
@@ -50,8 +62,29 @@ public class InteractableFunctionality : MonoBehaviour
 
                 }
             }
+
+            riddlesBool[1] = CheckTVRiddle();
+
         }
-        
-        
+    }
+
+    public void PickedUpPoster()
+    {
+        riddlesBool[0] = true;
+    }
+
+    private bool CheckTVRiddle()
+    {
+        if (TVs[0].GetComponent<ChangeColorScreen>().currentColor == Color.green && TVs[0].name == "TVLeft")
+        {
+            if (TVs[1].GetComponent<ChangeColorScreen>().currentColor == Color.red && TVs[1].name == "TVCenter")
+            {
+                if (TVs[2].GetComponent<ChangeColorScreen>().currentColor == Color.blue && TVs[2].name == "TVRight")
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
