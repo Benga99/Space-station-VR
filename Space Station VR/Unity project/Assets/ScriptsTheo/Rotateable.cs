@@ -18,12 +18,13 @@ public class Rotateable : MonoBehaviour
     private GameObject door;
 
     private InteractableFunctionality interFunc;
-
+    private Transform initialDoorTransform;
 
     float posX, posY, posZ;
     Vector3 pos;
 
     bool touched = false;
+    bool doorOpened = true;
 
     private Hand currentHand;
     private float previousHandRot = 0f, actualHandRot = 0f;
@@ -39,10 +40,11 @@ public class Rotateable : MonoBehaviour
     void Start()
     {
         interFunc = FindObjectOfType<InteractableFunctionality>();
+        initialDoorTransform = door.GetComponent<Transform>();
 
-        posX = this.transform.position.x;
-        posY = this.transform.position.y;
-        posZ = this.transform.position.z;
+        posX = gameObject.transform.position.x;
+        posY = gameObject.transform.position.y;
+        posZ = gameObject.transform.position.z;
         pos = new Vector3(posX, posY, posZ);
 
         solution.Add(1);
@@ -61,9 +63,13 @@ public class Rotateable : MonoBehaviour
             
             float toRotateY = Mathf.Floor((-actualHandRot + previousHandRot) * 100) / 10f;
             this.gameObject.transform.Rotate(new Vector3(0, toRotateY, 0));
-            this.gameObject.transform.position = pos;
+            //this.gameObject.transform.position = pos;
 
             CheckDuration(this.gameObject.transform.localRotation.eulerAngles.y);
+        }
+        if (doorOpened)
+        {
+            door.transform.position = initialDoorTransform.position;
         }
     }
 
@@ -93,6 +99,7 @@ public class Rotateable : MonoBehaviour
                         numberAudio.Play();
                     }
                     solutionIndex++;
+
                     if(solutionIndex == solution.Count)
                     {
                         finalAudio.Play();
@@ -100,6 +107,7 @@ public class Rotateable : MonoBehaviour
                         touched = false;
                         interFunc.DeactivateRigidbodyConstraints(this.gameObject);
                         StartCoroutine(OpenDoor());
+                        doorOpened = true;
                     }
 
                     CODE.Add(numb);
@@ -257,7 +265,7 @@ public class Rotateable : MonoBehaviour
         Debug.Log("openDoor");
         float degrees = 0;
         //door.gameObject.GetComponent<Rigidbody>().AddTorque()
-        while(degrees < 5f)
+        while(degrees < 15f)
         {
             //TODO smoth is wrong here, rotation.z is 0
             degrees += Time.deltaTime*10;
