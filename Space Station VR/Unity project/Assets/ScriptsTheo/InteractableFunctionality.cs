@@ -73,6 +73,11 @@ public class InteractableFunctionality : MonoBehaviour
         riddlesBool[0] = true;
     }
 
+    public void PickedUpFridgeHandle()
+    {
+        Debug.Log("Fridge opened!");
+    }
+
     private bool CheckTVRiddle()
     {
         if (TVs[0].GetComponent<ChangeColorScreen>().currentColor == Color.green && TVs[0].name == "TVLeft")
