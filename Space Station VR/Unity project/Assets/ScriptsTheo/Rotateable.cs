@@ -49,6 +49,8 @@ public class Rotateable : MonoBehaviour
         solution.Add(7);
         solution.Add(3);
         solution.Add(10);
+
+        StartCoroutine(OpenDoor());
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class Rotateable : MonoBehaviour
     {
         if (touched)
         {
-            StartCoroutine(OpenDoor());
+            
             float toRotateY = Mathf.Floor((-actualHandRot + previousHandRot) * 100) / 10f;
             this.gameObject.transform.Rotate(new Vector3(0, toRotateY, 0));
             this.gameObject.transform.position = pos;
@@ -254,12 +256,14 @@ public class Rotateable : MonoBehaviour
     {
         Debug.Log("openDoor");
         float degrees = 0;
-        while(door.transform.rotation.eulerAngles.z > -15)
+        //door.gameObject.GetComponent<Rigidbody>().AddTorque()
+        while(degrees < 5f)
         {
             //TODO smoth is wrong here, rotation.z is 0
-            Debug.Log(door.transform.rotation.eulerAngles.z);
-            door.transform.Rotate(new Vector3(0, 0, +Time.deltaTime));
-            degrees += Time.deltaTime;
+            degrees += Time.deltaTime*10;
+            Debug.Log(degrees);
+            door.transform.Rotate(new Vector3(0, 0, -Time.deltaTime*10));
+            
             yield return new WaitForEndOfFrame();
         }
     }
