@@ -16,6 +16,8 @@ public class Rotateable : MonoBehaviour
     private float timeToSolve = 1.5f;
     [SerializeField]
     private GameObject door;
+    [SerializeField]
+    private GameObject rotationObjectForSafe;
 
     private InteractableFunctionality interFunc;
     private Transform initialDoorTransform;
@@ -27,13 +29,13 @@ public class Rotateable : MonoBehaviour
     bool doorOpened = true;
 
     private Hand currentHand;
-    private float previousHandRot = 0f, actualHandRot = 0f;
+    private float previousHandRot = 0f, actualHandRot = 0f, startHandRot = 0f;
     private float lastY = 0f;
     private int lastNumber = -2;
     private float timeSinceLastNumberChanged = 0f;
     private bool numberAdded = false;
     private List<int> CODE = new List<int>();
-    private List<int> solution = new List<int>();
+    public List<int> solution = new List<int>();
     private int solutionIndex = 0;
 
     // Start is called before the first frame update
@@ -47,12 +49,12 @@ public class Rotateable : MonoBehaviour
         posZ = gameObject.transform.position.z;
         pos = new Vector3(posX, posY, posZ);
 
+        
         solution.Add(1);
-        solution.Add(7);
+        solution.Add(2);
         solution.Add(3);
-        solution.Add(10);
-
-        StartCoroutine(OpenDoor());
+        solution.Add(4);
+        //StartCoroutine(OpenDoor());
     }
 
     // Update is called once per frame
@@ -60,10 +62,8 @@ public class Rotateable : MonoBehaviour
     {
         if (touched)
         {
-            
-            float toRotateY = Mathf.Floor((-actualHandRot + previousHandRot) * 100) / 10f;
+            float toRotateY = Mathf.Floor((actualHandRot) * 100) / 10f;
             this.gameObject.transform.Rotate(new Vector3(0, toRotateY, 0));
-            //this.gameObject.transform.position = pos;
 
             CheckDuration(this.gameObject.transform.localRotation.eulerAngles.y);
         }
@@ -99,6 +99,7 @@ public class Rotateable : MonoBehaviour
                         numberAudio.Play();
                     }
                     solutionIndex++;
+                    Debug.Log("Found " + numb);
 
                     if(solutionIndex == solution.Count)
                     {
@@ -191,13 +192,19 @@ public class Rotateable : MonoBehaviour
     protected virtual void OnAttachedToHand(Hand hand)
     {
         currentHand = hand;
-        previousHandRot = actualHandRot;
-        actualHandRot = currentHand.transform.rotation.y;
+        startHandRot = currentHand.transform.rotation.z;
+        previousHandRot = startHandRot;
+        actualHandRot = currentHand.transform.rotation.z;
+
+        rotationObjectForSafe.SetActive(true);
+        rotationObjectForSafe.transform.parent = hand.gameObject.transform;
+        rotationObjectForSafe.transform.localPosition = Vector3.zero;
+        rotationObjectForSafe.transform.localRotation = Quaternion.identity;
     }
 
     public void onUpdate()
     {
-        actualHandRot = currentHand.transform.rotation.y;
+        actualHandRot = currentHand.transform.rotation.z - startHandRot;
     }
 
     public void OnDetachedHand()
@@ -262,16 +269,20 @@ public class Rotateable : MonoBehaviour
 
     private IEnumerator OpenDoor()
     {
+        float multiplier = 20f;
+        yield return new WaitForSeconds(1f);
         Debug.Log("openDoor");
         float degrees = 0;
-        //door.gameObject.GetComponent<Rigidbody>().AddTorque()
-        while(degrees < 15f)
+        while(multiplier > 0f)
         {
-            //TODO smoth is wrong here, rotation.z is 0
-            degrees += Time.deltaTime*10;
-            Debug.Log(degrees);
-            door.transform.Rotate(new Vector3(0, 0, -Time.deltaTime*10));
+            degrees += Time.deltaTime* multiplier;
+            door.transform.Rotate(new Vector3(0, 0, -Time.deltaTime* multiplier));
             
+            if(degrees > 5)
+            {
+                multiplier -= Time.deltaTime*15;
+            }
+
             yield return new WaitForEndOfFrame();
         }
     }

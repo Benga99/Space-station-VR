@@ -86,10 +86,21 @@ public class InteractableFunctionality : MonoBehaviour
             {
                 if (TVs[2].GetComponent<ChangeColorScreen>().currentColor == Color.blue && TVs[2].name == "TVRight")
                 {
+                    ActivateNumberTVs();
                     return true;
+                    
                 }
             }
         }
         return false;
+    }
+
+    private void ActivateNumberTVs()
+    {
+        var tvs = FindObjectsOfType<TVText>();
+        foreach(var tv in tvs)
+        {
+            tv.setStart(true);
+        }
     }
 }
