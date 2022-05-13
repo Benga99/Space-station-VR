@@ -67,6 +67,7 @@ public class Rotateable : MonoBehaviour
 
             CheckDuration(this.gameObject.transform.localRotation.eulerAngles.y);
         }
+        return;
         if (doorOpened)
         {
             door.transform.position = initialDoorTransform.position;
