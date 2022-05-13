@@ -9,7 +9,7 @@ public class InteractableFunctionality : MonoBehaviour
     [SerializeField]
     private List<string> riddlesNames;
     [SerializeField]
-    private List<bool> riddlesBool;
+    public List<bool> riddlesBool;
 
     [SerializeField]
     private GameObject RemoteControl;
@@ -63,7 +63,7 @@ public class InteractableFunctionality : MonoBehaviour
                 }
             }
 
-            riddlesBool[1] = CheckTVRiddle();
+            riddlesBool[2] = CheckRGB_TVRiddle();
 
         }
     }
@@ -78,7 +78,7 @@ public class InteractableFunctionality : MonoBehaviour
         Debug.Log("Fridge opened!");
     }
 
-    private bool CheckTVRiddle()
+    private bool CheckRGB_TVRiddle()
     {
         if (TVs[0].GetComponent<ChangeColorScreen>().currentColor == Color.green && TVs[0].name == "TVLeft")
         {
@@ -100,7 +100,8 @@ public class InteractableFunctionality : MonoBehaviour
         var tvs = FindObjectsOfType<TVText>();
         foreach(var tv in tvs)
         {
-            tv.setStart(true);
+            //tv.setStart(true);
+            StartCoroutine(tv.displayingNumbers());
         }
     }
 }

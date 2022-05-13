@@ -13,10 +13,12 @@ public class BreakBottle : MonoBehaviour
     // Start is called before the first frame update
 
     private InteractableFunctionality interFunc;
+    private SwitchBox switchBox;
 
     private void Start()
     {
         interFunc = FindObjectOfType<InteractableFunctionality>();
+        switchBox = FindObjectOfType<SwitchBox>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,16 +33,10 @@ public class BreakBottle : MonoBehaviour
             messagePlane.transform.position = this.gameObject.transform.position + new Vector3(0.1f, 0.1f, 0.1f);
             messagePlane.transform.rotation = this.gameObject.transform.rotation;
             messagePlane.SetActive(true);
-            //GameObject breakable = Instantiate(breakableBottle, this.gameObject.transform.position, this.gameObject.transform.rotation);
-            /*
-            breakable.transform.GetChild(0).GetComponent<Throwable>()
-                .onPickUp.AddListener(() => interFunc.DeactivateRigidbodyConstraints(breakable.transform.GetChild(0).gameObject));
-            breakable.transform.GetChild(1).GetComponent<Throwable>()
-                .onPickUp.AddListener(() => interFunc.DeactivateRigidbodyConstraints(breakable.transform.GetChild(1).gameObject));
-            //breakable.transform.GetChild(2).GetComponent<Throwable>()
-            //    .onPickUp.AddListener(() => interFunc.DeactivateRigidbodyConstraints(breakable.transform.GetChild(2).gameObject));
-            //Instantiate the message
-            */
+
+            switchBox.SetActiveDoorInteractable();
+            interFunc.riddlesBool[1] = true;
+
             Destroy(this.gameObject);
         }
     }

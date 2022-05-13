@@ -18,25 +18,27 @@ public class TVText : MonoBehaviour
     void Start()
     {
         rotateable = FindObjectOfType<Rotateable>();
-        
     }
 
-    // Update is called once per frame
+    /*
     void Update()
     {
+        
         if (start)
         {
             StartCoroutine(displayingNumbers());
             start = false;
         }
+        
     }
+
 
     public void setStart(bool s)
     {
         start = s;
     }
-
-    private IEnumerator displayingNumbers()
+    */
+    public IEnumerator displayingNumbers()
     {
         float seconds = 0.00001f;
         while (seconds < 1f)

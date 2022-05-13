@@ -50,10 +50,10 @@ public class Rotateable : MonoBehaviour
         pos = new Vector3(posX, posY, posZ);
 
         
-        solution.Add(1);
-        solution.Add(2);
-        solution.Add(3);
-        solution.Add(4);
+        solution.Add(-1);
+        solution.Add(-2);
+        solution.Add(-3);
+        solution.Add(-4);
         //StartCoroutine(OpenDoor());
     }
 
