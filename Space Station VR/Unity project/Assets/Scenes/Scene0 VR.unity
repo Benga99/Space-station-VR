@@ -3110,7 +3110,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!114 &1128926062
 MonoBehaviour:
@@ -3158,7 +3158,19 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1648074039}
+        m_TargetAssemblyTypeName: InteractableFunctionality, Assembly-CSharp
+        m_MethodName: DeactivateRigidbodyConstraints
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1648074038}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -9040,7 +9052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362854443}
   m_LocalRotation: {x: -0.7068599, y: 0, z: 0, w: 0.7073536}
-  m_LocalPosition: {x: -0.281, y: 0.019872874, z: 0.566}
+  m_LocalPosition: {x: -0.28, y: 0.019872874, z: 0.499}
   m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10851,7 +10863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430550, guid: 6be579eb8c4af8042896243285e41a98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.859
+      value: 0.584
       objectReference: {fileID: 0}
     - target: {fileID: 430550, guid: 6be579eb8c4af8042896243285e41a98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13566,7 +13578,7 @@ PrefabInstance:
     - target: {fileID: 4872084984349324611, guid: bf9f15a922c90a745b3133b2c696af4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4908953
+      value: 1.047
       objectReference: {fileID: 0}
     - target: {fileID: 4872084984349324611, guid: bf9f15a922c90a745b3133b2c696af4b,
         type: 3}
@@ -13576,7 +13588,7 @@ PrefabInstance:
     - target: {fileID: 4872084984349324611, guid: bf9f15a922c90a745b3133b2c696af4b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.9583
+      value: 13.886
       objectReference: {fileID: 0}
     - target: {fileID: 4872084984349324611, guid: bf9f15a922c90a745b3133b2c696af4b,
         type: 3}
@@ -15605,6 +15617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floorready
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813156142648511556, guid: 0d37ec7cbfc100447a912e1a8090d9fd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 6813156142648511557, guid: 0d37ec7cbfc100447a912e1a8090d9fd,
         type: 3}
