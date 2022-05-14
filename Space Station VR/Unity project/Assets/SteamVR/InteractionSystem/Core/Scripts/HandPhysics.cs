@@ -90,6 +90,7 @@ namespace Valve.VR.InteractionSystem
 
         private void UpdatePositions()
         {
+            /*
             // disable collisions when holding something
             if (hand.currentAttachedObject != null)
             {
@@ -109,8 +110,8 @@ namespace Valve.VR.InteractionSystem
                     }
                 }
             }
-
-            handCollider.SetCollisionDetectionEnabled(collisionsEnabled);
+            */
+            //handCollider.SetCollisionDetectionEnabled(collisionsEnabled);
 
             if (hand.skeleton == null) return;
             initialized = true;
@@ -139,6 +140,8 @@ namespace Valve.VR.InteractionSystem
                 handCollider.TeleportTo(targetPosition, targetRotation);
             }
         }
+
+        
 
         Transform wrist;
 

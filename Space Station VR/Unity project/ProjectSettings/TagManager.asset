@@ -8,6 +8,7 @@ TagManager:
   - SF_Door
   - KeyCard
   - Earth
+  - Fire
   layers:
   - Default
   - TransparentFX
