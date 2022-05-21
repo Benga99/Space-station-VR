@@ -24,7 +24,7 @@ public class BreakBottle : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //if it is not the player
-        if(collision.gameObject.name == "Floorready" || collision.gameObject.name == "Walls2")
+        if(collision.gameObject.name == "Floorready" || collision.gameObject.tag == "Wall")
         {
             
             breakableBottle.transform.position = this.gameObject.transform.position;

@@ -9,6 +9,9 @@ TagManager:
   - KeyCard
   - Earth
   - Fire
+  - Wall
+  - PCCard
+  - Hand
   layers:
   - Default
   - TransparentFX
