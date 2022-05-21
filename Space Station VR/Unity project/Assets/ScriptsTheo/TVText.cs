@@ -20,24 +20,6 @@ public class TVText : MonoBehaviour
         rotateable = FindObjectOfType<Rotateable>();
     }
 
-    /*
-    void Update()
-    {
-        
-        if (start)
-        {
-            StartCoroutine(displayingNumbers());
-            start = false;
-        }
-        
-    }
-
-
-    public void setStart(bool s)
-    {
-        start = s;
-    }
-    */
     public IEnumerator displayingNumbers()
     {
         float seconds = 0.00001f;

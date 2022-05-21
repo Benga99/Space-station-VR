@@ -62,15 +62,10 @@ public class Rotateable : MonoBehaviour
     {
         if (touched)
         {
-            float toRotateY = Mathf.Floor((actualHandRot) * 100) / 10f;
+            float toRotateY = Mathf.Floor((-actualHandRot) * 100) / 10f;
             this.gameObject.transform.Rotate(new Vector3(0, toRotateY, 0));
 
             CheckDuration(this.gameObject.transform.localRotation.eulerAngles.y);
-        }
-        return;
-        if (doorOpened)
-        {
-            door.transform.position = initialDoorTransform.position;
         }
     }
 
@@ -193,9 +188,9 @@ public class Rotateable : MonoBehaviour
     protected virtual void OnAttachedToHand(Hand hand)
     {
         currentHand = hand;
-        startHandRot = currentHand.transform.rotation.z;
+        startHandRot = currentHand.transform.rotation.y;
         previousHandRot = startHandRot;
-        actualHandRot = currentHand.transform.rotation.z;
+        actualHandRot = currentHand.transform.rotation.y;
 
         rotationObjectForSafe.SetActive(true);
         rotationObjectForSafe.transform.parent = hand.gameObject.transform;
@@ -205,7 +200,7 @@ public class Rotateable : MonoBehaviour
 
     public void onUpdate()
     {
-        actualHandRot = currentHand.transform.rotation.z - startHandRot;
+        actualHandRot = currentHand.transform.rotation.y - startHandRot;
     }
 
     public void OnDetachedHand()
@@ -279,7 +274,7 @@ public class Rotateable : MonoBehaviour
             degrees += Time.deltaTime* multiplier;
             door.transform.Rotate(new Vector3(0, 0, -Time.deltaTime* multiplier));
             
-            if(degrees > 5)
+            if(degrees > 60)
             {
                 multiplier -= Time.deltaTime*15;
             }
