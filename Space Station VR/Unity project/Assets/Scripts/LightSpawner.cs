@@ -8,19 +8,24 @@ public class LightSpawner : MonoBehaviour
     private GameObject lightPrefab;
     [SerializeField]
     private GameObject lightParent;
-    [SerializeField][Range(1, 5)]
+    [SerializeField][Range(1, 10)]
     private float SpawnFrequency;
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 90;
         StartCoroutine(Spawn());
+        var objs = FindObjectsOfType<LightSpawner>();
+        foreach (var o in objs) 
+        {
+            Debug.Log(o.gameObject.name);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(Camera.main.transform);
     }
 
     private IEnumerator Spawn()

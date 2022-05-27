@@ -26,12 +26,6 @@ public class EKG : MonoBehaviour
     Vector3[] nextPositionVector;
     Vector3[] interpolateVectors;
 
-
-    private void Awake()
-    {
-        Application.targetFrameRate = 90;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
