@@ -65,7 +65,6 @@ public class InteractableFunctionality : MonoBehaviour
             }
 
             riddlesBool[2] = CheckRGB_TVRiddle();
-            riddleManager.setRiddleDone(1);
         }
     }
 
@@ -88,6 +87,7 @@ public class InteractableFunctionality : MonoBehaviour
                 if (TVs[2].GetComponent<ChangeColorScreen>().currentColor == Color.blue && TVs[2].name == "TVRight")
                 {
                     ActivateNumberTVs();
+                    riddleManager.setRiddleDone(1);
                     return true;
                     
                 }

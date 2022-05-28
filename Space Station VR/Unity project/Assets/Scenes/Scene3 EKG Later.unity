@@ -3394,7 +3394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403847731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.03}
+  m_LocalPosition: {x: 0, y: -0.651, z: 0.03}
   m_LocalScale: {x: 1.05, y: 1.05, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3863,7 +3863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 1.739
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3871,7 +3871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.719
+      value: 16.966
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19676,7 +19676,19 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1648074039}
+        m_TargetAssemblyTypeName: InteractableFunctionality, Assembly-CSharp
+        m_MethodName: DeactivateRigidbodyConstraints
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2598905059109965282}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []

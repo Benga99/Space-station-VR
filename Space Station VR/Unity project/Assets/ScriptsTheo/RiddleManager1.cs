@@ -19,7 +19,6 @@ public class RiddleManager1 : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        Debug.Log(time);
         //180 seconds, not 20
         if(time > 20 && riddlesDone[0] == false && instantiatedVisualisations[0] == false)
         {
@@ -46,7 +45,7 @@ public class RiddleManager1 : MonoBehaviour
 
         if(instantiatedVis[index] != null)
         {
-            destroyObjAfterSeconds(instantiatedVis[index]);
+            StartCoroutine(destroyObjAfterSeconds(instantiatedVis[index]));
         }
         
         if(index == 2)
@@ -60,7 +59,15 @@ public class RiddleManager1 : MonoBehaviour
 
     private IEnumerator destroyObjAfterSeconds(GameObject desotryObj)
     {
-        yield return new WaitForSeconds(20);
+        float time = 0;
+        while(time < 10)
+        {
+            desotryObj.transform.localScale = new Vector3(desotryObj.transform.localScale.x * 0.999f, desotryObj.transform.localScale.y * 0.999f, desotryObj.transform.localScale.z);
+            time += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        Debug.Log("destroyed obj!");
         Destroy(desotryObj);
     }
 }

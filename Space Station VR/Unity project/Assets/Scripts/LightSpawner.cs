@@ -29,18 +29,13 @@ public class LightSpawner : MonoBehaviour
     void Update()
     {
         transform.LookAt(Camera.main.transform);
-        //transform.Rotate(0, 180, 0);
-        //transform.localRotation.eulerAngles.Set(Mathf.Clamp(transform.localRotation.x, -20, 20), transform.localRotation.y, transform.localRotation.z);
-        
 
         float rx = transform.eulerAngles.x;
         if(rx > 180)
         {
             rx = 360 - rx;
         }
-        Debug.Log(rx);
         transform.Rotate(-rx + 15, 180, 0);
-        //Debug.Log(transform.localRotation.eulerAngles.x);
     }
 
     private IEnumerator Spawn()
