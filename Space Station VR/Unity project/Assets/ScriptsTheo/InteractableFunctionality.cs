@@ -23,7 +23,7 @@ public class InteractableFunctionality : MonoBehaviour
     //TouchPad listener
     public SteamVR_Action_Boolean TouchpadAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TouchpadPressed");
 
-
+    RiddleManager1 riddleManager;
 
     private void Start()
     {
@@ -31,6 +31,7 @@ public class InteractableFunctionality : MonoBehaviour
         {
             child = RemoteControl.transform.GetChild(1).gameObject;
         }
+        riddleManager = FindObjectOfType<RiddleManager1>();
     }
 
     public void DeactivateRigidbodyConstraints(GameObject obj)
@@ -64,7 +65,7 @@ public class InteractableFunctionality : MonoBehaviour
             }
 
             riddlesBool[2] = CheckRGB_TVRiddle();
-
+            riddleManager.setRiddleDone(1);
         }
     }
 

@@ -6,6 +6,9 @@ public class Door : MonoBehaviour {
 
 	private AudioSource audioS;
 	private HovercarAnim hovercar;
+
+	bool floatingCar = false;
+
 	public void Start()
 	{
 		GameObject door = GameObject.FindWithTag("SF_Door");
@@ -20,7 +23,13 @@ public class Door : MonoBehaviour {
         {
 			anim.SetBool("open", true);
 			audioS.Play();
-			StartCoroutine(hovercar.Floating());
+            if (!floatingCar)
+            {
+				floatingCar = true;
+				StartCoroutine(hovercar.Floating());
+				//go to the car and leave
+			}
+			
 		}
 			
 

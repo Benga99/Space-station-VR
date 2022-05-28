@@ -20,6 +20,7 @@ public class Rotateable : MonoBehaviour
     private GameObject rotationObjectForSafe;
 
     private InteractableFunctionality interFunc;
+    private RiddleManager1 riddleManager;
     private Transform initialDoorTransform;
 
     float posX, posY, posZ;
@@ -41,6 +42,7 @@ public class Rotateable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        riddleManager = FindObjectOfType<RiddleManager1>();
         interFunc = FindObjectOfType<InteractableFunctionality>();
         initialDoorTransform = door.GetComponent<Transform>();
 
@@ -265,6 +267,7 @@ public class Rotateable : MonoBehaviour
 
     private IEnumerator OpenDoor()
     {
+        riddleManager.setRiddleDone(2);
         float multiplier = 20f;
         yield return new WaitForSeconds(1f);
         Debug.Log("openDoor");

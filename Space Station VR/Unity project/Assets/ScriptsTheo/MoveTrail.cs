@@ -34,6 +34,12 @@ public class MoveTrail : MonoBehaviour
     {
         //lightChild = gameObject.transform.GetChild(2).gameObject.GetComponent<Light>();
 
+        for(var pos = 0;pos<positions.Count; pos++)
+        {
+            positions[pos] -= new Vector3(6.25f, 5.375f);
+        }
+
+
         length = positions.Count;
 
         posVector = new Vector3[length];
