@@ -13,6 +13,8 @@ public class Pulse : MonoBehaviour
     public float multiplier = 3;
     public bool active = false;
 
+    public Transform lookAt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,8 +51,11 @@ public class Pulse : MonoBehaviour
         if (Vector3.Distance(transform.position, Camera.main.transform.position) > 0.4f)
         {
             transform.LookAt(Camera.main.transform);
+            //transform.localRotation.eulerAngles.Set(Mathf.Clamp(transform.localRotation.x, -20, 20), transform.localRotation.y, transform.localRotation.z);
             //transform.Rotate(transform.rotation.x / 3f, 180, 0);
         }
+        //Debug.Log(transform.localRotation.eulerAngles.x);
+
     }
 
     private IEnumerator Pulsing()

@@ -13,6 +13,7 @@ public class BreakBottle : MonoBehaviour
     // Start is called before the first frame update
 
     private InteractableFunctionality interFunc;
+    private RiddleManager1 riddleManager;
     private SwitchBox switchBox;
 
     private void Start()

@@ -28,15 +28,15 @@ MonoBehaviour:
   version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FireShader
-  m_Shader: {fileID: -6465566751694194690, guid: 13e00865fc30de441a19ea3fde61e3ef, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_Shader: {fileID: -6465566751694194690, guid: 13e00865fc30de441a19ea3fde61e3ef,
+    type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -70,8 +70,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color01: {r: 0.9056604, g: 0.1409754, b: 0.1409754, a: 1}
-    - _Color02: {r: 0.125178, g: 0.1359724, b: 0.9150943, a: 1}
+    - _Color01: {r: 1, g: 0, b: 0, a: 1}
+    - _Color02: {r: 0, g: 0.01492548, b: 1, a: 1}
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _MainTexSpeed: {r: -0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

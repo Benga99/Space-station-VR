@@ -34,7 +34,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SmokeShader
-  m_Shader: {fileID: -6465566751694194690, guid: 13e00865fc30de441a19ea3fde61e3ef, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 13e00865fc30de441a19ea3fde61e3ef,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -46,7 +47,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 05cda407c12da774c975bce33082f592, type: 3}
+        m_Texture: {fileID: 2800000, guid: 276e5a681e87b72499b780f7136ee554, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -72,5 +73,5 @@ Material:
     - _Color01: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     - _Color02: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
-    - _MainTexSpeed: {r: -0.1, g: 0, b: 0, a: 0}
+    - _MainTexSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
