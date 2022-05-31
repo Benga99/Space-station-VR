@@ -17,23 +17,34 @@ public class BrokenObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(time);
-        time += Time.deltaTime;
+        
+    }
 
-        if(time > 4.8f)
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!broken)
         {
-            brokenObj.SetActive(true);
-        }
-        if (time > 5 && !broken)
-        {
-            
-            brokenObj.transform.position = transform.position;
-            brokenObj.transform.rotation = transform.rotation;
-            
-
-            Destroy(gameObject);
-
+            StartCoroutine(breakable());
             broken = true;
         }
+       
+    }
+
+    private IEnumerator breakable()
+    {
+        time = 0;
+        brokenObj.SetActive(true);
+        /*
+        while (time < 0.2f)
+        {
+            yield return new WaitForEndOfFrame();
+            time += Time.deltaTime;
+        }
+        */
+        brokenObj.transform.position = transform.position;
+        brokenObj.transform.rotation = transform.rotation;
+        
+        Destroy(gameObject);
+        yield return new WaitForEndOfFrame();
     }
 }

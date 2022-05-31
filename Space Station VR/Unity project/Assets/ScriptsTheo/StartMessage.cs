@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class StartMessage : MonoBehaviour
 {
     public Canvas MessageCanvas;
-    public string UserName = "";
+    //public string UserName = "";
 
     public SteamVR_Action_Boolean grabPinch; //Grab Pinch is the trigger, select from inspecter
     public SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;//which controller
@@ -17,7 +17,7 @@ public class StartMessage : MonoBehaviour
 
     private void Start()
     {
-        MessageCanvas.GetComponent<Text>().text = $"Hello Cpt. {UserName}! You just woke up and realized your crew left you behind. The aliens will take over the ship shortly and you are the only one left on the ship. Find your way out! Press SELECT to continue!";
+        MessageCanvas.GetComponent<Text>().text = $"Hello Captain! You just woke up and realized your crew left you behind. The aliens will take over the ship shortly and you are the only one left on the ship. Find your way out! Press SELECT to continue!";
     }
 
     void OnEnable()
