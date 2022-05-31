@@ -2091,11 +2091,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0d0db3613eef34ba536a0b0af4337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 2598905059109965282}
+  half_key: {fileID: 16986157}
   card: {fileID: 175774527}
   screenText: {fileID: 1489364171}
   screenMat: {fileID: 2100000, guid: 65021c95b73b33742ab5375c1a7de314, type: 2}
-  startingColor: {r: 0.7924528, g: 0.4448202, b: 0.4448202, a: 1}
+  startingColor: {r: 0.3529412, g: 0.36862746, b: 0.16078432, a: 1}
+  mainColor: {r: 0.5330188, g: 0.73655957, b: 1, a: 1}
   leftHand: {fileID: 1983258276}
   rightHand: {fileID: 2057027978}
 --- !u!1 &195787416
@@ -23229,6 +23230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813156144631902109, guid: 0d37ec7cbfc100447a912e1a8090d9fd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.16
       objectReference: {fileID: 0}
     - target: {fileID: 6813156144631902109, guid: 0d37ec7cbfc100447a912e1a8090d9fd,
         type: 3}

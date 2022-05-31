@@ -9,10 +9,8 @@ public class MoveTrail : MonoBehaviour
     [SerializeField]
     private List<Vector3> positions;
 
-    private Light lightChild;
 
     int i = 0;
-    float offset = 0;
     int length;
     Vector3[] posVector;
     Vector3[] nextPositionVector;

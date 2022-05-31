@@ -24,10 +24,8 @@ public class Rotateable : MonoBehaviour
     private Transform initialDoorTransform;
 
     float posX, posY, posZ;
-    Vector3 pos;
 
     bool touched = false;
-    bool doorOpened = true;
 
     private Hand currentHand;
     private float previousHandRot = 0f, actualHandRot = 0f, startHandRot = 0f;
@@ -49,7 +47,6 @@ public class Rotateable : MonoBehaviour
         posX = gameObject.transform.position.x;
         posY = gameObject.transform.position.y;
         posZ = gameObject.transform.position.z;
-        pos = new Vector3(posX, posY, posZ);
 
         
         solution.Add(-1);
@@ -106,7 +103,6 @@ public class Rotateable : MonoBehaviour
                         touched = false;
                         interFunc.DeactivateRigidbodyConstraints(this.gameObject);
                         StartCoroutine(OpenDoor());
-                        doorOpened = true;
                     }
 
                     CODE.Add(numb);

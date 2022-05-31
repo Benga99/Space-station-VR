@@ -32,29 +32,10 @@ public class Pulse : MonoBehaviour
             maxY = 0;
             StartCoroutine(Pulsing());
         }
-        /*
-        if (Vector3.Distance(transform.position, Camera.main.transform.position) < 10)
-        {
-            active = true;
-            float offset = intensity + 0.00001f;
-            intensity = Mathf.Clamp(offset, 0.005f, 0.015f);
-            multiplier = Mathf.Clamp(multiplier * (1 + offset / 30f), 3f, 6f);
-        }
-        else
-        {
-            active = false;
-            float offset = intensity - 0.00001f;
-            intensity = Mathf.Clamp(offset, 0.005f, 0.015f);
-            multiplier = Mathf.Clamp(multiplier / (1 + offset / 20f), 3f, 6f);
-        }
-        */
         if (Vector3.Distance(transform.position, Camera.main.transform.position) > 0.4f)
         {
             transform.LookAt(Camera.main.transform);
-            //transform.localRotation.eulerAngles.Set(Mathf.Clamp(transform.localRotation.x, -20, 20), transform.localRotation.y, transform.localRotation.z);
-            //transform.Rotate(transform.rotation.x / 3f, 180, 0);
         }
-        //Debug.Log(transform.localRotation.eulerAngles.x);
 
     }
 
@@ -127,9 +108,5 @@ public class Pulse : MonoBehaviour
         yield return new WaitForSeconds(1f/(intensity*100f));
         //Debug.Log(1f / (intensity * 200f));
         coroutineAllowed = true;
-
-
-        
-        //Debug.Log($"maxX: {maxX}, maxY: {maxY}");
     }
 }

@@ -17,6 +17,8 @@ public class OperateComputerScene4 : MonoBehaviour
     [SerializeField]
     private Color startingColor;
     [SerializeField]
+    private Color mainColor;
+    [SerializeField]
     private GameObject leftHand;
     [SerializeField]
     private GameObject rightHand;
@@ -30,6 +32,7 @@ public class OperateComputerScene4 : MonoBehaviour
     void Start()
     {
         interFunc = FindObjectOfType<InteractableFunctionality>();
+        screenMat.color = startingColor;
     }
 
     // Update is called once per frame
@@ -52,7 +55,7 @@ public class OperateComputerScene4 : MonoBehaviour
 
                 card.SetActive(false);
                 keyIntroduced = true;
-
+                StartCoroutine(startGame());
 
             }
         }
@@ -60,10 +63,9 @@ public class OperateComputerScene4 : MonoBehaviour
         {
             if (other.gameObject.tag == "Fire" && !fired)
             {
-                interFunc.DeactivateRigidbodyConstraints(half_key);
+                //interFunc.DeactivateRigidbodyConstraints(half_key);
                 //Do something with the key, move it to the user
                 //half_key.GetComponent<Rigidbody>().AddForce(-5f, 0, 0);
-                Debug.Log("Force added 1");
                 fired = true;
             }
         }
@@ -82,33 +84,39 @@ public class OperateComputerScene4 : MonoBehaviour
         }
     }
 
-    private IEnumerator changeScreen()
+    private IEnumerator startGame()
     {
-        Color baseColor = screenMat.color;
-        Color white = Color.white;
-
-        while (keyIntroduced == false)
+        float index = 0;
+        while (screenText.GetComponent<CanvasGroup>().alpha > 0 || index < 1)
         {
-            GetComponent<AudioSource>().Play();
-            screenMat.color = baseColor;
-            yield return new WaitForSeconds(0.1f);
-            screenMat.color = white;
-            yield return new WaitForSeconds(0.05f);
-            screenMat.color = baseColor;
-            yield return new WaitForSeconds(0.1f);
-            screenMat.color = white;
+            screenText.GetComponent<CanvasGroup>().alpha -= 0.02f;
 
-            yield return new WaitForSeconds(Random.Range(3, 10));
+            screenMat.color = Color.Lerp(startingColor, mainColor, index);
+
+            index += 0.02f;
+
+            yield return new WaitForEndOfFrame();
         }
-        StartCoroutine(fadeText());
-    }
 
-    private IEnumerator fadeText()
-    {
+        screenText.text = "Press SELECT on either hand when the screen gets green as fast as you can!";
+        yield return new WaitForSeconds(5);
+        screenText.text = "3";
+        yield return new WaitForSeconds(0.5f);
+        screenText.text = "2";
+        yield return new WaitForSeconds(0.5f);
+        screenText.text = "1";
+        yield return new WaitForSeconds(0.5f);
+
+        screenMat.color = Color.red;
+
+        screenText.text = "GO!";
         while (screenText.GetComponent<CanvasGroup>().alpha > 0)
         {
             screenText.GetComponent<CanvasGroup>().alpha -= 0.02f;
             yield return new WaitForEndOfFrame();
         }
+        yield return new WaitForSeconds(Random.Range(2, 5));
+        screenMat.color = Color.green;
+
     }
 }

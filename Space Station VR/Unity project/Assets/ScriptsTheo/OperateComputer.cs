@@ -23,7 +23,7 @@ public class OperateComputer : MonoBehaviour
 
 
     private InteractableFunctionality interFunc;
-    private AudioSource audio;
+    private AudioSource audioS;
 
     private bool fired = false;
     private bool keyIntroduced = false;
@@ -31,7 +31,7 @@ public class OperateComputer : MonoBehaviour
     void Start()
     {
         interFunc = FindObjectOfType<InteractableFunctionality>();
-        audio = GetComponent<AudioSource>();
+        audioS = GetComponent<AudioSource>();
         screenMat.color = startingColor;
         StartCoroutine(changeScreen());
         
@@ -127,7 +127,7 @@ public class OperateComputer : MonoBehaviour
 
         while (keyIntroduced == false)
         {
-            audio.Play();
+            audioS.Play();
             screenMat.color = baseColor;
             yield return new WaitForSeconds(0.1f);
             screenMat.color = white;
