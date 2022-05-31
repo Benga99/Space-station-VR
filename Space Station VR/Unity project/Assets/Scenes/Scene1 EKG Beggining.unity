@@ -4615,6 +4615,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &493379736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 493379738}
+  - component: {fileID: 493379737}
+  m_Layer: 0
+  m_Name: Logger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &493379737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493379736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f68fc16620088e4088ae9cd5e18c3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  participantId: 0
+  rootFolder: ./LogData/
+--- !u!4 &493379738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493379736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16517788, y: 0.91382194, z: 14.654511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512754168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 133480, guid: dc06161b6d97feb419f45f03b62e14b9,
@@ -15559,7 +15605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MessageCanvas: {fileID: 1833768724}
-  UserName: Ana
   grabPinch:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
@@ -16813,6 +16858,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000002, y: 0.1, z: 10}
   m_Center: {x: 0, y: 0.0000076293945, z: 0}
+--- !u!1 &1590958554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590958556}
+  - component: {fileID: 1590958555}
+  m_Layer: 0
+  m_Name: LSLInputECG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1590958555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590958554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1835ed90483ab464883080fd3f1dda55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputName: ECG
+  StreamType: 1
+  StreamValue: PolarH10
+  streamTimeout: 0
+  streamMinimum: 1
+  scaleInput: 0.1
+  lastTimeStamp: 0
+  unixTime: 0
+  time: 0
+  timeLsl: 0
+  lastValues: []
+  bufferCount: 50
+  samplesTotal: 0
+  samplesBuffer: 5000
+  InfoHostName: 
+  InfoType: 
+  InfoName: 
+  InfoChannelFormat: 
+  InfoChannelCount: 0
+  InfoNominalSrate: 0
+  logger: {fileID: 493379737}
+--- !u!4 &1590958556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590958554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16517788, y: 0.91382194, z: 14.654511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601122338
 GameObject:
   m_ObjectHideFlags: 0
