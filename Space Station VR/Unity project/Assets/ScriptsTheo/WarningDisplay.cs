@@ -12,25 +12,7 @@ public class WarningDisplay : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        /*
-        if(cg_text.alpha == 1)
-        {
-            Debug.Log("hide");
-            StartCoroutine(hideText());
-            StopCoroutine(displayText());
-        }
-        else if(cg_text.alpha == 0)
-        {
-            Debug.Log("display");
-            StartCoroutine(displayText());
-            StopCoroutine(hideText());
-        }
-        */
-    }
-
-    private IEnumerator displayText()
+    public IEnumerator displayText()
     {
         while (cg_text.alpha < 1f)
         {
@@ -41,7 +23,7 @@ public class WarningDisplay : MonoBehaviour
         StartCoroutine(hideText());
     }
 
-    private IEnumerator hideText()
+    public IEnumerator hideText()
     {
         while (cg_text.alpha > 0f)
         {
@@ -49,6 +31,11 @@ public class WarningDisplay : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         StartCoroutine(displayText());
+    }
+
+    public void killThis()
+    {
+        Destroy(this);
     }
 
 
