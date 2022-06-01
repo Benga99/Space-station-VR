@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - PCCard
   - Hand
+  - MetalKey
   layers:
   - Default
   - TransparentFX

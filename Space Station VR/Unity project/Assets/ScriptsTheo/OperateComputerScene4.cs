@@ -10,7 +10,7 @@ public class OperateComputerScene4 : MonoBehaviour
     [SerializeField]
     private GameObject half_key;
     [SerializeField]
-    private GameObject half_key_interact;
+    private GameObject metal_box_key;
     [SerializeField]
     private GameObject card;
     [SerializeField]
@@ -197,7 +197,7 @@ public class OperateComputerScene4 : MonoBehaviour
                     yield return new WaitForEndOfFrame();
                 }
 
-                half_key_interact.SetActive(true);
+                metal_box_key.SetActive(true);
             }
             else
             {
@@ -230,9 +230,9 @@ public class OperateComputerScene4 : MonoBehaviour
         float distance = 0;
         while(distance < 0.2f)
         {
-            half_key_interact.transform.position = new Vector3(half_key_interact.transform.position.x,
-                                                      half_key_interact.transform.position.y,
-                                                      half_key_interact.transform.position.z - 0.001f);
+            metal_box_key.transform.position = new Vector3(metal_box_key.transform.position.x,
+                                                      metal_box_key.transform.position.y,
+                                                      metal_box_key.transform.position.z - 0.001f);
             distance += 0.001f;
             yield return new WaitForEndOfFrame();
         }
