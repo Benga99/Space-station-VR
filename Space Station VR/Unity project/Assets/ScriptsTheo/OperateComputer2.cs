@@ -7,13 +7,21 @@ using Valve.VR.InteractionSystem;
 public class OperateComputer2 : MonoBehaviour
 {
     [SerializeField]
+    private GameObject DartsBoard;
+    [SerializeField]
+    private GameObject DartsPoint1;
+    [SerializeField]
+    private GameObject DartsPoint2;
+    [SerializeField]
+    private GameObject DartsPoint3;
+    [SerializeField]
     private GameObject key;
     [SerializeField]
     private GameObject card;
     [SerializeField]
     private Text screenText;
     [SerializeField]
-    private Material screenMat;
+    private CanvasGroup screenCG;
     [SerializeField]
     private Color startingColor;
     [SerializeField]
@@ -24,17 +32,18 @@ public class OperateComputer2 : MonoBehaviour
 
     private InteractableFunctionality interFunc;
     private AudioSource audioS;
+    private OpenMetalBoxScene2 openMetalBox;
 
     private bool started = false;
 
     private bool fired = false;
-    private bool keyIntroduced = false;
+    private int darts = 0;
     // Start is called before the first frame update
     void Start()
     {
         interFunc = FindObjectOfType<InteractableFunctionality>();
         audioS = GetComponent<AudioSource>();
-        screenMat.color = startingColor;
+        openMetalBox = FindObjectOfType<OpenMetalBoxScene2>();
     }
 
     // Update is called once per frame
@@ -42,42 +51,29 @@ public class OperateComputer2 : MonoBehaviour
     {
         if (started)
         {
-            started = false;
-            StartCoroutine(initializeScreen());
+            if(darts == 3)
+            {
+                //game ready
+                StartCoroutine(gameEnded());
+                //spawn 2 notes -> look in thge fridge
+                //TODO 03.06.
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //this works 
-        if (!keyIntroduced)
+        if(other.gameObject.tag == "Dart" && (rightHand.GetComponent<Hand>().currentAttachedObject == card ||
+                                                leftHand.GetComponent<Hand>().currentAttachedObject == card))
         {
-            if(other.gameObject.tag == "PCCard" && (rightHand.GetComponent<Hand>().currentAttachedObject == card ||
-                                                    leftHand.GetComponent<Hand>().currentAttachedObject == card))
-            {
-                GameObject hand = GetTheHand(other.gameObject);
+            GameObject hand = GetTheHand(other.gameObject);
 
-                hand.GetComponent<Hand>().DetachObject(card);
+            hand.GetComponent<Hand>().DetachObject(card);
 
-                card.SetActive(false);
-                keyIntroduced = true;
-                screenText.text = "Hit me with\nsomething\nred! 1";
-                screenMat.color = Color.red;
-
-                this.gameObject.GetComponent<MeshCollider>().isTrigger = false;
-                
-            }
+            card.SetActive(false);
+            darts++; 
         }
-        else
-        {
-            if (other.gameObject.tag == "Fire" && !fired)
-            {
-                interFunc.DeactivateRigidbodyConstraints(key);
-                key.GetComponent<Rigidbody>().AddForce(-5f, 0, 0);
-                Debug.Log("Force added 1");
-                fired = true;
-            }
-        }
+
     }
 
     private GameObject GetTheHand(GameObject card)
@@ -92,12 +88,18 @@ public class OperateComputer2 : MonoBehaviour
         }
     }
 
-    private IEnumerator initializeScreen()
+    private IEnumerator gameEnded()
     {
-        Color baseColor = screenMat.color;
-        Color white = Color.white;
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(1);
+        //play some sound
+        DartsBoard.SetActive(false);
 
+        screenText.text = "End game!";
+        while (screenCG.alpha < 1)
+        {
+            screenCG.alpha += 0.01f;
+            yield return new WaitForEndOfFrame();
+        }
+        StartCoroutine(openMetalBox.takeLockDown());
     }
-
 }

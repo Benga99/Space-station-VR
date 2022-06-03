@@ -17,6 +17,8 @@ public class InteractableFunctionality : MonoBehaviour
     private List<GameObject> TVs;
     [SerializeField]
     private GameObject key;
+    [SerializeField]
+    private GameObject dartsBoard;
 
     private List<bool> switchButtonsList = new List<bool>() { false, false, false, false};
 
@@ -56,6 +58,7 @@ public class InteractableFunctionality : MonoBehaviour
             if (switchButtonsList[0] == true && switchButtonsList[1] == false && switchButtonsList[2] == false && switchButtonsList[3] == true)
             {
                 //do smth
+                dartsBoard.SetActive(true);
             }
         }
     }

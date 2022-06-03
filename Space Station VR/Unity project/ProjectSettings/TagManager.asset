@@ -14,6 +14,7 @@ TagManager:
   - Hand
   - MetalKey
   - USB
+  - Dart
   layers:
   - Default
   - TransparentFX

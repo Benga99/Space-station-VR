@@ -16268,6 +16268,8 @@ MonoBehaviour:
   - {fileID: 1186681144}
   - {fileID: 1009112761}
   - {fileID: 1442524876}
+  key: {fileID: 0}
+  dartsBoard: {fileID: 0}
   TouchpadAction:
     actionPath: /actions/default/in/TouchpadPressed
     needsReinit: 0

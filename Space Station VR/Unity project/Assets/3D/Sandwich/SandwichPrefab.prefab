@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 290033578115965782}
   - component: {fileID: 7237249129581988241}
   m_Layer: 0
-  m_Name: 13931_Reuben_Sandwich_on_Plate_sandwich
+  m_Name: Sandwich
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6037800123217358490}
   - component: {fileID: 1310948412185175750}
   m_Layer: 0
-  m_Name: 13931_Reuben_Sandwich_on_Plate_plate
+  m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8863623592911509312}
-  m_LocalRotation: {x: -0.6778032, y: -0, z: -0, w: 0.7352433}
+  m_LocalRotation: {x: -0.67780036, y: 0, z: 0, w: 0.73524594}
   m_LocalPosition: {x: -1.139, y: 0.022444844, z: 15.403}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
@@ -323,7 +323,7 @@ MonoBehaviour:
         m_MethodName: DeactivateRigidbodyConstraints
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 8863623592911509312}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
