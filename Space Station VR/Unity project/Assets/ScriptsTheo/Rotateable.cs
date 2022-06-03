@@ -282,4 +282,11 @@ public class Rotateable : MonoBehaviour
         }
     }
 
+    public void setSafeCodeLevel3()
+    {
+        solution.Clear();
+        solution.Add(3);
+        solution.Add(11);
+    }
+
 }

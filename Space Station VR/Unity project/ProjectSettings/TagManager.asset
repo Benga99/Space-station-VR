@@ -13,6 +13,7 @@ TagManager:
   - PCCard
   - Hand
   - MetalKey
+  - USB
   layers:
   - Default
   - TransparentFX

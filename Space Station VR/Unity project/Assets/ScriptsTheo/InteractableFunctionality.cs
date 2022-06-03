@@ -19,7 +19,7 @@ public class InteractableFunctionality : MonoBehaviour
 
 
     private RaycastHit hitInfo;
-    private GameObject child;
+    private GameObject child = null;
     //TouchPad listener
     public SteamVR_Action_Boolean TouchpadAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TouchpadPressed");
 
