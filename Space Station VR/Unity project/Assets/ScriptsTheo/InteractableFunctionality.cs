@@ -15,8 +15,14 @@ public class InteractableFunctionality : MonoBehaviour
     private GameObject RemoteControl;
     [SerializeField]
     private List<GameObject> TVs;
+    [SerializeField]
+    private GameObject key;
 
+    private List<bool> switchButtonsList = new List<bool>() { false, false, false, false};
 
+    private bool switchButtonsTouched = false;
+    
+    private bool switchButtonsTouchedLevel2 = false;
 
     private RaycastHit hitInfo;
     private GameObject child = null;
@@ -32,6 +38,26 @@ public class InteractableFunctionality : MonoBehaviour
             child = RemoteControl.transform.GetChild(1).gameObject;
         }
         riddleManager = FindObjectOfType<RiddleManager1>();
+    }
+
+    private void Update()
+    {
+        if (switchButtonsTouched)
+        {
+            if(switchButtonsList[0] == true && switchButtonsList[1] == false && switchButtonsList[2] == true && switchButtonsList[3] == true)
+            {
+                key.SetActive(true);
+                //play some sound
+            }
+        }
+
+        if (switchButtonsTouchedLevel2)
+        {
+            if (switchButtonsList[0] == true && switchButtonsList[1] == false && switchButtonsList[2] == false && switchButtonsList[3] == true)
+            {
+                //do smth
+            }
+        }
     }
 
     public void DeactivateRigidbodyConstraints(GameObject obj)
@@ -104,5 +130,17 @@ public class InteractableFunctionality : MonoBehaviour
             //tv.setStart(true);
             StartCoroutine(tv.displayingNumbers());
         }
+    }
+
+    public void SetSwitch(int index)
+    {
+        switchButtonsTouched = true;
+        switchButtonsList[index] = !switchButtonsList[index];
+    }
+
+    public void SetSwitchLevel2(int index)
+    {
+        switchButtonsTouchedLevel2 = true;
+        switchButtonsList[index] = !switchButtonsList[index];
     }
 }
