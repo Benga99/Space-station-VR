@@ -18,6 +18,7 @@ public class RiddleManager1 : MonoBehaviour
 
     private void Update()
     {
+        return;
         time += Time.deltaTime;
         //180 seconds, not 20
         if(time > 20 && riddlesDone[0] == false && instantiatedVisualisations[0] == false)
