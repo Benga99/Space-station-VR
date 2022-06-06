@@ -35,6 +35,7 @@ public class InteractableFunctionality : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 90;
         if (RemoteControl.transform.childCount > 1)
         {
             child = RemoteControl.transform.GetChild(1).gameObject;

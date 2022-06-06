@@ -20,6 +20,7 @@ public class OpenMetalBoxScene2 : MonoBehaviour
 
     public IEnumerator takeLockDown()
     {
+        Debug.Log("takeLockDown");
         Transform lck = locker.transform.GetChild(2).transform;
         float pos = 0;
         while (pos < 0.006f)
@@ -45,6 +46,7 @@ public class OpenMetalBoxScene2 : MonoBehaviour
 
     private IEnumerator openBox()
     {
+        Debug.Log("openBox");
         Transform doorT = door.transform;
         float rotation = 0;
         while (rotation < 93)

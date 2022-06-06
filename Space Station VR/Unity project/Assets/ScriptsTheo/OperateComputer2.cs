@@ -28,22 +28,39 @@ public class OperateComputer2 : MonoBehaviour
     private GameObject leftHand;
     [SerializeField]
     private GameObject rightHand;
+    [SerializeField]
+    private GameObject UFOParent;
+    [SerializeField]
+    private List<OperateSwitchButton> switchButtons;
+    [SerializeField]
+    private AudioSource startSound;
+    [SerializeField]
+    private GameObject DistanceChild;
+    [SerializeField]
+    private GameObject PlayerFollowHead;
+    [SerializeField]
+    private GameObject DistanceLine;
 
 
     private InteractableFunctionality interFunc;
     private AudioSource audioS;
     private OpenMetalBoxScene2 openMetalBox;
+    private DartsGame dartsGame;
 
     private bool started = false;
 
-    private bool fired = false;
+    private bool ruleWritten = false;
     private int darts = 0;
+    private float defaultDistance = 0f;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         interFunc = FindObjectOfType<InteractableFunctionality>();
         audioS = GetComponent<AudioSource>();
         openMetalBox = FindObjectOfType<OpenMetalBoxScene2>();
+        defaultDistance = Vector3.Distance(DistanceChild.transform.position, this.transform.position);
     }
 
     // Update is called once per frame
@@ -51,40 +68,39 @@ public class OperateComputer2 : MonoBehaviour
     {
         if (started)
         {
-            if(darts == 3)
+            bool correctDist = Vector3.Distance(this.transform.position, PlayerFollowHead.transform.position) > defaultDistance;
+            if (!correctDist && !ruleWritten)
+            {
+                screenText.text = "Please keep\nthe distance!";
+                DartsBoard.SetActive(false);
+                ruleWritten = true;
+            }
+            else if(correctDist && ruleWritten)
+            {
+                screenText.text = "";
+                DartsBoard.SetActive(true);
+                ruleWritten = false;
+            }
+            if(dartsGame.darts == 3)
             {
                 //game ready
                 StartCoroutine(gameEnded());
-                //spawn 2 notes -> look in thge fridge
-                //TODO 03.06.
+                dartsGame.darts++;
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Dart" && (rightHand.GetComponent<Hand>().currentAttachedObject == card ||
-                                                leftHand.GetComponent<Hand>().currentAttachedObject == card))
+        else
         {
-            GameObject hand = GetTheHand(other.gameObject);
-
-            hand.GetComponent<Hand>().DetachObject(card);
-
-            card.SetActive(false);
-            darts++; 
-        }
-
-    }
-
-    private GameObject GetTheHand(GameObject card)
-    {
-        if (Vector3.Distance(card.transform.position, leftHand.transform.position) < Vector3.Distance(card.transform.position, rightHand.transform.position))
-        {
-            return leftHand;
-        }
-        else 
-        {
-            return rightHand;
+            if (switchButtons[0].isUp == true && switchButtons[1].isUp == false && switchButtons[2].isUp == false && switchButtons[3].isUp == true)
+            {
+                started = true;
+                if (!DartsBoard.activeInHierarchy)
+                {
+                    startSound.Play();
+                    DartsBoard.SetActive(true);
+                    DistanceLine.SetActive(true);
+                    dartsGame = FindObjectOfType<DartsGame>();
+                }
+            }
         }
     }
 
@@ -93,13 +109,22 @@ public class OperateComputer2 : MonoBehaviour
         yield return new WaitForSeconds(1);
         //play some sound
         DartsBoard.SetActive(false);
-
-        screenText.text = "End game!";
+        screenCG.alpha = 1;
+        screenText.text = "Game ended!";
         while (screenCG.alpha < 1)
         {
             screenCG.alpha += 0.01f;
             yield return new WaitForEndOfFrame();
         }
         StartCoroutine(openMetalBox.takeLockDown());
+        UFOParent.SetActive(true);
+
+
+        yield return new WaitForSeconds(10);
+        Destroy(DartsPoint1);
+        Destroy(DartsPoint2);
+        Destroy(DartsPoint3);
+
+        Destroy(this);
     }
 }

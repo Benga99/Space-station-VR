@@ -4872,7 +4872,7 @@ MeshCollider:
   m_GameObject: {fileID: 541274942}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -17316,6 +17316,8 @@ MonoBehaviour:
   - {fileID: 1186681144}
   - {fileID: 1009112761}
   - {fileID: 1442524876}
+  key: {fileID: 0}
+  dartsBoard: {fileID: 0}
   TouchpadAction:
     actionPath: /actions/default/in/TouchpadPressed
     needsReinit: 0

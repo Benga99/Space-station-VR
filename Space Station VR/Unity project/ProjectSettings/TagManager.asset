@@ -15,6 +15,7 @@ TagManager:
   - MetalKey
   - USB
   - Dart
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,8 @@ using Valve.VR.InteractionSystem;
 public class OperateSwitchButton : MonoBehaviour
 {
     [SerializeField]
+    private GameObject thisSwitchButton;
+    [SerializeField]
     private GameObject leftHand;
     [SerializeField]
     private GameObject rightHand;
@@ -14,84 +16,64 @@ public class OperateSwitchButton : MonoBehaviour
     private Vector3 positionDown;
     [SerializeField]
     private Vector3 positionUp;
+    [SerializeField]
+    private SteamVR_Action_Boolean grabPinch;
+    [SerializeField]
+    private SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;
 
-    private bool active = false;
+    private bool canMoveUp = true, canMoveDown = false;
+    public bool isUp = false;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!active)
-        {
-            if (rightHand.GetComponent<Hand>().currentAttachedObject == this.gameObject ||
-                leftHand.GetComponent<Hand>().currentAttachedObject == this.gameObject)
-            {
-                GameObject hand = GetTheHand(other.gameObject);
-
-                hand.GetComponent<Hand>().DetachObject(this.gameObject);
-                Debug.Log("switchUp");
-                active = !active;
-                StartCoroutine(moveSwitchUp());
-            }
-        }
-        else
-        {
-            if (rightHand.GetComponent<Hand>().currentAttachedObject == this.gameObject ||
-                leftHand.GetComponent<Hand>().currentAttachedObject == this.gameObject)
-            {
-                GameObject hand = GetTheHand(other.gameObject);
-
-                hand.GetComponent<Hand>().DetachObject(this.gameObject);
-                Debug.Log("switchDown");
-                active = !active;
-                StartCoroutine(moveSwitchDown());
-            }
-        }
-    }
-
-    private IEnumerator moveSwitchUp()
-    {
-        float i = 0;
-        while (i<=1)
-        {
-            this.gameObject.transform.localPosition = Vector3.Lerp(positionDown, positionUp, i);
-            i += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
+        rightHand.GetComponent<Hand>().grabPinchAction.AddOnStateDownListener(onPinchDown, inputSource);
+        leftHand.GetComponent<Hand>().grabPinchAction.AddOnStateDownListener(onPinchDown, inputSource);
     }
 
     private IEnumerator moveSwitchDown()
     {
         float i = 0;
-        while (i <= 1)
+        this.gameObject.transform.rotation.eulerAngles.Set(0, -135, 0);
+        while (i<=1)
         {
-            this.gameObject.transform.localPosition = Vector3.Lerp(positionUp, positionDown, i);
+            this.gameObject.transform.position = Vector3.Lerp(positionUp, positionDown, i);
             i += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        canMoveUp = true;
+        isUp = false;
+    }
+
+    private IEnumerator moveSwitchUp()
+    {
+        float i = 0;
+        this.gameObject.transform.rotation.eulerAngles.Set(0, -135, 0);
+        while (i <= 1)
+        {
+            this.gameObject.transform.position = Vector3.Lerp(positionDown, positionUp, i);
+            i += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        canMoveDown = true;
+        isUp = true;
     }
 
 
-    private GameObject GetTheHand(GameObject card)
+    private void onPinchDown(SteamVR_Action_Boolean action, SteamVR_Input_Sources input)
     {
-        if (Vector3.Distance(card.transform.position, leftHand.transform.position) < Vector3.Distance(card.transform.position, rightHand.transform.position))
+        if ((rightHand.GetComponent<Hand>().hoveringInteractable != null && rightHand.GetComponent<Hand>().hoveringInteractable.gameObject == thisSwitchButton) ||
+                (leftHand.GetComponent<Hand>().hoveringInteractable != null && leftHand.GetComponent<Hand>().hoveringInteractable.gameObject == thisSwitchButton))
         {
-            return leftHand;
-        }
-        else
-        {
-            return rightHand;
-        }
+            if (canMoveUp)
+            {
+                canMoveUp = false;
+                StartCoroutine(moveSwitchUp());
+            }
+            if(canMoveDown)
+            {
+                canMoveDown = false;
+                StartCoroutine(moveSwitchDown());
+            }
+        }   
     }
 }

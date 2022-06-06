@@ -17,7 +17,6 @@ public class UFOupDown : MonoBehaviour
     void Update()
     {
         y = Mathf.PingPong(Time.time, length);
-        Debug.Log(y);
         transform.localPosition= new Vector3(x, y, z);
     }
 }

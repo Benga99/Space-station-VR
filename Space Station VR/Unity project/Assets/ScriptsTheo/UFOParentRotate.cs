@@ -9,7 +9,7 @@ public class UFOParentRotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(goUp());
     }
 
     // Update is called once per frame
@@ -23,6 +23,17 @@ public class UFOParentRotate : MonoBehaviour
             key.SetActive(true);
             //play sound
 
+        }
+    }
+
+    private IEnumerator goUp()
+    {
+        float y = 0;
+        while (y < 5)
+        {
+            y += Time.deltaTime;
+            this.transform.position = new Vector3(transform.position.x, transform.position.y + Time.deltaTime, transform.position.z);
+            yield return new WaitForEndOfFrame();
         }
     }
 }

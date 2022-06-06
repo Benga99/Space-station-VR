@@ -38,11 +38,11 @@ public class Revolver : MonoBehaviour
     void Start()
     {
         //TO DO TO TEST 
-        leftHand.GetComponent<Hand>().grabPinchAction.AddOnStateUpListener(OnPinchUpLeft, inputSourceLeft);
-        rightHand.GetComponent<Hand>().grabPinchAction.AddOnStateUpListener(OnPinchUpRight, inputSourceRight);
+        //leftHand.GetComponent<Hand>().grabPinchAction.AddOnStateUpListener(OnPinchUpLeft, inputSourceLeft);
+        //rightHand.GetComponent<Hand>().grabPinchAction.AddOnStateUpListener(OnPinchUpRight, inputSourceRight);
 
-        leftHand.GetComponent<Hand>().grabPinchAction.AddOnStateDownListener(onPinchDownLeft, inputSourceLeft);
-        rightHand.GetComponent<Hand>().grabPinchAction.AddOnStateDownListener(onPinchDownRight, inputSourceRight);
+        //leftHand.GetComponent<Hand>().grabPinchAction.AddOnStateDownListener(onPinchDownLeft, inputSourceLeft);
+        //rightHand.GetComponent<Hand>().grabPinchAction.AddOnStateDownListener(onPinchDownRight, inputSourceRight);
     }
 
     // Update is called once per frame
@@ -54,7 +54,8 @@ public class Revolver : MonoBehaviour
             leftH = false;
             if (TouchpadAction.stateDown)
             {
-                rightHand.GetComponent<Hand>().DetachObject(this.gameObject);
+                //rightHand.GetComponent<Hand>().DetachObject(this.gameObject);
+                Fire();
             }
         }
         else if(leftHand.GetComponent<Hand>().currentAttachedObject == this.gameObject)
@@ -63,7 +64,8 @@ public class Revolver : MonoBehaviour
             rightH = false;
             if (TouchpadAction.stateDown)
             {
-                rightHand.GetComponent<Hand>().DetachObject(this.gameObject);
+                //rightHand.GetComponent<Hand>().DetachObject(this.gameObject);
+                Fire();
             }
         }
     }
@@ -118,7 +120,8 @@ public class Revolver : MonoBehaviour
         if (rightH == true)
         {
             rightH = false;
-            rightHand.GetComponent<Hand>().AttachObject(this.gameObject, GrabTypes.Pinch);
+            Debug.Log("OnPinchUpRight");
+            rightHand.GetComponent<Hand>().AttachObject(this.gameObject, GrabTypes.None);
         }
     }
 

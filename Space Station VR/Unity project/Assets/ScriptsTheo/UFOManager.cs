@@ -11,6 +11,7 @@ public class UFOManager : MonoBehaviour
 
     private UFOParentRotate UFOparent;
 
+    bool collided = false;
     float rotationFactor = 0;
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,14 @@ public class UFOManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Bullet")
+        if(other.gameObject.tag == "Bullet" && !collided)
         {
+            collided = true;
             UFOparent.UFOsDown++;
             audioExplosion.Play();
-            Instantiate(explosionEffect, this.transform.localPosition, this.transform.rotation);
-            Destroy(this.gameObject);
+            Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
+
+            this.gameObject.SetActive(false);
         }
     }
 }
