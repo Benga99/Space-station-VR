@@ -32,10 +32,16 @@ public class UFOManager : MonoBehaviour
         {
             collided = true;
             UFOparent.UFOsDown++;
+            /*
+            audioExplosion = GetComponent<AudioSource>();
             audioExplosion.Play();
+            */
+            audioExplosion = this.transform.parent.transform.parent.transform.parent.GetComponent<UFOParentRotate>().destroyAudio;
+            audioExplosion.Play();
+
             Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
 
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject.transform.parent.gameObject);
         }
     }
 }

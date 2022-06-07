@@ -263,7 +263,7 @@ public class Rotateable : MonoBehaviour
 
     private IEnumerator OpenDoor()
     {
-        riddleManager.setRiddleDone(2);
+        //riddleManager.setRiddleDone(2);
         float multiplier = 20f;
         yield return new WaitForSeconds(1f);
         Debug.Log("openDoor");

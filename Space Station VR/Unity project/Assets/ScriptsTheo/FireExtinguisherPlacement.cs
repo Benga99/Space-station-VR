@@ -15,21 +15,19 @@ public class FireExtinguisherPlacement : MonoBehaviour
     private Material startingMat;
     [SerializeField]
     private Material pizzaMat;
+    [SerializeField]
+    private GameObject oldBoxDoor;
+    [SerializeField]
+    private GameObject newBoxDoor;
 
     private bool fireExtIntroduced = false;
-    private Vector3 finalPosition = new Vector3(2.4f, 1.4f, 14.7f);
+    private Vector3 finalPosition = new Vector3(2.402f, 1.425f, 14.729f);
     private Vector3 finalRotation = new Vector3(270, 270, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(putFireExtInPlace());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //StartCoroutine(putFireExtInPlace());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,10 +37,12 @@ public class FireExtinguisherPlacement : MonoBehaviour
             if (other.gameObject.tag == "Fire" && (rightHand.GetComponent<Hand>().currentAttachedObject == FireExtinguisher ||
                                                     leftHand.GetComponent<Hand>().currentAttachedObject == FireExtinguisher))
             {
+                
+                //other.gameObject.GetComponent<BoxCollider>().isTrigger = true;
                 GameObject hand = GetTheHand(other.gameObject);
 
                 hand.GetComponent<Hand>().DetachObject(FireExtinguisher);
-
+                other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 StartCoroutine(putFireExtInPlace());
 
                 fireExtIntroduced = true;
@@ -70,12 +70,12 @@ public class FireExtinguisherPlacement : MonoBehaviour
         Vector3 localRot = FireExtinguisher.transform.rotation.eulerAngles;
         float i = 0;
 
-        while (i<=1)
+        while (i<=1.5f)
         {
             FireExtinguisher.transform.position = Vector3.Lerp(localPos, finalPosition, i);
             Vector3 r = Vector3.Lerp(localRot, finalRotation, i);
-            Debug.Log(r);
-            FireExtinguisher.transform.rotation.eulerAngles.Set(r.x, r.y, r.z);
+
+            FireExtinguisher.transform.localEulerAngles = new Vector3(r.x, r.y, r.z);
             i += 0.05f;
             yield return new WaitForEndOfFrame();
         }
@@ -110,5 +110,8 @@ public class FireExtinguisherPlacement : MonoBehaviour
             time += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        oldBoxDoor.SetActive(false);
+        newBoxDoor.SetActive(true);
     }
 }

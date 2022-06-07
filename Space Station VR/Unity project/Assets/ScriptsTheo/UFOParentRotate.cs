@@ -6,6 +6,7 @@ public class UFOParentRotate : MonoBehaviour
 {
     public int UFOsDown = 0;
     public GameObject key;
+    public AudioSource destroyAudio;
     // Start is called before the first frame update
     void Start()
     {
