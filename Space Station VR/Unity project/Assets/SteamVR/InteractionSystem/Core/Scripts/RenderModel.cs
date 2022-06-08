@@ -42,6 +42,7 @@ namespace Valve.VR.InteractionSystem
             InitializeController();
         }
 
+
         protected void InitializeHand()
         {
             if (handPrefab != null)

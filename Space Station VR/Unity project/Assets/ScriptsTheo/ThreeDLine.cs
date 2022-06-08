@@ -6,6 +6,7 @@ using Valve.VR.InteractionSystem;
 
 public class ThreeDLine : MonoBehaviour
 {
+    public Hand leftHand, rightHand;
     public Transform pen;
     public Transform parentT;
     public GameObject circle;
@@ -29,7 +30,7 @@ public class ThreeDLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (touchPad.stateDown)
+        if (touchPad.stateDown && (leftHand.currentAttachedObject == this.gameObject || rightHand.currentAttachedObject == this.gameObject) )
         {
             canDraw = !canDraw;
             if(canDraw == false)

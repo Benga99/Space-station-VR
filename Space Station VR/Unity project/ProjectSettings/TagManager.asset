@@ -16,6 +16,7 @@ TagManager:
   - USB
   - Dart
   - Bullet
+  - Sphere
   layers:
   - Default
   - TransparentFX
