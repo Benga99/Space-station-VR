@@ -34,7 +34,16 @@ public class Pulse : MonoBehaviour
         }
         if (Vector3.Distance(transform.position, Camera.main.transform.position) > 0.4f)
         {
-            transform.LookAt(Camera.main.transform);
+            if(lookAt == null)
+            {
+                transform.LookAt(Camera.main.transform);
+            }
+            else
+            {
+                transform.LookAt(lookAt);
+                transform.Rotate(0, 180, 0);
+            }
+            
         }
 
     }
