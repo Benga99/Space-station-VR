@@ -17,6 +17,8 @@ TagManager:
   - Dart
   - Bullet
   - Sphere
+  - Chess
+  - Soda
   layers:
   - Default
   - TransparentFX

@@ -9,39 +9,30 @@ public class ButtonPressed : MonoBehaviour
     [SerializeField]
     private GameObject press;
     [SerializeField]
-    private Hand leftHand;
-    [SerializeField]
-    private Hand rightHand;
+    private GameObject canvas;
 
-    private bool pressed = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    public bool pressed = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if((leftHand.hoveringInteractable == press || rightHand.hoveringInteractable == press) && !pressed)
+        if ((other.gameObject.transform.parent.gameObject.transform.parent.gameObject.name == "HandColliderRight(Clone)" ||
+            other.gameObject.transform.parent.gameObject.transform.parent.gameObject.name == "HandColliderLeft(Clone)") && !pressed)
         {
             pressed = true;
+            Debug.Log("button pressed trig");
             StartCoroutine(PressButton());
         }
     }
 
     private IEnumerator PressButton()
     {
-        while(press.transform.localPosition.z > -0.085f)
+        while(press.transform.localPosition.z > -0.078f)
         {
-            press.transform.localPosition = new Vector3(press.transform.localPosition.x, press.transform.localPosition.y, press.transform.localPosition.z - Time.deltaTime / 2f);
+            press.transform.localPosition = new Vector3(press.transform.localPosition.x, press.transform.localPosition.y, press.transform.localPosition.z - Time.deltaTime / 3f);
+            yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
         }
-        
+        canvas.SetActive(true);
     }
 }

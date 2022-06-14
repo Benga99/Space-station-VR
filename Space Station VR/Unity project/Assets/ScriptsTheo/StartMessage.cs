@@ -21,7 +21,7 @@ public class StartMessage : MonoBehaviour
         //message = "Hello Captain! You just woke up and realized your crew left you behind. The aliens will take over the ship shortly and you are the only one left on the ship. Find your way out! Press SELECT to continue!";
         MessageCanvas.GetComponent<Text>().text = "";
         char[] m = message.ToCharArray();
-        StartCoroutine(writeMessage(m));
+        //StartCoroutine(writeMessage(m));
         
         //MessageCanvas.GetComponent<Text>().text = $"Hello Captain! You just woke up and realized your crew left you behind. The aliens will take over the ship shortly and you are the only one left on the ship. Find your way out! Press SELECT to continue!";
     }

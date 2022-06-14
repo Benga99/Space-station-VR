@@ -19,6 +19,8 @@ public class InteractableFunctionality : MonoBehaviour
     private GameObject key;
     [SerializeField]
     private GameObject dartsBoard;
+    [SerializeField]
+    private List<GameObject> buttons;
 
     private List<bool> switchButtonsList = new List<bool>() { false, false, false, false};
 
@@ -135,6 +137,32 @@ public class InteractableFunctionality : MonoBehaviour
             StartCoroutine(tv.displayingNumbers());
         }
     }
+
+    public void activateTVButtons()
+    {
+        buttons[0].SetActive(true);
+        buttons[1].SetActive(true);
+        buttons[2].SetActive(true);
+        StartCoroutine(waitUntilAllButtonsArePressed());
+    }
+
+    private IEnumerator waitUntilAllButtonsArePressed()
+    {
+        while(!buttons[0].GetComponentInChildren<ButtonPressed>().pressed ||
+             !buttons[1].GetComponentInChildren<ButtonPressed>().pressed ||
+             !buttons[2].GetComponentInChildren<ButtonPressed>().pressed)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        buttons[3].SetActive(true);
+        while (!buttons[3].GetComponentInChildren<ButtonPressed>().pressed)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        key.SetActive(true);
+    }
+
 
     public void SetSwitch(int index)
     {

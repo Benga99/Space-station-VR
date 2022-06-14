@@ -18,7 +18,7 @@ public class UFOParentRotate : MonoBehaviour
     {
         transform.Rotate(0, Time.deltaTime * 10, 0);
         
-        if(UFOsDown == 14)
+        if(UFOsDown == 7)
         {
             //instantiate key
             key.SetActive(true);
