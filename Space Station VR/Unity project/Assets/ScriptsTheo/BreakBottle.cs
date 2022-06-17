@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using ViveSR.anipal.Eye;
 
 public class BreakBottle : MonoBehaviour
 {
@@ -41,4 +42,6 @@ public class BreakBottle : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    
 }
