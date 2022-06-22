@@ -5,7 +5,7 @@ public class Door : MonoBehaviour {
 	private Animator anim;
 
 	private AudioSource audioS;
-	private HovercarAnim hovercar;
+	public HovercarAnim hovercar;
 
 	bool floatingCar = false;
 
@@ -14,7 +14,7 @@ public class Door : MonoBehaviour {
 		GameObject door = GameObject.FindWithTag("SF_Door");
 		anim = door.GetComponent<Animator>();
 		audioS = this.GetComponent<AudioSource>();
-		hovercar = FindObjectOfType<HovercarAnim>();
+		//hovercar = FindObjectOfType<HovercarAnim>();
 	}
 
 	void OnTriggerEnter(Collider other)
