@@ -52,12 +52,13 @@ public class EKG : MonoBehaviour
             pulse.intensity = Mathf.Clamp(offset, 0.005f, 0.015f);
             pulse.multiplier = Mathf.Clamp(pulse.multiplier / (1 + offset / 20f), 3f, 6f);
         }
-
+        /*
         if(Vector3.Distance(transform.position, Camera.main.transform.position) > 0.4f)
         {
             transform.LookAt(Camera.main.transform);
             transform.Rotate(transform.rotation.x/3f, 180, 0);
         }
+        */
         
     }
 

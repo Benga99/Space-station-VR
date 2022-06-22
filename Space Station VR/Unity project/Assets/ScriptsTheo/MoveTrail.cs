@@ -11,15 +11,16 @@ public class MoveTrail : MonoBehaviour
 
 
     int i = 0;
-    int length;
+    int length, offset = 0;
     Vector3[] posVector;
     Vector3[] nextPositionVector;
-    Vector3[] interpolateVectors;
+    public Vector3[] interpolateVectors;
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
         StartCoroutine(move());
+        //StartCoroutine(lineFlow());
     }
 
     // Update is called once per frame
@@ -59,22 +60,42 @@ public class MoveTrail : MonoBehaviour
             }
         }
         length = j;
-        Debug.Log(j);
     }
 
     private IEnumerator move()
     {
-        this.transform.localPosition = interpolateVectors[i++];
+        for (i = 0; i < length; i++)
+        {
+
+            this.transform.localPosition = interpolateVectors[i++] + new Vector3(offset, 0, 0);
+            yield return new WaitForSeconds(0.02f);
+        }
         if (i == length)
         {
-            StartCoroutine(kill());
-               
+            //StartCoroutine(kill());
+            offset += 6;
 
-            i = length - 1;
+            i = 0;
         }
-        yield return new WaitForSeconds(0f);
-
         StartCoroutine(move());
+    }
+
+    private IEnumerator lineFlow()
+    {
+        Vector3 newPosition = interpolateVectors[0];
+        for (int i = 0; i < length - 1; i++)
+        {
+            interpolateVectors[i].y = interpolateVectors[i + 1].y;
+        }
+        newPosition = new Vector3(interpolateVectors[length - 1].x, newPosition.y);
+        interpolateVectors[length - 1] = newPosition;
+
+        yield return new WaitForSeconds(0.2f);
+
+        //TODO to adjust speed for the EKG to go faster
+        //line.SetPositions(interpolateVectors);
+
+        StartCoroutine(lineFlow());
     }
 
     private IEnumerator kill()

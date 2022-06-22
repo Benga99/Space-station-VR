@@ -26,6 +26,7 @@ public class Door : MonoBehaviour {
             if (!floatingCar)
             {
 				floatingCar = true;
+				hovercar.gameObject.SetActive(true);
 				StartCoroutine(hovercar.Floating());
 				//go to the car and leave
 			}
