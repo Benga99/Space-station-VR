@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class ChessGame : MonoBehaviour
 {
@@ -46,7 +48,7 @@ public class ChessGame : MonoBehaviour
         }
         LeoSign.SetActive(true);
         SodaSign.SetActive(true);
-
+        image.GetComponent<Interactable>().enabled = true;
         //write on the soda
     }
 }

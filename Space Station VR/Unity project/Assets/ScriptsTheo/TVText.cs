@@ -29,7 +29,6 @@ public class TVText : MonoBehaviour
             textField.text = randomNum.ToString();
             yield return new WaitForSeconds(seconds);
             seconds *= 1.075f;
-            Debug.Log(seconds);
         }
 
         rotateable.solution[numbering] = randomNum;

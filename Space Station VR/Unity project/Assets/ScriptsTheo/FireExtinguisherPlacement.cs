@@ -19,14 +19,20 @@ public class FireExtinguisherPlacement : MonoBehaviour
     private GameObject oldBoxDoor;
     [SerializeField]
     private GameObject newBoxDoor;
+    [SerializeField]
+    private List<GameObject> pizzaOBJS;
+
 
     private bool fireExtIntroduced = false;
     private Vector3 finalPosition = new Vector3(2.402f, 1.425f, 14.729f);
     private Vector3 finalRotation = new Vector3(270, 270, 0);
 
+    private InteractableFunctionality interFunc;
+
     // Start is called before the first frame update
     void Start()
     {
+        interFunc = FindObjectOfType<InteractableFunctionality>();
         //StartCoroutine(putFireExtInPlace());
     }
 
@@ -113,5 +119,10 @@ public class FireExtinguisherPlacement : MonoBehaviour
 
         oldBoxDoor.SetActive(false);
         newBoxDoor.SetActive(true);
+        foreach(var o in pizzaOBJS)
+        {
+            o.GetComponent<Interactable>().enabled = true;
+            o.GetComponent<Throwable>().enabled = true;
+        }
     }
 }

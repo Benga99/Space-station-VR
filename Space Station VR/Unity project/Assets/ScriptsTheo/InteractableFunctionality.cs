@@ -34,7 +34,7 @@ public class InteractableFunctionality : MonoBehaviour
     public SteamVR_Action_Boolean TouchpadAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("TouchpadPressed");
 
     RiddleManager1 riddleManager;
-
+    private bool numbersOnTv = false;
     private void Start()
     {
         Application.targetFrameRate = 90;
@@ -135,8 +135,8 @@ public class InteractableFunctionality : MonoBehaviour
             {
                 if (TVs[2].GetComponent<ChangeColorScreen>().currentColor == Color.blue && TVs[2].name == "TVRight")
                 {
-                    ActivateNumberTVs();
-                    riddleManager.setRiddleDone(1);
+                    StartCoroutine(ActivateNumberTVs());
+                    //riddleManager.setRiddleDone(1);
                     return true;
                     
                 }
@@ -145,13 +145,22 @@ public class InteractableFunctionality : MonoBehaviour
         return false;
     }
 
-    private void ActivateNumberTVs()
+    private IEnumerator ActivateNumberTVs()
     {
-        var tvs = FindObjectsOfType<TVText>();
-        foreach(var tv in tvs)
+        if (!numbersOnTv)
         {
-            //tv.setStart(true);
-            StartCoroutine(tv.displayingNumbers());
+            numbersOnTv = true;
+            var tvs = FindObjectsOfType<TVText>();
+            foreach(var tv in tvs)
+            {
+                //tv.setStart(true);
+                StartCoroutine(tv.displayingNumbers());
+                yield return new WaitForSeconds(1f);
+            }
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
         }
     }
 

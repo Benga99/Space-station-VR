@@ -11,14 +11,19 @@ public class ChangeColorScreen : MonoBehaviour
     private void Start()
     {
         this.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+        this.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_Color");
     }
 
 
     public void Change()
     {
         currentColor = colors[colorIndex++ % colors.Length];
+
         this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", currentColor);
         this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_Emission", currentColor);
         this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EMISSION", currentColor);
+        //this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color", currentColor);
+        this.gameObject.GetComponent<MeshRenderer>().material.color = currentColor;
+
     }
 }
