@@ -43,6 +43,8 @@ public class InteractableFunctionality : MonoBehaviour
             child = RemoteControl.transform.GetChild(1).gameObject;
         }
         riddleManager = FindObjectOfType<RiddleManager1>();
+
+        setFrictionForce();
     }
 
     private void Update()
@@ -63,6 +65,16 @@ public class InteractableFunctionality : MonoBehaviour
                 //do smth
                 dartsBoard.SetActive(true);
             }
+        }
+    }
+
+    private void setFrictionForce()
+    {
+        var objs = FindObjectsOfType<Rigidbody>(true);
+        foreach(var o in objs)
+        {
+            o.angularDrag = 2;
+            o.drag = 10;
         }
     }
 

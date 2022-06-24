@@ -11,18 +11,7 @@ public class ChessGame : MonoBehaviour
 
     public GameObject LeoSign;
     public GameObject SodaSign;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject Thunderbolt;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,6 +28,7 @@ public class ChessGame : MonoBehaviour
 
     private IEnumerator showImage()
     {
+        image.SetActive(true);
         float pos = 0f;
         while(pos < 0.16f)
         {
@@ -48,7 +38,7 @@ public class ChessGame : MonoBehaviour
         }
         LeoSign.SetActive(true);
         SodaSign.SetActive(true);
-        image.GetComponent<Interactable>().enabled = true;
+        Thunderbolt.SetActive(true);
         //write on the soda
     }
 }
