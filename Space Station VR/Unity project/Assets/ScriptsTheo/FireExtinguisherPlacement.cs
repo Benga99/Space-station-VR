@@ -20,7 +20,11 @@ public class FireExtinguisherPlacement : MonoBehaviour
     [SerializeField]
     private GameObject newBoxDoor;
     [SerializeField]
-    private List<GameObject> pizzaOBJS;
+    private GameObject oldPizza;
+    [SerializeField]
+    private GameObject newPizza;
+    [SerializeField]
+    private GameObject pizzaNotePrefab;
 
 
     private bool fireExtIntroduced = false;
@@ -119,10 +123,9 @@ public class FireExtinguisherPlacement : MonoBehaviour
 
         oldBoxDoor.SetActive(false);
         newBoxDoor.SetActive(true);
-        foreach(var o in pizzaOBJS)
-        {
-            o.GetComponent<Interactable>().enabled = true;
-            o.GetComponent<Throwable>().enabled = true;
-        }
+
+        oldPizza.SetActive(false);
+        newPizza.SetActive(true);
+        pizzaNotePrefab.SetActive(true);
     }
 }

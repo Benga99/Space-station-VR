@@ -47,7 +47,6 @@ public class InteractableFunctionality : MonoBehaviour
 
     private void Update()
     {
-        CheckFocus();
         if (switchButtonsTouched)
         {
             if(switchButtonsList[0] == true && switchButtonsList[1] == false && switchButtonsList[2] == true && switchButtonsList[3] == true)
@@ -66,22 +65,6 @@ public class InteractableFunctionality : MonoBehaviour
             }
         }
     }
-
-    private void CheckFocus()
-    {
-        Ray testRay;
-        FocusInfo focusInfo;
-        string currentFocus = "";
-
-        if (SRanipal_Eye.Focus(GazeIndex.COMBINE, out testRay, out focusInfo)) { }
-        else if (SRanipal_Eye.Focus(GazeIndex.LEFT, out testRay, out focusInfo)) { }
-        else if (SRanipal_Eye.Focus(GazeIndex.RIGHT, out testRay, out focusInfo)) { }
-        else return;
-
-        currentFocus = focusInfo.collider.gameObject.name;
-        Debug.Log(currentFocus);
-    }
-
 
     public void DeactivateRigidbodyConstraints(GameObject obj)
     {
