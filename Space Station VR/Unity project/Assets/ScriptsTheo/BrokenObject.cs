@@ -22,10 +22,14 @@ public class BrokenObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!broken)
+        if (collision.gameObject.name == "Floorready" || collision.gameObject.tag == "Wall")
         {
-            StartCoroutine(breakable());
-            broken = true;
+            if (!broken)
+            {
+                StartCoroutine(breakable());
+                broken = true;
+            }
+
         }
        
     }

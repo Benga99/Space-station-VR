@@ -4490,6 +4490,16 @@ PrefabInstance:
       propertyPath: onTransformUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1993162002879507798, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506049010216060895, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013786455312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -16635,7 +16645,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MessageCanvas: {fileID: 2024773304}
   audioK: {fileID: 1458362080}
-  message: 3rd level
+  message: Hello Captain! An asteroid is heading towards your space station. Once
+    it hits, it will destroy you all.  Get out of there now! - Press GRAB to continue
+    -
+  messageCG: {fileID: 2024773305}
   grabPinch:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
@@ -20545,6 +20558,7 @@ GameObject:
   - component: {fileID: 2024773304}
   - component: {fileID: 2024773303}
   - component: {fileID: 2024773302}
+  - component: {fileID: 2024773305}
   m_Layer: 5
   m_Name: StartMessage
   m_TagString: Untagged
@@ -20636,6 +20650,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &2024773305
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024773300}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2025036851
 PrefabInstance:
   m_ObjectHideFlags: 0
