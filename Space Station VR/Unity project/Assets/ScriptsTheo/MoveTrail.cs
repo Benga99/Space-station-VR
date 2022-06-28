@@ -11,7 +11,9 @@ public class MoveTrail : MonoBehaviour
 
 
     int i = 0;
-    int length, offset = 0;
+    int length;
+    float offset = 0;
+    Vector3 direction;
     Vector3[] posVector;
     Vector3[] nextPositionVector;
     public Vector3[] interpolateVectors;
@@ -66,14 +68,20 @@ public class MoveTrail : MonoBehaviour
     {
         for (i = 0; i < length; i++)
         {
-
-            this.transform.localPosition = interpolateVectors[i++] + new Vector3(offset, 0, 0);
+            if(i > 0)
+            {
+                direction = (interpolateVectors[i] - interpolateVectors[i - 1]).normalized;
+            }
+            
+            this.transform.localPosition = interpolateVectors[i++]/* + new Vector3(offset, 0, 0)*/;
+            
             yield return new WaitForSeconds(0.02f);
         }
         if (i == length)
         {
             //StartCoroutine(kill());
-            offset += 6;
+            offset = 0.6f;
+            this.transform.parent.position -= direction * 0.6f;
 
             i = 0;
         }
