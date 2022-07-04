@@ -42,10 +42,11 @@ public class DataLogger : MonoBehaviour
         }
 
         string filepath;
-        filepath = rootFolder + underFolder + "ID" + participantId + "-" + participantRoom + "-visitor.csv";
+        filepath = rootFolder + underFolder + "ID" + participantId + "-" + participantRoom + "-state.csv";
 
         if (File.Exists(filepath)) {
             Debug.LogError("Participant log files already exists ID " + participantId + "-" + participantRoom);
+
 #if UNITY_EDITOR
             //UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -90,6 +91,7 @@ public class DataLogger : MonoBehaviour
         if (swState == null)
         {
             filepath = rootFolder + underFolder + "ID" + participantId + "-" + participantRoom + "-state.csv";
+            //filepath = rootFolder + "ID" + participantId + "-state.csv";
             swState = (!File.Exists(filepath)) ? File.CreateText(filepath) : File.AppendText(filepath);
             swState.WriteLine("Time,State,BlockNumber,AdaptationStatus");
             swState.Flush();
