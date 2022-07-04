@@ -13,6 +13,8 @@ public class MoveTrail : MonoBehaviour
     int i = 0;
     int length;
     float offset = 0;
+    bool rotate = false;
+    float angle = 0;
     Vector3 direction;
     Vector3[] posVector;
     Vector3[] nextPositionVector;
@@ -68,24 +70,42 @@ public class MoveTrail : MonoBehaviour
     {
         for (i = 0; i < length; i++)
         {
-            if(i > 0)
-            {
-                direction = (interpolateVectors[i] - interpolateVectors[i - 1]).normalized;
-            }
-            
-            this.transform.localPosition = interpolateVectors[i++]/* + new Vector3(offset, 0, 0)*/;
+                this.transform.localPosition = interpolateVectors[i++] + new Vector3(offset, 0, 0);
+
             
             yield return new WaitForSeconds(0.02f);
         }
         if (i == length)
         {
             //StartCoroutine(kill());
-            offset = 0.6f;
-            this.transform.parent.position -= direction * 0.6f;
-
+            offset += 6f;
+            //this.transform.parent.position -= direction * 0.6f;
+            rotate = !rotate;
             i = 0;
         }
         StartCoroutine(move());
+    }
+
+    Vector3 rotateHead(Vector3 point, float angle)
+    {
+        float centerX = point.x;
+        float centerY = point.z - 0.1f;
+
+        float s = Mathf.Sin(angle);
+        float c = Mathf.Cos(angle);
+
+        // translate point back to origin:
+        point.x -= centerX;
+        point.z -= centerY;
+
+        // rotate point
+        float xnew = point.x * c - point.z * s;
+        float ynew = point.x * s + point.z * c;
+
+        // translate point back:
+        point.x = xnew + centerX;
+        point.z = ynew + centerY;
+        return point;
     }
 
     private IEnumerator lineFlow()
