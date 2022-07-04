@@ -13,9 +13,8 @@ public class RiddleManager1 : MonoBehaviour
     public bool allRiddlesComplete = false;
 
     List<GameObject> instantiatedVis = new List<GameObject>();
-    float time = 0f;
 
-
+    /*
     private void Update()
     {
         return;
@@ -39,7 +38,7 @@ public class RiddleManager1 : MonoBehaviour
             instantiatedVisualisations[2] = true;
         }
     }
-
+    */
     public void setRiddleDone(int index)
     {
         riddlesDone[index] = true;

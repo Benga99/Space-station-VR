@@ -12,7 +12,7 @@ public class LightSpawner : MonoBehaviour
     private float SpawnFrequency;
 
 
-    float minX = -20, maxX = 20;
+    //float minX = -20, maxX = 20;
     // Start is called before the first frame update
     void Start()
     {

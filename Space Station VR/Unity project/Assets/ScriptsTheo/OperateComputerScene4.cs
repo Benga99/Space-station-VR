@@ -34,7 +34,6 @@ public class OperateComputerScene4 : MonoBehaviour
     private InteractableFunctionality interFunc;
     private WarningDisplay warDisplay;
 
-    private bool fired = false;
     private bool keyIntroduced = false;
     private bool triggerPressed = false;
 

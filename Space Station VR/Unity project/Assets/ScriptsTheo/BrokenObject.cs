@@ -6,7 +6,7 @@ public class BrokenObject : MonoBehaviour
 {
     public GameObject brokenObj;
 
-    float time = 0;
+    //float time = 0;
     bool broken = false;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class BrokenObject : MonoBehaviour
 
     private IEnumerator breakable()
     {
-        time = 0;
+        //time = 0;
         brokenObj.SetActive(true);
         /*
         while (time < 0.2f)

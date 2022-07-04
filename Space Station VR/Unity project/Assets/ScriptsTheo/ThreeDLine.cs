@@ -18,7 +18,7 @@ public class ThreeDLine : MonoBehaviour
     public SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;
 
     private List<Vector3> circles = new List<Vector3>();
-    int i = 0, j = 0;
+    int i = 0;
 
     private bool canDraw = false;
     // Start is called before the first frame update

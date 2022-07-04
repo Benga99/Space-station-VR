@@ -50,7 +50,7 @@ public class OperateComputer2 : MonoBehaviour
     private bool started = false;
 
     private bool ruleWritten = false;
-    private int darts = 0;
+    //private int darts = 0;
     private float defaultDistance = 0f;
 
     

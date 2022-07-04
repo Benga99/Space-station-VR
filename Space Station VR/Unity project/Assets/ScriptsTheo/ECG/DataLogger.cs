@@ -28,7 +28,7 @@ public class DataLogger : MonoBehaviour
     //StringBuilder stringbuilderEeg = new StringBuilder();
     StringBuilder stringbuilderEcg = new StringBuilder();
 
-    private int countedEda = 0, countedEeg = 0, countedEcg = 0;
+    private int /*countedEda = 0, countedEeg = 0,*/ countedEcg = 0;
 
 
 

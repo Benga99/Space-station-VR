@@ -14,10 +14,10 @@ public class MoveTrail : MonoBehaviour
     int length;
     float offset = 0;
     bool rotate = false;
-    float angle = 0;
-    Vector3 direction;
+    //float angle = 0;
+    //Vector3 direction;
     Vector3[] posVector;
-    Vector3[] nextPositionVector;
+    //Vector3[] nextPositionVector;
     public Vector3[] interpolateVectors;
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class MoveTrail : MonoBehaviour
         length = positions.Count;
 
         posVector = new Vector3[length];
-        nextPositionVector = new Vector3[length];
+        //nextPositionVector = new Vector3[length];
         interpolateVectors = new Vector3[length * 20];
 
         for (int i = 0; i < length; i++)

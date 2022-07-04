@@ -14,16 +14,16 @@ public class LightSpawnerV2 : MonoBehaviour
     public bool follow = true;
 
     GameObject obj;
-    float minX = -20, maxX = 20;
+    //float minX = -20, maxX = 20;
     int i = 0;
 
-    GameObject parent = null, child = null;
+    //GameObject parent = null, child = null;
     float time = 0;
-    bool once = false, broken = false;
+    bool/* once = false,*/ broken = false;
     // Start is called before the first frame update
     void Start()
     {
-        parent = this.gameObject;
+        //parent = this.gameObject;
         Application.targetFrameRate = 90;
         StartCoroutine(Spawn());
     }
@@ -54,7 +54,7 @@ public class LightSpawnerV2 : MonoBehaviour
         else
         {
             obj = Instantiate(lightPrefab, obj.transform.localPosition + new Vector3(i, 0, 0), obj.transform.rotation, lightParent.transform);
-            child = obj;
+            //child = obj;
         }
         yield return new WaitForSeconds(1f);
         i++;

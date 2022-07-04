@@ -29,7 +29,7 @@ public class Rotateable : MonoBehaviour
 
     private Hand currentHand;
     private float previousHandRot = 0f, actualHandRot = 0f, startHandRot = 0f;
-    private float lastY = 0f;
+    //private float lastY = 0f;
     private int lastNumber = -2;
     private float timeSinceLastNumberChanged = 0f;
     private bool numberAdded = false;
