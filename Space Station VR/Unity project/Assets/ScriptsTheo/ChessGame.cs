@@ -19,7 +19,7 @@ public class ChessGame : MonoBehaviour
         {
             pieces.Add(other.gameObject);
         }
-        if(pieces.Count == 4)
+        if(pieces.Count == 3)
         {
             StartCoroutine(showImage());
             pieces.Add(other.gameObject);

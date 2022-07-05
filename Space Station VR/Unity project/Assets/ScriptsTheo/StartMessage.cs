@@ -27,6 +27,11 @@ public class StartMessage : MonoBehaviour
         //MessageCanvas.GetComponent<Text>().text = $"Hello Captain! You just woke up and realized your crew left you behind. The aliens will take over the ship shortly and you are the only one left on the ship. Find your way out! Press SELECT to continue!";
     }
 
+    private void Update()
+    {
+        
+    }
+
     private IEnumerator writeMessage(char[] m)
     {
         yield return new WaitForSeconds(1f);
@@ -50,11 +55,6 @@ public class StartMessage : MonoBehaviour
             yield return new WaitForSeconds(0.06f);
         }
         audioK.Stop();
-
-    }
-
-    void OnEnable()
-    {
         if (grabPinch != null)
         {
             grabPinch.AddOnChangeListener(OnTriggerPressedOrReleased, inputSource);
@@ -72,6 +72,7 @@ public class StartMessage : MonoBehaviour
 
     private void OnTriggerPressedOrReleased(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
     {
+        audioK.Stop();
         Destroy(MessageCanvas.gameObject);
         Destroy(this);
     }
