@@ -16,6 +16,8 @@ public class OpenMetalBoxScene4 : MonoBehaviour
     private GameObject leftHand;
     [SerializeField]
     private GameObject rightHand;
+    [SerializeField]
+    private GameObject TVMessage;
 
     private bool keyIntroduced = false;
     private InteractableFunctionality interFunc;
@@ -79,7 +81,7 @@ public class OpenMetalBoxScene4 : MonoBehaviour
         StartCoroutine(openBox());
         yield return new WaitForSeconds(2);
         locker.GetComponent<Rigidbody>().useGravity = false;
-        
+        TVMessage.SetActive(true);
     }
 
     private IEnumerator openBox()

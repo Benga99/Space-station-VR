@@ -8,8 +8,6 @@ public class Timer : MonoBehaviour
     public Text timer;
 
     float seconds, minutes;
-
-    float timeSinceStarted = 0;
     bool canStartCoroutine = true;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +29,7 @@ public class Timer : MonoBehaviour
         }
         timer.text = minutes.ToString("00") + ":" + ((int)seconds % 60).ToString("00");
 
-        if((minutes == 8 || minutes == 4 || minutes == 1) && canStartCoroutine)
+        if((minutes == 7 || minutes == 4 || minutes == 1) && canStartCoroutine)
         {
             canStartCoroutine = false;
             StartCoroutine(showTimer());
@@ -43,7 +41,7 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(20);
         while (timer.gameObject.GetComponent<CanvasGroup>().alpha > 0)
         {
-            timer.gameObject.GetComponent<CanvasGroup>().alpha -= 0.0002f;
+            timer.gameObject.GetComponent<CanvasGroup>().alpha -= 0.002f;
             yield return new WaitForEndOfFrame();
         }
     }

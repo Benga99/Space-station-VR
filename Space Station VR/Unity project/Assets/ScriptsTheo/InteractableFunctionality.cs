@@ -21,6 +21,12 @@ public class InteractableFunctionality : MonoBehaviour
     private GameObject dartsBoard;
     [SerializeField]
     private List<GameObject> buttons;
+    [SerializeField]
+    private List<GameObject> dartPoints;
+    [SerializeField]
+    private GameObject hiddenNoteLevel2;
+    [SerializeField]
+    private AudioSource numberTVAaudio;
 
     private List<bool> switchButtonsList = new List<bool>() { false, false, false, false};
 
@@ -74,8 +80,20 @@ public class InteractableFunctionality : MonoBehaviour
         foreach(var o in objs)
         {
             o.angularDrag = 2;
-            o.drag = 10;
+            o.drag = 9;
         }
+
+        if(dartPoints != null)
+        {
+            foreach (var d in dartPoints)
+            {
+                d.GetComponent<Rigidbody>().angularDrag = 0.1f;
+                d.GetComponent<Rigidbody>().drag = 0.1f;
+                d.GetComponent<Rigidbody>().useGravity = true;
+            }
+            Debug.Log("Darts are fine!");
+        }
+        
     }
 
     public void DeactivateRigidbodyConstraints(GameObject obj)
@@ -115,6 +133,10 @@ public class InteractableFunctionality : MonoBehaviour
     public void PickedUpPoster()
     {
         riddlesBool[0] = true;
+        if(hiddenNoteLevel2 != null)
+        {
+            hiddenNoteLevel2.SetActive(true);
+        }
     }
 
     public void PickedUpFridgeHandle()
@@ -130,6 +152,7 @@ public class InteractableFunctionality : MonoBehaviour
             {
                 if (TVs[2].GetComponent<ChangeColorScreen>().currentColor == Color.blue && TVs[2].name == "TVRight")
                 {
+                    numberTVAaudio.Play();
                     StartCoroutine(ActivateNumberTVs());
                     //riddleManager.setRiddleDone(1);
                     return true;

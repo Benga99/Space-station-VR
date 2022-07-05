@@ -4931,7 +4931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 6
+  m_Text: 5
 --- !u!222 &459100165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6528,7 +6528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752174109}
   m_LocalRotation: {x: 0.47116533, y: -0.4226607, z: -0.46950793, w: 0.6155677}
-  m_LocalPosition: {x: 2.311, y: 1.202, z: 15.1385}
+  m_LocalPosition: {x: 2.317, y: 1.206, z: 15.171}
   m_LocalScale: {x: 0.0916635, y: 0.0916635, z: 0.0916635}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9229,6 +9229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f7ff3b20c57eb4ba1078b24ccdfa24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndMessageCanvas: {fileID: 0}
+  EndMessageCG: {fileID: 0}
   MessageCanvas: {fileID: 1624699408}
   audioK: {fileID: 1220036522}
   message: Hello Captain! You are attacked by aliens that will take over the ship
@@ -16417,6 +16419,122 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: -87.944, y: 0, z: 0}
+--- !u!1 &1340682928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1340682929}
+  - component: {fileID: 1340682933}
+  - component: {fileID: 1340682932}
+  - component: {fileID: 1340682931}
+  - component: {fileID: 1340682930}
+  m_Layer: 5
+  m_Name: EndMessage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1340682929
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340682928}
+  m_LocalRotation: {x: -7.0843028e-15, y: -0.997027, z: 0.07705329, w: -5.474966e-16}
+  m_LocalPosition: {x: 0, y: 0, z: -1.9215002}
+  m_LocalScale: {x: 0.0013649999, y: 0.0013649997, z: 0.0013649997}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2064041500}
+  m_Father: {fileID: 1967149285}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 8.838, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1.098}
+  m_SizeDelta: {x: 900, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1340682930
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340682928}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1340682931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340682928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8602941, g: 0.8792712, b: 0.8792712, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: affa699da3af15c47af3e326dc80edc7, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1340682932
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340682928}
+  m_CullTransparentMesh: 1
+--- !u!223 &1340682933
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340682928}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!33 &1359502881
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17423,6 +17541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f7ff3b20c57eb4ba1078b24ccdfa24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndMessageCanvas: {fileID: 0}
+  EndMessageCG: {fileID: 0}
   MessageCanvas: {fileID: 2024773304}
   audioK: {fileID: 1458362080}
   message: Hello Captain! An asteroid is heading towards your space station. Once
@@ -19036,6 +19156,9 @@ MonoBehaviour:
   key: {fileID: 2598905059109965282}
   dartsBoard: {fileID: 0}
   buttons: []
+  dartPoints: []
+  hiddenNoteLevel2: {fileID: 0}
+  numberTVAaudio: {fileID: 0}
   TouchpadAction:
     actionPath: /actions/default/in/TouchpadPressed
     needsReinit: 0
@@ -22556,6 +22679,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062729068}
   m_Mesh: {fileID: 4300028, guid: 8440704ec62c4654487710bdce635aa1, type: 3}
+--- !u!1 &2064041499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064041500}
+  - component: {fileID: 2064041502}
+  - component: {fileID: 2064041501}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2064041500
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064041499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00052452093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1340682929}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2064041501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064041499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8066038, g: 0.86580384, b: 1, a: 0.69803923}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2064041502
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064041499}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2111802985
 PrefabInstance:
   m_ObjectHideFlags: 0

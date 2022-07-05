@@ -11,7 +11,7 @@ public class BrokenObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.GetComponent<Rigidbody>().useGravity = true;   
     }
 
     // Update is called once per frame

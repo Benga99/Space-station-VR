@@ -6,6 +6,7 @@ public class Door : MonoBehaviour {
 
 	private AudioSource audioS;
 	public HovercarAnim hovercar;
+	private StartMessage startMessageScript;
 
 	bool floatingCar = false;
 
@@ -15,6 +16,7 @@ public class Door : MonoBehaviour {
 		anim = door.GetComponent<Animator>();
 		audioS = this.GetComponent<AudioSource>();
 		//hovercar = FindObjectOfType<HovercarAnim>();
+		startMessageScript = FindObjectOfType<StartMessage>();
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -29,6 +31,7 @@ public class Door : MonoBehaviour {
 				hovercar.gameObject.SetActive(true);
 				StartCoroutine(hovercar.Floating());
 				//go to the car and leave
+				startMessageScript.onFinishEscapeRoom();
 			}
 			
 		}

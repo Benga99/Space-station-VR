@@ -286,7 +286,7 @@ public class Rotateable : MonoBehaviour
     {
         solution.Clear();
         solution.Add(3);
-        solution.Add(11);
+        solution.Add(10);
     }
 
 }

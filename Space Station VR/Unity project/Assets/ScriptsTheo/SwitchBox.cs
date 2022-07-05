@@ -8,10 +8,13 @@ public class SwitchBox : MonoBehaviour
     private GameObject doorInteractable;
     [SerializeField]
     private GameObject doorStatic;
+    [SerializeField]
+    private GameObject remoteControl;
 
     public void SetActiveDoorInteractable()
     {
         doorInteractable.SetActive(true);
         doorStatic.SetActive(false);
+        remoteControl.SetActive(true);
     }
 }

@@ -22,13 +22,13 @@ public class TVText : MonoBehaviour
 
     public IEnumerator displayingNumbers()
     {
-        float seconds = 0.00001f;
+        float seconds = 0.00003f;
         while (seconds < 1f)
         {
             randomNum = Random.Range(1, 13);
             textField.text = randomNum.ToString();
             yield return new WaitForSeconds(seconds);
-            seconds *= 1.075f;
+            seconds *= 1.1f;
         }
 
         rotateable.solution[numbering] = randomNum;

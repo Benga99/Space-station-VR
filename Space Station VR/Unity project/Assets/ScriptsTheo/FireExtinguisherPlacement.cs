@@ -89,6 +89,8 @@ public class FireExtinguisherPlacement : MonoBehaviour
             i += 0.05f;
             yield return new WaitForEndOfFrame();
         }
+        oldBoxDoor.SetActive(false);
+        newBoxDoor.SetActive(true);
         StartCoroutine(rotateFireExt());
     }
 
