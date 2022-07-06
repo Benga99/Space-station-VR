@@ -9,6 +9,8 @@ public class OperateComputer2 : MonoBehaviour
     [SerializeField]
     private GameObject DartsBoard;
     [SerializeField]
+    private Text dartNumbersReady;
+    [SerializeField]
     private GameObject DartsPoint1;
     [SerializeField]
     private GameObject DartsPoint2;
@@ -73,12 +75,14 @@ public class OperateComputer2 : MonoBehaviour
             {
                 screenText.text = "Please keep\nthe distance!";
                 DartsBoard.SetActive(false);
+                dartNumbersReady.gameObject.SetActive(false);
                 ruleWritten = true;
             }
             else if(correctDist && ruleWritten)
             {
                 screenText.text = "";
                 DartsBoard.SetActive(true);
+                dartNumbersReady.gameObject.SetActive(true);
                 ruleWritten = false;
             }
             if(dartsGame.darts == 3)
@@ -97,6 +101,7 @@ public class OperateComputer2 : MonoBehaviour
                 {
                     startSound.Play();
                     DartsBoard.SetActive(true);
+                    dartNumbersReady.gameObject.SetActive(true);
                     DistanceLine.SetActive(true);
                     dartsGame = FindObjectOfType<DartsGame>();
                 }
@@ -109,6 +114,7 @@ public class OperateComputer2 : MonoBehaviour
         yield return new WaitForSeconds(1);
         //play some sound
         DartsBoard.SetActive(false);
+        dartNumbersReady.gameObject.SetActive(false);
         screenCG.alpha = 1;
         screenText.text = "Game ended!";
         while (screenCG.alpha < 1)

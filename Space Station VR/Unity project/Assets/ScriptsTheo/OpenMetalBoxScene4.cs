@@ -61,6 +61,7 @@ public class OpenMetalBoxScene4 : MonoBehaviour
 
     private IEnumerator takeLockDown()
     {
+        TVMessage.SetActive(true);
         Transform lck = locker.transform.GetChild(2).transform;
         float pos = 0;
         while (pos < 0.006f)
@@ -81,7 +82,7 @@ public class OpenMetalBoxScene4 : MonoBehaviour
         StartCoroutine(openBox());
         yield return new WaitForSeconds(2);
         locker.GetComponent<Rigidbody>().useGravity = false;
-        TVMessage.SetActive(true);
+        
     }
 
     private IEnumerator openBox()

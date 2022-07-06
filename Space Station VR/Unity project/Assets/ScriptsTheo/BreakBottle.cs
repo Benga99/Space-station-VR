@@ -10,7 +10,8 @@ public class BreakBottle : MonoBehaviour
     private GameObject breakableBottle;
     [SerializeField]
     private GameObject messagePlane;
-    // Start is called before the first frame update
+    [SerializeField]
+    private AudioSource breakAudio;
 
     private InteractableFunctionality interFunc;
     private RiddleManager1 riddleManager;
@@ -25,9 +26,9 @@ public class BreakBottle : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //if it is not the player
-        if(collision.gameObject.name == "Floorready" || collision.gameObject.tag == "Wall")
+        if(collision.gameObject.name == "Floorready")
         {
-            
+            breakAudio.Play();
             breakableBottle.transform.position = this.gameObject.transform.position;
             breakableBottle.transform.rotation = this.gameObject.transform.rotation;
             breakableBottle.SetActive(true);
@@ -37,7 +38,7 @@ public class BreakBottle : MonoBehaviour
 
             switchBox.SetActiveDoorInteractable();
             interFunc.riddlesBool[1] = true;
-
+            
             Destroy(this.gameObject);
         }
     }

@@ -21,6 +21,7 @@ public class EyeTracker : MonoBehaviour
     List<Vector3> playerPositions = new List<Vector3>();
 
     float time = 0;
+    float totalTimePassed = 0;
     // Update is called once per frame
     void Update()
     {
@@ -49,7 +50,7 @@ public class EyeTracker : MonoBehaviour
         }
 
         time += Time.deltaTime;
-        
+        totalTimePassed += Time.deltaTime;
     }
 
     private void OnApplicationQuit()

@@ -50,7 +50,7 @@ public class Timer : MonoBehaviour
     {
         while(timer.gameObject.GetComponent<CanvasGroup>().alpha < 1)
         {
-            timer.gameObject.GetComponent<CanvasGroup>().alpha += 0.0002f;
+            timer.gameObject.GetComponent<CanvasGroup>().alpha += 0.001f;
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(3);
