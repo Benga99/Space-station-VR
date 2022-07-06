@@ -10,6 +10,8 @@ public class OpenMetalBoxScene2 : MonoBehaviour
     private GameObject door;
     [SerializeField]
     private GameObject locker;
+    [SerializeField]
+    private GameObject pistol;
 
     private InteractableFunctionality interFunc;
 
@@ -20,6 +22,7 @@ public class OpenMetalBoxScene2 : MonoBehaviour
 
     public IEnumerator takeLockDown()
     {
+        pistol.SetActive(true);
         Debug.Log("takeLockDown");
         Transform lck = locker.transform.GetChild(2).transform;
         float pos = 0;

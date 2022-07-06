@@ -4302,8 +4302,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 2.000002, z: 0.8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 8, z: 2}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!1 &423169362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,10 +4847,30 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Push the \nbuttons."
       objectReference: {fileID: 0}
+    - target: {fileID: 1706980313117963038, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 1706980313117963038, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
+      objectReference: {fileID: 0}
     - target: {fileID: 1993162002879507798, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055772010630633984, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 3055772010630633984, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
       objectReference: {fileID: 0}
     - target: {fileID: 3637468263956539943, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -4861,6 +4881,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846611254535532085, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 4846611254535532085, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
       objectReference: {fileID: 0}
     - target: {fileID: 7388178079872055052, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -5346,8 +5376,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 2.000002, z: 0.8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 8, z: 2}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!1 &555686498
 GameObject:
   m_ObjectHideFlags: 0
@@ -8126,8 +8156,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 2.000002, z: 0.8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 8, z: 2}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!114 &1043467574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16409,7 +16439,7 @@ Transform:
   m_GameObject: {fileID: 1274234484}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.558, z: -0.05}
-  m_LocalScale: {x: 0.12981042, y: 0.020957895, z: 0.12981042}
+  m_LocalScale: {x: 0.12, y: 0.020957895, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2129069963}
@@ -16692,7 +16722,7 @@ Transform:
   m_GameObject: {fileID: 1308864086}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.558, z: -0.05}
-  m_LocalScale: {x: 0.12981042, y: 0.020957895, z: 0.12981042}
+  m_LocalScale: {x: 0.12, y: 0.020957895, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1658006561}
@@ -19130,7 +19160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1658006561
 Transform:
   m_ObjectHideFlags: 0
@@ -20855,7 +20885,7 @@ Transform:
   m_GameObject: {fileID: 1883614343}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.558, z: -0.05}
-  m_LocalScale: {x: 0.12981042, y: 0.020957895, z: 0.12981042}
+  m_LocalScale: {x: 0.12, y: 0.020957895, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1954233694}
@@ -21478,7 +21508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1954233694
 Transform:
   m_ObjectHideFlags: 0
@@ -22779,7 +22809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2129069963
 Transform:
   m_ObjectHideFlags: 0
