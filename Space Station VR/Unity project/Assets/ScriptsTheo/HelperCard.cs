@@ -19,7 +19,7 @@ public class HelperCard : MonoBehaviour
     private bool card2revealed = false;
     private bool card3revealed = false;
 
-    private Vector3 positionForCard = new Vector3();
+    private Vector3 finalPosition = new Vector3();
     private Vector3 finalRotation = new Vector3();
 
     // Start is called before the first frame update
@@ -51,18 +51,11 @@ public class HelperCard : MonoBehaviour
 
     IEnumerator showCard(GameObject card)
     {
-        Vector3 initialPos = card.transform.position;
-        Vector3 initialRot = card.transform.localEulerAngles;
-        float i = 0;
-        while (i < 1)
-        {
-            card.transform.position = Vector3.Lerp(initialPos, positionForCard, i);
-            //card.transform.rotation = 
-
-
-
-            i += Time.deltaTime;
-        }
+        card.transform.localScale = new Vector3(0.3333f, 0.01f, 0.3333f);
+        card.transform.LeanMoveLocal(finalPosition, 3f).setEaseInOutCubic();
+        card.transform.LeanRotate(finalRotation, 3f).setEaseInOutCubic();
+        card.transform.LeanScaleY(0.3333f, 1f).setEaseInOutBounce().delay = 3f;
+       
         yield return new WaitForEndOfFrame();
     }
 }

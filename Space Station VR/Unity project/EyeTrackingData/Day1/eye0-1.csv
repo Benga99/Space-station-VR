@@ -1,3 +1,7 @@
-EndLevelZone ;0; seconds
-frame ;0; seconds
-SpaceVideFront ;23; seconds
+SF_Door ;0; seconds
+SpaceVideFront ;25; seconds
+TVCenter ;0; seconds
+Chair ;1; seconds
+Floorready ;294; seconds
+ApplePrefab ;0; seconds
+ScrollHint1 ;0; seconds
