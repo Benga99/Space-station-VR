@@ -4832,12 +4832,52 @@ PrefabInstance:
       propertyPath: onTransformUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1076045861184262528, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1126678241673839417, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "Push the \nbuttons."
+      objectReference: {fileID: 0}
     - target: {fileID: 1993162002879507798, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637468263956539943, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "So much fake\n news on those \nTVs..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388178079872055052, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "That looks like \nI need to \nswipe my card."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388178079872055054, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388178079872055054, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658790080848177720, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4854,6 +4894,24 @@ PrefabInstance:
 --- !u!1 &454931164 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101548, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 454931163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &454931165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 454931163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &454931166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 454931163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &454931167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7658790080848177720, guid: dc06161b6d97feb419f45f03b62e14b9,
     type: 3}
   m_PrefabInstance: {fileID: 454931163}
   m_PrefabAsset: {fileID: 0}
@@ -18453,6 +18511,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11, y: 2.5, z: 3}
   m_Center: {x: -1.88, y: 0, z: 0}
+--- !u!1 &1565197781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565197783}
+  - component: {fileID: 1565197782}
+  m_Layer: 0
+  m_Name: HelperCards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1565197782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565197781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52fb9e6d0b98c34abf1302d03a2e9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpCard1: {fileID: 454931167}
+  HelpCard2: {fileID: 454931166}
+  HelpCard3: {fileID: 454931165}
+  showCard1: 0
+  showCard2: 0
+  showCard3: 0
+--- !u!4 &1565197783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565197781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.095193654, y: 0.8575889, z: 13.435721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575169873
 GameObject:
   m_ObjectHideFlags: 0

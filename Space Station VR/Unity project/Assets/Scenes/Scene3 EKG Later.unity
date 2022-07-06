@@ -8634,6 +8634,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -951608786083511892, guid: 7d40fb9dfb38cfc44b73b756d21e3ca7, type: 3}
+--- !u!1 &1174338587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967149283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1174338588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967149283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1174338589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7658790080848177720, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967149283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1175822834
 GameObject:
   m_ObjectHideFlags: 0
@@ -17330,7 +17348,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451912528}
   m_LocalRotation: {x: 0, y: -0.70710677, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1875}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1839}
   m_LocalScale: {x: 0.00009857596, y: 0.00009857589, z: 0.00009857591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17378,10 +17396,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: affa699da3af15c47af3e326dc80edc7, type: 3}
-    m_FontSize: 70
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 100
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -20803,6 +20821,56 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1927112703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927112705}
+  - component: {fileID: 1927112704}
+  m_Layer: 0
+  m_Name: HelperCards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1927112704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927112703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52fb9e6d0b98c34abf1302d03a2e9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpCard1: {fileID: 1174338589}
+  HelpCard2: {fileID: 1174338588}
+  HelpCard3: {fileID: 1174338587}
+  showCard1: 0
+  showCard2: 0
+  showCard3: 0
+--- !u!4 &1927112705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927112703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.095193654, y: 0.8575889, z: 13.435721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1940315101
 GameObject:
   m_ObjectHideFlags: 0
@@ -21502,12 +21570,53 @@ PrefabInstance:
       propertyPath: onTransformUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1076045861184262528, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1126678241673839417, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "You don't \nlike pizza?!"
+      objectReference: {fileID: 0}
     - target: {fileID: 1993162002879507798, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637468263956539943, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "Where to plug \nin the USB?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388178079872055052, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "We always ate \nso much pineapple. \nMaybe we should \ncount how many
+        \nwe have left."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388178079872055054, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388178079872055054, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658790080848177720, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_IsActive
       value: 0
