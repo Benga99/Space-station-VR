@@ -186,9 +186,9 @@ public class Rotateable : MonoBehaviour
     protected virtual void OnAttachedToHand(Hand hand)
     {
         currentHand = hand;
-        startHandRot = currentHand.transform.rotation.y;
+        startHandRot = -currentHand.transform.rotation.x;
         previousHandRot = startHandRot;
-        actualHandRot = currentHand.transform.rotation.y;
+        actualHandRot = -currentHand.transform.rotation.x;
 
         rotationObjectForSafe.SetActive(true);
         rotationObjectForSafe.transform.parent = hand.gameObject.transform;
@@ -198,7 +198,7 @@ public class Rotateable : MonoBehaviour
 
     public void onUpdate()
     {
-        actualHandRot = currentHand.transform.rotation.y - startHandRot;
+        actualHandRot = -currentHand.transform.rotation.x - startHandRot;
     }
 
     public void OnDetachedHand()
