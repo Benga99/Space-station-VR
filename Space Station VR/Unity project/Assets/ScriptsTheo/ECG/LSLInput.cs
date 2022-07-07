@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using LSL;
 using static LSL.liblsl;
 
@@ -37,6 +38,9 @@ public class LSLInput : MonoBehaviour
     public int    InfoChannelCount; //Number of channels per sample. 
     public double InfoNominalSrate; //The sampling rate (in Hz) as by the data source
     public DataLogger logger;
+
+
+    private bool startTimeSaved = false;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +83,11 @@ public class LSLInput : MonoBehaviour
             for (int j = 0; j < count; j++)
             {
                 lastTimeStamp = rawBufferedTimes[j];
+                if (!startTimeSaved)
+                {
+                    logger.writeState(lastTimeStamp, "start");
+                    startTimeSaved = true;
+                }
                 for (int i = 0; i < InfoChannelCount; i++)
                 {
                     lastValues[i] = rawBufferedValues[j, i];
@@ -120,5 +129,10 @@ public class LSLInput : MonoBehaviour
     public enum LSLType
     {
         type, name, source_id //"desc/manufaturer"
+    }
+
+    private void OnApplicationQuit()
+    {
+        logger.writeState(lastTimeStamp, "end");
     }
 }

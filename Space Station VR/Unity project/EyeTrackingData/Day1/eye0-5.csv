@@ -1,45 +1,51 @@
-SF_Door ;77; seconds
-Computer ;3; seconds
-TVset4 ;1; seconds
-PineapllePrefab (4) ;0; seconds
-Fridge_door ;19; seconds
-Cables ;2; seconds
-SpaceVideFront ;84; seconds
-Poster ;3; seconds
-PineapllePrefab (3) ;4; seconds
-Floorready ;39; seconds
-PineapllePrefab (5) ;1; seconds
-Fridge ;15; seconds
-TVCenter ;4; seconds
-TVRight ;3; seconds
-Chair ;8; seconds
-Chess ;15; seconds
-Walls ;33; seconds
-WallTVs ;9; seconds
-TVLeft ;1; seconds
-ScrollHint1 ;28; seconds
-HandColliderRight(Clone) ;0; seconds
-SpaceVideUp ;14; seconds
-Whisky_Bottle ;0; seconds
-SodaCanPrefab ;1; seconds
-frame ;1; seconds
-door ;1; seconds
+SpaceVideFront ;24; seconds
+SF_Door ;22; seconds
+SpaceVideUp ;13; seconds
+Cables ;3; seconds
+Fridge_door ;11; seconds
+TVLeft ;3; seconds
+PineapllePrefab (3) ;0; seconds
+Fridge ;20; seconds
+Poster ;8; seconds
+Floorready ;30; seconds
+Chair ;5; seconds
+TVCenter ;2; seconds
+card ;3; seconds
+TVRight ;7; seconds
+OldExtinguisher ;2; seconds
+safe ;3; seconds
+Chess ;37; seconds
+Walls ;13; seconds
 PizzaSliceprefab ;1; seconds
-ChessPieceBlack3 ;0; seconds
-ChessPieceBlack1 ;0; seconds
-safe ;2; seconds
-door ;3; seconds
-SodaNote ;5; seconds
-13917_Pepperoni_v2 ;0; seconds
-ScrollHint2 ;9; seconds
-ShinRamen ;0; seconds
-ChessPieceBlack9 ;0; seconds
-card ;1; seconds
+PineapllePrefab (5) ;1; seconds
+ShinRamen ;1; seconds
+HandColliderLeft(Clone) ;4; seconds
+SodaCanPrefab ;7; seconds
+ApplePrefab ;0; seconds
+door ;2; seconds
+Computer ;10; seconds
+PineapllePrefab (4) ;2; seconds
+ChessFind1 ;0; seconds
+BrokenKey1Interactable ;13; seconds
+pokretlo ;0; seconds
+SandwichPrefab ;0; seconds
+SwitchBoxDoorInteractable ;0; seconds
+remote control TV ;6; seconds
 SwitchBoxSlider2 ;0; seconds
 SwitchBoxSlider1 ;0; seconds
-remote control TV ;0; seconds
-SandwichPrefab ;0; seconds
-pokretlo ;0; seconds
-OldExtinguisher ;0; seconds
+ChessFind2 ;0; seconds
+frame ;2; seconds
+door ;5; seconds
+ChessPieceBlack5 ;0; seconds
+SodaNote ;4; seconds
+Icon ;1; seconds
+TVset4 ;0; seconds
+WallTVs ;2; seconds
 ChessPieceBlack7 ;0; seconds
-ScrollHint3 ;8; seconds
+13917_Pepperoni_v2 ;1; seconds
+HandColliderRight(Clone) ;0; seconds
+plate ;1; seconds
+Whisky_Bottle ;0; seconds
+ChessPieceBlack2 ;0; seconds
+key ;0; seconds
+EndLevelZone ;1; seconds

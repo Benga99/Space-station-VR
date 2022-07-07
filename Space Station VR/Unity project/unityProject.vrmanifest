@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.unityproject.exe",
+      "app_key": "application.generated.unity.spacestationvr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Unity Projects\\Space Station VR\\SpaceStation\\Space Station VR\\Unity project\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\ru94wuw\\Desktop\\SpaceStation ayi\\SpaceProject\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "Unity project [Testing]"
+          "name": "SpaceStationVR [Testing]"
         }
       }
     }

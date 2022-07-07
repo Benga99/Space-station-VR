@@ -1,40 +1,48 @@
-door ;2; seconds
-frame ;0; seconds
-Cables ;7; seconds
-Fridge ;6; seconds
-Fridge_door ;6; seconds
-SpaceVideFront ;37; seconds
-SF_Door ;27; seconds
+SpaceVideFront ;15; seconds
+SpaceVideUp ;1; seconds
+Cables ;22; seconds
+PineapllePrefab ;11; seconds
+Fridge ;8; seconds
+Fridge_door ;20; seconds
+Floorready ;24; seconds
+TVLeft ;3; seconds
+TVCenter ;6; seconds
+TVRight ;5; seconds
+SF_Door ;30; seconds
+Walls ;21; seconds
+remote control TV ;1; seconds
 Poster ;2; seconds
-Floorready ;30; seconds
-TVLeft ;1; seconds
-Chair ;0; seconds
-TVRight ;7; seconds
-safe ;41; seconds
-door ;65; seconds
-pokretlo ;6; seconds
-TVCenter ;0; seconds
-WallTVs ;0; seconds
-TVset4 ;0; seconds
-PineapllePrefab 2 ;1; seconds
-Walls ;7; seconds
-Whisky_Bottle ;0; seconds
-SodaCanPrefab ;0; seconds
-PineapllePrefab 1 ;12; seconds
+HandColliderRight(Clone) ;1; seconds
 PizzaSliceprefabStatic ;0; seconds
-OldExtinguisher ;8; seconds
-Flash Drive USB ;0; seconds
-13917_Pepperoni_v2 ;0; seconds
+safe ;12; seconds
+Lock ;0; seconds
+Computer ;32; seconds
+Chair ;6; seconds
+ShinRamen ;0; seconds
+PineapllePrefab 1 ;5; seconds
+OldExtinguisher ;7; seconds
+door ;22; seconds
+pokretlo ;8; seconds
 Metal_box ;0; seconds
+WallTVs ;6; seconds
+TVset4 ;0; seconds
+PineapllePrefab 2 ;11; seconds
+13917_Pepperoni_v2 ;0; seconds
+Whisky_Bottle ;1; seconds
+SodaCanPrefab ;0; seconds
+SandwichPrefab ;0; seconds
+ApplePrefab ;0; seconds
+SwitchBoxDoorStatic ;0; seconds
+frame ;1; seconds
+door ;0; seconds
 card ;2; seconds
-Revolver ;0; seconds
-Computer ;2; seconds
+Revolver ;1; seconds
+Flash Drive USB ;0; seconds
+HandColliderLeft(Clone) ;0; seconds
+Capsule (1) ;0; seconds
+Capsule ;0; seconds
+SwitchBoxDoorInteractable ;2; seconds
 PizzaSliceprefab ;0; seconds
 plate ;0; seconds
-HandColliderRight(Clone) ;0; seconds
-SwitchBoxSlider1 ;0; seconds
-EndLevelZone ;0; seconds
-SpaceVideUp ;6; seconds
-ScrollHint1 ;16; seconds
-ScrollHint2 ;6; seconds
-ScrollHint3 ;6; seconds
+PizzaNotePrefab ;0; seconds
+EndLevelZone ;1; seconds

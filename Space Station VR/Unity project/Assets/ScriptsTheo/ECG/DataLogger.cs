@@ -14,21 +14,21 @@ public class DataLogger : MonoBehaviour
     public string rootFolder = "./LogData/";
     public string underFolder;
 
-    //StreamWriter swVisitor;
-    //StreamWriter swSphere;
-    //StreamWriter swFeedback;
+    StreamWriter swVisitor;
+    StreamWriter swSphere;
+    StreamWriter swFeedback;
     StreamWriter swState;
-    //StreamWriter swFlow;
-    //StreamWriter swVisitorCount;
-    //StreamWriter swAdaption;
+    StreamWriter swFlow;
+    StreamWriter swVisitorCount;
+    StreamWriter swAdaption;
 
-    StreamWriter swEcg;//swEda, swEeg, ;
+    StreamWriter swEcg, swEda, swEeg;
 
-    //StringBuilder stringbuilderEda = new StringBuilder();
-    //StringBuilder stringbuilderEeg = new StringBuilder();
+    StringBuilder stringbuilderEda = new StringBuilder();
+    StringBuilder stringbuilderEeg = new StringBuilder();
     StringBuilder stringbuilderEcg = new StringBuilder();
 
-    private int /*countedEda = 0, countedEeg = 0,*/ countedEcg = 0;
+    private int countedEda = 0, countedEeg = 0, countedEcg = 0;
 
 
 
@@ -64,7 +64,7 @@ public class DataLogger : MonoBehaviour
         Debug.Log("Init Files");
         string filepath = rootFolder + underFolder + "ID" + participantId + "-" + participantRoom + "-visitor.csv";
 
-        /*
+        
         if (swVisitor == null)
         {
             swVisitor = (!File.Exists(filepath)) ? File.CreateText(filepath) : File.AppendText(filepath);
@@ -87,16 +87,16 @@ public class DataLogger : MonoBehaviour
             swFeedback.WriteLine("Time,NbackColor,CurrentColors,Trash,IsCorrect");
             swFeedback.Flush();
         }
-        */
+        
         if (swState == null)
         {
             filepath = rootFolder + underFolder + "ID" + participantId + "-" + participantRoom + "-state.csv";
             //filepath = rootFolder + "ID" + participantId + "-state.csv";
             swState = (!File.Exists(filepath)) ? File.CreateText(filepath) : File.AppendText(filepath);
-            swState.WriteLine("Time,State,BlockNumber,AdaptationStatus");
+            swState.WriteLine("Time,State");
             swState.Flush();
         }
-        /*
+        
         if (swFlow == null)
         {
             filepath = rootFolder + "ID" + participantId + "-flow.csv";
@@ -121,7 +121,7 @@ public class DataLogger : MonoBehaviour
             swEeg.WriteLine("Time,TimeLsl,Value0,Value1,Value2,Value3,Value4,Value5,Value6,Value7");
             swEeg.Flush();
         }
-        */
+        
         if (swEcg == null)
         {
             filepath = rootFolder + underFolder + "ID" + participantId + "-" + participantRoom + "-ECG.csv";
@@ -130,7 +130,7 @@ public class DataLogger : MonoBehaviour
             swEcg.Flush();
         }
 
-        /*
+        
         if (swVisitorCount == null)
         {
             filepath = rootFolder + "ID" + participantId + "-visitorCount.csv";
@@ -147,11 +147,11 @@ public class DataLogger : MonoBehaviour
             swAdaption.WriteLine("Time,Direction,CurrentCount,SlopeBaseline,SlopeEDA");
             swAdaption.Flush();
         }
-        */
+        
     }
 
 
-    /*
+    
     public void writeVisitorClick(double timestamp, string name, string type)           // public void writeVisitorClick(double timestamp, string name, bool hasTicket, string type)
     {
         if (swVisitor == null) {
@@ -181,14 +181,14 @@ public class DataLogger : MonoBehaviour
         swFeedback.Flush();
     }
 
-    */
-    public void writeState(double timestamp, string state, int blockNumber, int adaptationStatus)
+    
+    public void writeState(double timestamp, string state)
     {
         if (swState == null)
         {
             init();
         }
-        swState.WriteLine(timestamp + "," + state + "," + blockNumber + "," + adaptationStatus);
+        swState.WriteLine(timestamp + "," + state);
         swState.Flush();
     }
 
@@ -202,7 +202,7 @@ public class DataLogger : MonoBehaviour
         swState.Flush();
     }
 
-    /*
+    
     public void writeFlow(double timestamp, string name, string shirtcolor, string hair)        // public void writeFlow(double timestamp, string name, bool hasticket, string shirtcolor, string hair)
     {
         if (swFlow == null)
@@ -234,15 +234,15 @@ public class DataLogger : MonoBehaviour
         swAdaption.WriteLine(timestamp  + "," + direction + "," + currentCount + "," + slopeBaseline + "," + slopeEDA); //(timestamp + "," + direction + "," + currentCount + "," + slopeBaseline + "," + slopeEDA);
         swAdaption.Flush();
     }
-    */
+    
 
     internal void write(string name, SignalSample1D s)
     {
-        if (/*swEda == null || swEeg == null ||*/ swEcg == null)
+        if (swEda == null || swEeg == null || swEcg == null)
         {
             init();
         }
-        /*
+        
         if (name.ToLower() == "eda")
         {
             stringbuilderEda.AppendFormat("{0},{1},{2}{3}", s.time, s.timeLsl, s.values[0], Environment.NewLine);
@@ -273,7 +273,7 @@ public class DataLogger : MonoBehaviour
                 swEeg.Flush();
             }
         }
-        else*/ if (name.ToLower() == "ecg")
+        else if (name.ToLower() == "ecg")
         {
             if (s.values.Length == 1)
             {
@@ -298,7 +298,7 @@ public class DataLogger : MonoBehaviour
     }
 
     void OnDestroy()
-    {/*
+    {
         if (swEda != null)
         {
             swEda.Flush();
@@ -306,7 +306,7 @@ public class DataLogger : MonoBehaviour
         if (swEeg != null)
         {
             swEeg.Flush();
-        }*/
+        }
         if (swEcg != null)
         {
             swEcg.Flush();
