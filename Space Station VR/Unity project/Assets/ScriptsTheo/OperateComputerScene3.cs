@@ -58,8 +58,8 @@ public class OperateComputerScene3 : MonoBehaviour
 
                 USBStick.SetActive(false);
                 keyIntroduced = true;
-                screenText.fontSize = 40;
-                screenText.text = "Put the fire\nextinguisher\nback in place!";
+                screenText.fontSize = 30;
+                screenText.text = "The fires are\nput out. We can\nclean up now.";
                 screenMat.color = Color.red;
             }
         }
