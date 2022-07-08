@@ -10,7 +10,7 @@ public class ChessGame : MonoBehaviour
     List<GameObject> pieces = new List<GameObject>();
 
     public GameObject LeoSign;
-    public GameObject SodaSign;
+    public GameObject LightBeam;
     public GameObject Thunderbolt;
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +37,7 @@ public class ChessGame : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         LeoSign.SetActive(true);
-        SodaSign.SetActive(true);
+        LightBeam.SetActive(true);
         Thunderbolt.SetActive(true);
         //write on the soda
     }

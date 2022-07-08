@@ -15,9 +15,9 @@ public class Timer : MonoBehaviour
         minutes = 10;
         seconds = 5;
         timer.text = minutes.ToString("00") + ":" + seconds.ToString("00");
-        StartCoroutine(hideTimer());
+        //StartCoroutine(hideTimer());
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -27,15 +27,21 @@ public class Timer : MonoBehaviour
             minutes -= 1;
             seconds = 60;
         }
+        else if(minutes == 0 && seconds <= 0)
+        {
+            minutes = 0;
+            seconds = 0;
+        }
         timer.text = minutes.ToString("00") + ":" + ((int)seconds % 60).ToString("00");
-
+        /*
         if((minutes == 7 || minutes == 4 || minutes == 1) && canStartCoroutine)
         {
             canStartCoroutine = false;
             StartCoroutine(showTimer());
         }
+        */
     }
-
+    
     IEnumerator hideTimer()
     {
         yield return new WaitForSeconds(20);
