@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -13,15 +14,26 @@ public class EyeTracker : MonoBehaviour
 
     public GameObject HeadFollow;
 
+    private HelperCard helperCard;
+
     RaycastHit hit;
     Ray ray;
 
     Dictionary<GameObject, float> objectsTracked = new Dictionary<GameObject, float>();
+    Dictionary<string, string> helpers = new Dictionary<string, string>();
+
 
     List<Vector3> playerPositions = new List<Vector3>();
 
     float time = 0;
     float totalTimePassed = 0;
+
+
+    private void Start()
+    {
+        helperCard = FindObjectOfType<HelperCard>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -55,11 +67,24 @@ public class EyeTracker : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        helpers.Add("hint1 used", helperCard.showCard1.ToString());
+        helpers.Add("hint2 used", helperCard.showCard2.ToString());
+        helpers.Add("hint3 used", helperCard.showCard3.ToString());
+        helpers.Add("total time passed", $"{(int)(totalTimePassed / 60)}:{((int)(totalTimePassed % 60)).ToString("00")} minutes" );
+
+
         String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key.ToString().Substring(0, d.Key.ToString().Length - 24)};{(int)d.Value};{" seconds"}"));
         String csv2 = String.Join(Environment.NewLine, playerPositions.Select(d => $"{d.ToString()}"));
+        String csv3 = String.Join(Environment.NewLine, helpers.Select(d => $"{d.Key};{d.Value}"));
+
+        if (!Directory.Exists(path + day))
+        {
+            Directory.CreateDirectory(path + day);
+        }
 
 
-        System.IO.File.WriteAllText(path + day + "eye" + participantID + "-" + roomID + ".csv", csv);
-        System.IO.File.WriteAllText(path + day + "pos" + participantID + "-" + roomID + ".csv", csv2);
+        File.WriteAllText(path + day + "eyee" + participantID + "-" + roomID + ".csv", csv);
+        File.WriteAllText(path + day + "posit" + participantID + "-" + roomID + ".csv", csv2);
+        File.WriteAllText(path + day + "hints" + participantID + "-" + roomID + ".csv", csv3);
     }
 }
