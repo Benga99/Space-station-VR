@@ -82,9 +82,20 @@ public class EyeTracker : MonoBehaviour
             Directory.CreateDirectory(path + day);
         }
 
+        string filepathEYE = path + day + "eyee" + participantID + "-" + roomID + ".csv";
+        string filepathPOS = path + day + "posit" + participantID + "-" + roomID + ".csv";
+        string filepathHIN = path + day + "hints" + participantID + "-" + roomID + ".csv";
 
-        File.WriteAllText(path + day + "eyee" + participantID + "-" + roomID + ".csv", csv);
-        File.WriteAllText(path + day + "posit" + participantID + "-" + roomID + ".csv", csv2);
-        File.WriteAllText(path + day + "hints" + participantID + "-" + roomID + ".csv", csv3);
+        if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
+        {
+            Debug.LogError("Participant log files already exists ID " + participantID + "-" + roomID);
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            File.WriteAllText(filepathEYE, csv);
+            File.WriteAllText(filepathPOS, csv2);
+            File.WriteAllText(filepathHIN, csv3);
+        }
     }
 }

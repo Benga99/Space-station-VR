@@ -48,7 +48,7 @@ MonoBehaviour:
   participantId: 0
   participantRoom: 1
   rootFolder: ./LogData/
-  underFolder: Day1/
+  underFolder: Pre-Study/
 --- !u!114 &1794012894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,5 +64,5 @@ MonoBehaviour:
   participantID: 0
   roomID: 1
   path: ./EyeTrackingData/
-  day: Day1/
+  day: Pre-Study/
   HeadFollow: {fileID: 0}

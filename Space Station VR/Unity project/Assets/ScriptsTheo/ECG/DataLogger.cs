@@ -48,7 +48,7 @@ public class DataLogger : MonoBehaviour
             Debug.LogError("Participant log files already exists ID " + participantId + "-" + participantRoom);
 
 #if UNITY_EDITOR
-            //UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #else
                 Application.Quit();
 #endif
@@ -67,6 +67,7 @@ public class DataLogger : MonoBehaviour
         
         if (swVisitor == null)
         {
+
             swVisitor = (!File.Exists(filepath)) ? File.CreateText(filepath) : File.AppendText(filepath);
             swVisitor.WriteLine("Time,Name,Type");            // swVisitor.WriteLine("Time,Name,HasTicket,Type");
             swVisitor.Flush();
