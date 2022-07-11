@@ -13,6 +13,8 @@ public class ChessGame : MonoBehaviour
     public GameObject LightBeam;
     public GameObject Thunderbolt;
 
+    public GameObject SodaDisplay;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Chess") && !pieces.Contains(other.gameObject))
@@ -39,6 +41,7 @@ public class ChessGame : MonoBehaviour
         LeoSign.SetActive(true);
         LightBeam.SetActive(true);
         Thunderbolt.SetActive(true);
+        SodaDisplay.SetActive(true);
         //write on the soda
     }
 }

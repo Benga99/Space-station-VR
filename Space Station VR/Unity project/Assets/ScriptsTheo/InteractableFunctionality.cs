@@ -27,6 +27,8 @@ public class InteractableFunctionality : MonoBehaviour
     private GameObject hiddenNoteLevel2;
     [SerializeField]
     private AudioSource numberTVAaudio;
+    [SerializeField]
+    private GameObject NoteScene2Electricity;
 
     private List<bool> switchButtonsList = new List<bool>() { false, false, false, false};
 
@@ -51,6 +53,12 @@ public class InteractableFunctionality : MonoBehaviour
         riddleManager = FindObjectOfType<RiddleManager1>();
 
         setFrictionForce();
+
+        if(NoteScene2Electricity != null)
+        {
+            StartCoroutine(activateNoteScene2());
+        }
+
     }
 
     private void Update()
@@ -104,6 +112,17 @@ public class InteractableFunctionality : MonoBehaviour
     public void DeactivateGravity(GameObject obj)
     {
         obj.GetComponent<Rigidbody>().useGravity = false;
+    }
+
+    public void StopRotation(GameObject obj)
+    {
+        obj.GetComponent<Rigidbody>().freezeRotation = true;
+    }
+
+    IEnumerator activateNoteScene2()
+    {
+        yield return new WaitForSeconds(2);
+        NoteScene2Electricity.SetActive(true);
     }
 
     public void UpdateRemoteControl()
