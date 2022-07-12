@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Collections;
+using Unity.Jobs;
 
 public class Pulse : MonoBehaviour
 {
@@ -25,7 +27,6 @@ public class Pulse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (coroutineAllowed)
         {
             maxX = 0;
@@ -118,4 +119,13 @@ public class Pulse : MonoBehaviour
         //Debug.Log(1f / (intensity * 200f));
         coroutineAllowed = true;
     }
+
+
+    public struct PulsingJob : IJob
+    {
+        public void Execute()
+        {
+            StartCoroutine(Pulsing());
+        }
+    } 
 }
