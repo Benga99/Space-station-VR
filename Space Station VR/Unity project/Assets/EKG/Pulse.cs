@@ -119,13 +119,4 @@ public class Pulse : MonoBehaviour
         //Debug.Log(1f / (intensity * 200f));
         coroutineAllowed = true;
     }
-
-
-    public struct PulsingJob : IJob
-    {
-        public void Execute()
-        {
-            StartCoroutine(Pulsing());
-        }
-    } 
 }
