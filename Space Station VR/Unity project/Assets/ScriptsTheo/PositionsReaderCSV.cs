@@ -8,12 +8,10 @@ public class PositionsReaderCSV : MonoBehaviour
 {
     public GameObject point;
 
-
-
-
-
     List<string> listA = new List<string>();
     List<Vector3> listV = new List<Vector3>();
+
+    Vector3 prevPos = Vector3.zero, pos = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +30,22 @@ public class PositionsReaderCSV : MonoBehaviour
     {
         using (var reader = new StreamReader("./Assets/test-positions.csv"))
         {
-            
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 listA.Add(line);
-                listV.Add(StringToVector3(line));
+                prevPos = pos;
+                pos = StringToVector3(line);
+                if (!prevPos.Equals(Vector3.zero) && !pos.Equals(Vector3.zero) && !prevPos.Equals(pos))
+                {
+                    for (float i = 0.5f; i <= 9.5f; i += 0.8f)
+                    {
+                        listV.Add(Vector3.Lerp(prevPos, pos, i / 10f));
+                    }
+                }
+                
+                listV.Add(pos);
+                
             }
         }
 
@@ -49,12 +57,16 @@ public class PositionsReaderCSV : MonoBehaviour
     {
         foreach(var pos in listV)
         {
-            Instantiate(point, pos, Quaternion.identity, this.transform);
-            yield return new WaitForEndOfFrame();
-            yield return new WaitForEndOfFrame();
-            yield return new WaitForEndOfFrame();
-            yield return new WaitForEndOfFrame();
+            GameObject go = Instantiate(point, pos, Quaternion.identity, this.transform);
+            StartCoroutine(deleteTrace(go));
+            yield return new WaitForSeconds(0);
         }
+    }
+
+    private IEnumerator deleteTrace(GameObject go)
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(go);
     }
 
 
