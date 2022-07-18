@@ -8,16 +8,20 @@ public class PositionsReaderCSV : MonoBehaviour
 {
     public GameObject point;
 
+    public List<Vector3> positionsOffset;
+
     List<string> listA = new List<string>();
     List<Vector3> listV = new List<Vector3>();
 
     Vector3 prevPos = Vector3.zero, pos = Vector3.zero;
+    int i = 0, offsetNumber = 13, index = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         point.transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
         Read();
-
+        //offsetNumber = positionsOffset.Count;
     }
 
     // Update is called once per frame
@@ -38,14 +42,26 @@ public class PositionsReaderCSV : MonoBehaviour
                 pos = StringToVector3(line);
                 if (!prevPos.Equals(Vector3.zero) && !pos.Equals(Vector3.zero) && !prevPos.Equals(pos))
                 {
-                    for (float i = 0.5f; i <= 9.5f; i += 0.8f)
+                    if(index % offsetNumber == 6 || index % offsetNumber == 7)
                     {
-                        listV.Add(Vector3.Lerp(prevPos, pos, i / 10f));
+                        for (float i = 0.1f; i <= 9.9f; i += 0.15f)
+                        {
+                            listV.Add(Vector3.Lerp(prevPos, pos, i / 10f));
+                        }
                     }
+                    else
+                    {
+                        for (float i = 0.5f; i <= 9.5f; i += 0.8f)
+                        {
+                            listV.Add(Vector3.Lerp(prevPos, pos, i / 10f));
+                        }
+                    }
+
+                    
                 }
                 
                 listV.Add(pos);
-                
+                index++;
             }
         }
 
@@ -87,6 +103,6 @@ public class PositionsReaderCSV : MonoBehaviour
             float.Parse(sArray[1], CultureInfo.InvariantCulture.NumberFormat),
             float.Parse(sArray[2], CultureInfo.InvariantCulture.NumberFormat));
 
-        return result;
+        return result + positionsOffset[(i++) % offsetNumber];
     }
 }
