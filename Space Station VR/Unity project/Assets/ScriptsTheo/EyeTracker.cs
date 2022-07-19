@@ -89,7 +89,11 @@ public class EyeTracker : MonoBehaviour
         if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
         {
             Debug.LogError("Participant log files already exists ID " + participantID + "-" + roomID);
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
         }
         else
         {

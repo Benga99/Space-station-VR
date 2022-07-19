@@ -7,6 +7,7 @@ using System.Globalization;
 public class PositionsReaderCSV : MonoBehaviour
 {
     public GameObject point;
+    public GameObject canvas;
 
     public List<Vector3> positionsOffset;
 
@@ -71,12 +72,33 @@ public class PositionsReaderCSV : MonoBehaviour
 
     private IEnumerator createTrace()
     {
+        Vector3 prevPos = Vector3.zero;
         foreach(var pos in listV)
         {
+            Vector3 dir = (pos - prevPos).normalized;
+            Vector3 actualDir = canvas.transform.forward;
+            dir.y = 0;
+            canvas.transform.position = pos;
+            setForward(actualDir, dir);
+
+            /*
             GameObject go = Instantiate(point, pos, Quaternion.identity, this.transform);
-            StartCoroutine(deleteTrace(go));
+            StartCoroutine(deleteTrace(go));*/
             yield return new WaitForSeconds(0);
+            prevPos = pos;
         }
+    }
+
+    private IEnumerator setForward(Vector3 actualDir, Vector3 dir)
+    {
+        float i = 0;
+        while (i < 1)
+        {
+            canvas.transform.forward = Vector3.Lerp(actualDir, dir, i);
+            i += Time.deltaTime*20;
+            yield return new WaitForEndOfFrame();
+        }
+        
     }
 
     private IEnumerator deleteTrace(GameObject go)
@@ -103,6 +125,6 @@ public class PositionsReaderCSV : MonoBehaviour
             float.Parse(sArray[1], CultureInfo.InvariantCulture.NumberFormat),
             float.Parse(sArray[2], CultureInfo.InvariantCulture.NumberFormat));
 
-        return result + positionsOffset[(i++) % offsetNumber];
+        return result/* + positionsOffset[(i++) % offsetNumber]*/;
     }
 }

@@ -33,11 +33,14 @@ public class Pulse : MonoBehaviour
             maxY = 0;
             StartCoroutine(Pulsing());
         }
+        //no lookAt
+        //return;
         if (Vector3.Distance(transform.position, Camera.main.transform.position) > 0.4f)
         {
             if(lookAt == null)
             {
                 transform.LookAt(Camera.main.transform);
+                transform.Rotate(0, 180, 0);
             }
             else
             {
