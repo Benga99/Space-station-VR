@@ -21,7 +21,6 @@ public class Pulse : MonoBehaviour
     void Start()
     {
         coroutineAllowed = true;
-        Debug.Log(this.gameObject.name);
     }
 
     // Update is called once per frame

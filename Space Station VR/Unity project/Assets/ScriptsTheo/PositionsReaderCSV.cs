@@ -9,7 +9,20 @@ public class PositionsReaderCSV : MonoBehaviour
     public GameObject point;
     public GameObject canvas;
 
-    public List<Vector3> positionsOffset;
+    public List<string> posPaths;
+    public List<string> ECGCleanPaths;
+    public List<string> HeartRatePaths;
+
+
+    private List<Vector3> positionData0 = new List<Vector3>();
+    private List<Vector3> positionData1 = new List<Vector3>();
+    private List<Vector3> positionData2 = new List<Vector3>();
+    private List<Vector3> positionData3 = new List<Vector3>();
+
+    private List<(float, float)> HeartRateData0 = new List<(float, float)>();
+    private List<(float, float)> HeartRateData1 = new List<(float, float)>();
+    private List<(float, float)> HeartRateData2 = new List<(float, float)>();
+    private List<(float, float)> HeartRateData3 = new List<(float, float)>();
 
     List<string> listA = new List<string>();
     List<Vector3> listV = new List<Vector3>();
