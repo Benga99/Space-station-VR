@@ -10,6 +10,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     public GameObject ECG;
 
     public List<string> posPaths;
+    public List<string> ECGCleanPaths;
     public List<string> HeartRatePaths;
 
     public bool vis0, vis1, vis2, vis3;
@@ -19,13 +20,18 @@ public class ECGVisualizationCreator : MonoBehaviour
     private List<Vector3> positionData2 = new List<Vector3>();
     private List<Vector3> positionData3 = new List<Vector3>();
 
+    private List<float> ECGCleanData0 = new List<float>();
+    private List<float> ECGCleanData1 = new List<float>();
+    private List<float> ECGCleanData2 = new List<float>();
+    private List<float> ECGCleanData3 = new List<float>();
+
 
     private List<(float, float)> HeartRateData0 = new List<(float, float)>();
     private List<(float, float)> HeartRateData1 = new List<(float, float)>();
     private List<(float, float)> HeartRateData2 = new List<(float, float)>();
     private List<(float, float)> HeartRateData3 = new List<(float, float)>();
 
-    bool readyPosition = false;
+    bool readyPosition = false, readyECGClean = false;
 
 
     // Start is called before the first frame update
@@ -34,21 +40,26 @@ public class ECGVisualizationCreator : MonoBehaviour
         if (vis0)
         {
             openPositionFile0(posPaths[0], 0);
+            openECGCleanFile0(ECGCleanPaths[0], 0);
             openHeartRateFile0(HeartRatePaths[0], 0);
+            
         }
         if (vis1)
         {
             openPositionFile1(posPaths[1], 1);
+            openECGCleanFile1(ECGCleanPaths[1], 1);
             openHeartRateFile1(HeartRatePaths[1], 1);
         }
         if (vis2)
         {
             openPositionFile2(posPaths[2], 2);
+            openECGCleanFile2(ECGCleanPaths[2], 2);
             openHeartRateFile2(HeartRatePaths[2], 2);
         }
         if (vis3)
         {
             openPositionFile3(posPaths[3], 3);
+            openECGCleanFile3(ECGCleanPaths[3], 3);
             openHeartRateFile3(HeartRatePaths[3], 3);
         }
     }
@@ -222,6 +233,64 @@ public class ECGVisualizationCreator : MonoBehaviour
     }
 
 
+    // 1 value
+    private void openECGCleanFile0(string path, int id)
+    {
+        var ecgD = getECGDataList(id);
+        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                ECGCleanData0.Add(float.Parse(line));
+            }
+        }
+        readyECGClean = true;
+    }
+
+    private void openECGCleanFile1(string path, int id)
+    {
+        var ecgD = getECGDataList(id);
+        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                ECGCleanData1.Add(float.Parse(line));
+            }
+        }
+        readyECGClean = true;
+    }
+
+    private void openECGCleanFile2(string path, int id)
+    {
+        var ecgD = getECGDataList(id);
+        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                ECGCleanData2.Add(float.Parse(line));
+            }
+        }
+        readyECGClean = true;
+    }
+
+    private void openECGCleanFile3(string path, int id)
+    {
+        var ecgD = getECGDataList(id);
+        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                ECGCleanData3.Add(float.Parse(line));
+            }
+        }
+        readyECGClean = true;
+    }
+
+
     // 2 values
     private void openHeartRateFile0(string path, int id)
     {
@@ -298,10 +367,12 @@ public class ECGVisualizationCreator : MonoBehaviour
         Vector3 prevPos = Vector3.zero, pos = Vector3.zero;
         int HeartRateIndex = 0, positionIndex = 0, visPassed = 0;
         Debug.Log("create trace: " + id);
-        GameObject go;
 
         var posD = getPosDataList(id);
         var harD = getHeartDataList(id);
+        var ecgD = getECGDataList(id);
+
+        StartCoroutine(localECG.GetComponent<ECGReader>().lineFlow(ecgD, harD));
 
         while (readyPosition == false)
         {
@@ -411,6 +482,25 @@ public class ECGVisualizationCreator : MonoBehaviour
                 return null;
         }
     }
+
+
+    private List<float> getECGDataList(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                return ECGCleanData0;
+            case 1:
+                return ECGCleanData1;
+            case 2:
+                return ECGCleanData2;
+            case 3:
+                return ECGCleanData3;
+            default:
+                return null;
+        }
+    }
+
 
 
 }
