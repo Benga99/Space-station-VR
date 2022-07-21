@@ -403,8 +403,8 @@ public class HeartVisualizationCreator : MonoBehaviour
                     float value = ecgD[HeartRateIndex];
                     float lerpValue = Mathf.InverseLerp(40, 140, value);
 
-                    float mult = Mathf.Lerp(1.1f, 2, lerpValue);
-                    float inte = Mathf.Lerp(0.005f, 0.02f, lerpValue);
+                    float mult = Mathf.Lerp(1.2f, 3, lerpValue);
+                    float inte = Mathf.Lerp(0.007f, 0.025f, lerpValue);
 
                     go.GetComponent<Pulse>().multiplier = mult;
                     go.GetComponent<Pulse>().intensity = inte;

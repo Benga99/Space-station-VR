@@ -414,6 +414,7 @@ public class ECGVisualizationCreator : MonoBehaviour
             }
             yield return new WaitForFixedUpdate();
         }
+        localECG.transform.LeanScale(Vector3.zero, 10);
     }
 
     private IEnumerator setForward(Vector3 actualDir, Vector3 dir)
