@@ -30,7 +30,6 @@ public class ECGReader : MonoBehaviour
 
     public IEnumerator lineFlow(List<float> ECGCleanData, List<(float, float)> HeartRateData)
     {
-        yield return new WaitForSeconds(0);
         Debug.Log("Line flow starting");
         float timerECG = 0;
         int index = 0, localIndex = 0;

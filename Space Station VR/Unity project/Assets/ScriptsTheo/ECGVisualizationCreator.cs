@@ -403,6 +403,7 @@ public class ECGVisualizationCreator : MonoBehaviour
                     //ECG.transform.position = pos;
                     //setForward(actualDir, dir);
                     yield return new WaitForSeconds(0);
+ 
                     prevPos = pos;
 
                     visPassed = 0;
