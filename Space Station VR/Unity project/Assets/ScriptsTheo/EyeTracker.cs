@@ -28,10 +28,25 @@ public class EyeTracker : MonoBehaviour
     float time = 0;
     float totalTimePassed = 0;
 
+    string filepathEYE;
+    string filepathPOS;
+    string filepathHIN;
 
     private void Start()
     {
         helperCard = FindObjectOfType<HelperCard>();
+        filepathEYE = path + day + "eyee" + participantID + "-" + roomID + ".csv";
+        filepathPOS = path + day + "posit" + participantID + "-" + roomID + ".csv";
+        filepathHIN = path + day + "hints" + participantID + "-" + roomID + ".csv";
+        if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
+        {
+            Debug.LogError("Participant log files already exists ID " + participantID + "-" + roomID);
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+        }
     }
 
     // Update is called once per frame
@@ -73,7 +88,9 @@ public class EyeTracker : MonoBehaviour
         helpers.Add("total time passed", $"{(int)(totalTimePassed / 60)}:{((int)(totalTimePassed % 60)).ToString("00")} minutes" );
 
 
-        String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key.ToString().Substring(0, d.Key.ToString().Length - 24)};{(int)d.Value};{" seconds"}"));
+        
+
+        //String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key.ToString().Substring(0, (d.Key.ToString().Length >= 0 ? (d.Key.ToString().Length - 24) : "Nothing")()};{(int)d.Value};{" seconds"}"));
         String csv2 = String.Join(Environment.NewLine, playerPositions.Select(d => $"{d.ToString()}"));
         String csv3 = String.Join(Environment.NewLine, helpers.Select(d => $"{d.Key};{d.Value}"));
 
@@ -82,9 +99,9 @@ public class EyeTracker : MonoBehaviour
             Directory.CreateDirectory(path + day);
         }
 
-        string filepathEYE = path + day + "eyee" + participantID + "-" + roomID + ".csv";
-        string filepathPOS = path + day + "posit" + participantID + "-" + roomID + ".csv";
-        string filepathHIN = path + day + "hints" + participantID + "-" + roomID + ".csv";
+        //filepathEYE = path + day + "eyee" + participantID + "-" + roomID + ".csv";
+        //filepathPOS = path + day + "posit" + participantID + "-" + roomID + ".csv";
+        //filepathHIN = path + day + "hints" + participantID + "-" + roomID + ".csv";
 
         if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
         {
@@ -97,7 +114,7 @@ public class EyeTracker : MonoBehaviour
         }
         else
         {
-            File.WriteAllText(filepathEYE, csv);
+            //File.WriteAllText(filepathEYE, csv);
             File.WriteAllText(filepathPOS, csv2);
             File.WriteAllText(filepathHIN, csv3);
         }
