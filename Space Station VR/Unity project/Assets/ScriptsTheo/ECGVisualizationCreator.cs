@@ -75,7 +75,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     {
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -110,7 +110,7 @@ public class ECGVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
 
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -152,7 +152,7 @@ public class ECGVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
 
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -194,7 +194,7 @@ public class ECGVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
 
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -237,7 +237,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     private void openECGCleanFile0(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -251,7 +251,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     private void openECGCleanFile1(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -265,7 +265,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     private void openECGCleanFile2(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -279,7 +279,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     private void openECGCleanFile3(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -294,7 +294,7 @@ public class ECGVisualizationCreator : MonoBehaviour
     // 2 values
     private void openHeartRateFile0(string path, int id)
     {
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -311,7 +311,7 @@ public class ECGVisualizationCreator : MonoBehaviour
 
     private void openHeartRateFile1(string path, int id)
     {
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -328,7 +328,7 @@ public class ECGVisualizationCreator : MonoBehaviour
 
     private void openHeartRateFile2(string path, int id)
     {
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -345,7 +345,7 @@ public class ECGVisualizationCreator : MonoBehaviour
 
     private void openHeartRateFile3(string path, int id)
     {
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -386,7 +386,7 @@ public class ECGVisualizationCreator : MonoBehaviour
 
             timerECG += Time.deltaTime;
             timerPos += Time.deltaTime;
-            while (timerECG >= harD[HeartRateIndex].Item1)
+            while (timerECG >= harD[HeartRateIndex].Item1 && HeartRateIndex < harD.Count - 1)
             {
                 HeartRateIndex++;
                 //positionIndex++;

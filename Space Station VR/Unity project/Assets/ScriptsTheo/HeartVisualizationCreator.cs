@@ -65,7 +65,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     private void openECGCleanFile0(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -79,7 +79,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     private void openECGCleanFile1(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -93,7 +93,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     private void openECGCleanFile2(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -107,7 +107,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     private void openECGCleanFile3(string path, int id)
     {
         var ecgD = getECGDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -123,7 +123,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     {
         var harD = getHeartDataList(id);
 
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -142,7 +142,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     {
         var harD = getHeartDataList(id);
         Debug.Log("6");
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -163,7 +163,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     {
         var harD = getHeartDataList(id);
 
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -182,7 +182,7 @@ public class HeartVisualizationCreator : MonoBehaviour
     {
         var harD = getHeartDataList(id);
 
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Heart/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -202,7 +202,7 @@ public class HeartVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
         var posList = getPosDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -244,7 +244,7 @@ public class HeartVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
         var posList = getPosDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -286,7 +286,7 @@ public class HeartVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
         var posList = getPosDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
@@ -328,7 +328,7 @@ public class HeartVisualizationCreator : MonoBehaviour
         Vector3 lastPos = Vector3.zero;
         Vector3 currentPos = Vector3.zero;
         var posList = getPosDataList(id);
-        using (var reader = new StreamReader($"./Assets/AnalizedDataPreStudy/Positions/{path}.csv"))
+        using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Positions/{path}.csv"))
         {
             while (!reader.EndOfStream)
             {
