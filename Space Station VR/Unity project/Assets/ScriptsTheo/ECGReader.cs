@@ -64,9 +64,10 @@ public class ECGReader : MonoBehaviour
             }
             line.SetPositions(valuesList);
 
-            timerECG += Time.deltaTime;
+            timerECG += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
+        this.transform.LeanScale(Vector3.zero, 10);
     }
 
 }

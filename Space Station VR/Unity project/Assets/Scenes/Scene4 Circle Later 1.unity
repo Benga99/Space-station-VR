@@ -1054,7 +1054,7 @@ PrefabInstance:
       objectReference: {fileID: 937584714}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: posPaths.Array.data[0]
@@ -23214,6 +23214,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859365411381194801, guid: 73ce0fd5765f2f14797edfea21d7cad1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859365411381194801, guid: 73ce0fd5765f2f14797edfea21d7cad1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859365411381194801, guid: 73ce0fd5765f2f14797edfea21d7cad1,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859365411381194801, guid: 73ce0fd5765f2f14797edfea21d7cad1,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ce0fd5765f2f14797edfea21d7cad1, type: 3}

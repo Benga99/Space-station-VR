@@ -362,8 +362,11 @@ public class ECGVisualizationCreator : MonoBehaviour
 
     private IEnumerator createTrace(int id)
     {
+
         GameObject localECG = Instantiate(ECG);
-        float timerECG = 0, timerPos = 0;
+        localECG.name = "ECGVisuzalization";
+
+        float timerECG = 0, timerPos = 0, timerLimit = 0.08f;
         Vector3 prevPos = Vector3.zero, pos = Vector3.zero;
         int HeartRateIndex = 0, positionIndex = 0, visPassed = 0;
         Debug.Log("create trace: " + id);
@@ -384,14 +387,14 @@ public class ECGVisualizationCreator : MonoBehaviour
             pos = posD[positionIndex];
 
 
-            timerECG += Time.deltaTime;
-            timerPos += Time.deltaTime;
+            timerECG += Time.fixedDeltaTime;
+            timerPos += Time.fixedDeltaTime;
             while (timerECG >= harD[HeartRateIndex].Item1 && HeartRateIndex < harD.Count - 1)
             {
                 HeartRateIndex++;
                 //positionIndex++;
             }
-            if (timerPos >= 0.1f)
+            if (timerPos >= timerLimit)
             {
                 timerPos = 0f;
                 if (visPassed == 1)

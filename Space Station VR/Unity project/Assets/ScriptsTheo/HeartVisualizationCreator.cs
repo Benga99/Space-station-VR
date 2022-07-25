@@ -367,7 +367,7 @@ public class HeartVisualizationCreator : MonoBehaviour
 
     private IEnumerator CreateSingleHeartVisualization(int id)
     {
-        float timerECG = 0, timerPos = 0;
+        float timerECG = 0, timerPos = 0, timerLimit = 0.08f;
         int HeartRateIndex = 0, positionIndex = 0, visPassed = 0;
         Debug.Log("create id: " + id);
         GameObject go;
@@ -385,20 +385,20 @@ public class HeartVisualizationCreator : MonoBehaviour
         {
             counter++;
 
-            timerECG += Time.deltaTime;
-            timerPos += Time.deltaTime;
+            timerECG += Time.fixedDeltaTime;
+            timerPos += Time.fixedDeltaTime;
             while (timerECG >= harD[HeartRateIndex].Item1)
             {
                 HeartRateIndex++;
                 //positionIndex++;
             }
-            if (timerPos >= 0.1f)
+            if (timerPos >= timerLimit)
             {
                 timerPos = 0f;
                 if (visPassed == 2)
                 {
                     go = Instantiate(Heart, posD[positionIndex], Quaternion.identity) as GameObject;
-
+                    go.name = "HeartVisualization";
                     StartCoroutine(deleteHeart(go));
                     float value = ecgD[HeartRateIndex];
                     float lerpValue = Mathf.InverseLerp(40, 140, value);
@@ -410,6 +410,7 @@ public class HeartVisualizationCreator : MonoBehaviour
                     go.GetComponent<Pulse>().intensity = inte;
 
                     visPassed = 0;
+                    yield return new WaitForSeconds(0);
                 }
 
 
@@ -431,15 +432,16 @@ public class HeartVisualizationCreator : MonoBehaviour
             matt.color = new Color(matt.color.r, matt.color.g, matt.color.b, matt.color.a + 0.001f);
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(0);
         //h.SetActive(false);
         matt = h.GetComponent<SpriteRenderer>().material;
         while (matt.color.a > 0)
         {
-            matt.color = new Color(matt.color.r, matt.color.g, matt.color.b, matt.color.a - 0.001f);
+            matt.color = new Color(matt.color.r, matt.color.g, matt.color.b, matt.color.a - 0.002f);
             yield return new WaitForEndOfFrame();
         }
         h.SetActive(false);
+        Destroy(h);
     }
 
 

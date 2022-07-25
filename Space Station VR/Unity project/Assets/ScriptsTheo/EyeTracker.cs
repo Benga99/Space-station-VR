@@ -19,7 +19,7 @@ public class EyeTracker : MonoBehaviour
     RaycastHit hit;
     Ray ray;
 
-    Dictionary<GameObject, float> objectsTracked = new Dictionary<GameObject, float>();
+    Dictionary<string, float> objectsTracked = new Dictionary<string, float>();
     Dictionary<string, string> helpers = new Dictionary<string, string>();
 
 
@@ -56,15 +56,15 @@ public class EyeTracker : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            if(hit.transform.gameObject.tag != "Wall")
+            if(hit.transform.gameObject.tag != "Wall" && hit.transform.gameObject.name != null && hit.transform.gameObject.name.Length > 0)
             {
-                if (objectsTracked.ContainsKey(hit.transform.gameObject))
+                if (objectsTracked.ContainsKey(hit.transform.gameObject.name))
                 {
-                    objectsTracked[hit.transform.gameObject] += Time.deltaTime;
+                    objectsTracked[hit.transform.gameObject.name] += Time.deltaTime;
                 }
                 else
                 {
-                    objectsTracked[hit.transform.gameObject] = Time.deltaTime;
+                    objectsTracked[hit.transform.gameObject.name] = Time.deltaTime;
                 }
             }
         }
@@ -90,33 +90,61 @@ public class EyeTracker : MonoBehaviour
 
         
 
-        //String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key.ToString().Substring(0, (d.Key.ToString().Length >= 0 ? (d.Key.ToString().Length - 24) : "Nothing")()};{(int)d.Value};{" seconds"}"));
         String csv2 = String.Join(Environment.NewLine, playerPositions.Select(d => $"{d.ToString()}"));
         String csv3 = String.Join(Environment.NewLine, helpers.Select(d => $"{d.Key};{d.Value}"));
+        String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key/*.ToString().Substring(0, d.Key.ToString().Length - 24)*/};{(int)d.Value};{" seconds"}"));
 
         if (!Directory.Exists(path + day))
         {
             Directory.CreateDirectory(path + day);
         }
 
-        //filepathEYE = path + day + "eyee" + participantID + "-" + roomID + ".csv";
-        //filepathPOS = path + day + "posit" + participantID + "-" + roomID + ".csv";
-        //filepathHIN = path + day + "hints" + participantID + "-" + roomID + ".csv";
-
         if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
         {
-            Debug.LogError("Participant log files already exists ID " + participantID + "-" + roomID);
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-                Application.Quit();
-#endif
+
         }
         else
         {
-            //File.WriteAllText(filepathEYE, csv);
             File.WriteAllText(filepathPOS, csv2);
             File.WriteAllText(filepathHIN, csv3);
+            File.WriteAllText(filepathEYE, csv);
         }
+        //OpenAllEyeTracking();
+    }
+
+    private void OpenAllEyeTracking()
+    {
+        Dictionary<string, float> allTracking = new Dictionary<string, float>();
+
+        for (int pid = 1; pid <= 5; pid++)
+        {
+            for(int rid = 3; rid <= 3; rid++)
+            {
+                using (var reader = new StreamReader($"./EyeTrackingData/Test/eyee{pid}-{rid}.csv"))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        var spl = line.Split(';');
+                        Debug.Log($"{spl[0]}: {int.Parse(spl[1])}{spl[2]}");
+
+                        if (allTracking.ContainsKey(spl[0]))
+                        {
+                            allTracking[spl[0]] += int.Parse(spl[1]);
+                        }
+                        else
+                        {
+                            allTracking[spl[0]] = int.Parse(spl[1]);
+                        }
+
+                        reader.ReadLine();
+                    }
+                }
+            }
+        }
+
+        String csv4 = String.Join(Environment.NewLine, allTracking.Select(d => $"{d.Key};{(int)d.Value};{" seconds"}"));
+        File.WriteAllText($"./EyeTrackingData/Test/finalEye.csv", csv4);
+
     }
 }
