@@ -13,6 +13,8 @@ public class HeartVisualizationCreator : MonoBehaviour
 
     public bool vis0, vis1, vis2, vis3;
 
+    public string bestPlayer;
+    
     private List<Vector3> positionData0 = new List<Vector3>();
     private List<Vector3> positionData1 = new List<Vector3>();
     private List<Vector3> positionData2 = new List<Vector3>();
@@ -30,10 +32,14 @@ public class HeartVisualizationCreator : MonoBehaviour
 
 
     bool readyPosition = false, readyECGClean = false;
+    CultureInfo culture;
 
     // Start is called before the first frame update
     void Start()
     {
+        culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+        culture.NumberFormat.NumberDecimalSeparator = ",";
+
         if (vis0)
         {
             openPositionFile0(posPaths[0], 0);
@@ -70,7 +76,7 @@ public class HeartVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData0.Add(float.Parse(line));
+                ECGCleanData0.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -84,7 +90,7 @@ public class HeartVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData1.Add(float.Parse(line));
+                ECGCleanData1.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -98,7 +104,7 @@ public class HeartVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData2.Add(float.Parse(line));
+                ECGCleanData2.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -112,7 +118,7 @@ public class HeartVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData3.Add(float.Parse(line));
+                ECGCleanData3.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -130,7 +136,7 @@ public class HeartVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData0.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData0.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -141,7 +147,6 @@ public class HeartVisualizationCreator : MonoBehaviour
     private void openHeartRateFile1(string path, int id)
     {
         var harD = getHeartDataList(id);
-        Debug.Log("6");
         using (var reader = new StreamReader($"./Assets/AnalizaPrestudyFinal/Heart/{path}.csv"))
         {
             while (!reader.EndOfStream)
@@ -149,7 +154,7 @@ public class HeartVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData1.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData1.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -170,7 +175,7 @@ public class HeartVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData2.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData2.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -189,7 +194,7 @@ public class HeartVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData3.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData3.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -403,8 +408,8 @@ public class HeartVisualizationCreator : MonoBehaviour
                     float value = ecgD[HeartRateIndex];
                     float lerpValue = Mathf.InverseLerp(40, 140, value);
 
-                    float mult = Mathf.Lerp(1.3f, 3, lerpValue);
-                    float inte = Mathf.Lerp(0.008f, 0.025f, lerpValue);
+                    float mult = Mathf.Lerp(1.3f, 2.5f, lerpValue);
+                    float inte = Mathf.Lerp(0.008f, 0.020f, lerpValue);
 
                     go.GetComponent<Pulse>().multiplier = mult;
                     go.GetComponent<Pulse>().intensity = inte;
@@ -432,7 +437,7 @@ public class HeartVisualizationCreator : MonoBehaviour
             matt.color = new Color(matt.color.r, matt.color.g, matt.color.b, matt.color.a + 0.001f);
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(4);
         //h.SetActive(false);
         matt = h.GetComponent<SpriteRenderer>().material;
         while (matt.color.a > 0)

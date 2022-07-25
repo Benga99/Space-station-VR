@@ -92,7 +92,7 @@ public class EyeTracker : MonoBehaviour
 
         String csv2 = String.Join(Environment.NewLine, playerPositions.Select(d => $"{d.ToString()}"));
         String csv3 = String.Join(Environment.NewLine, helpers.Select(d => $"{d.Key};{d.Value}"));
-        String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key/*.ToString().Substring(0, d.Key.ToString().Length - 24)*/};{(int)d.Value};{" seconds"}"));
+        String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key};{(int)d.Value};{" seconds"}"));
 
         if (!Directory.Exists(path + day))
         {
@@ -126,7 +126,6 @@ public class EyeTracker : MonoBehaviour
                     {
                         var line = reader.ReadLine();
                         var spl = line.Split(';');
-                        Debug.Log($"{spl[0]}: {int.Parse(spl[1])}{spl[2]}");
 
                         if (allTracking.ContainsKey(spl[0]))
                         {
@@ -136,8 +135,6 @@ public class EyeTracker : MonoBehaviour
                         {
                             allTracking[spl[0]] = int.Parse(spl[1]);
                         }
-
-                        reader.ReadLine();
                     }
                 }
             }

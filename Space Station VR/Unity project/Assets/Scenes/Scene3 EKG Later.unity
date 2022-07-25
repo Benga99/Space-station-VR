@@ -2330,6 +2330,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1794012894, guid: 66ce2124e15231946b091cb567002e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794012894, guid: 66ce2124e15231946b091cb567002e6c, type: 3}
       propertyPath: HeadFollow
       value: 
       objectReference: {fileID: 2011215170}
@@ -2400,12 +2404,12 @@ PrefabInstance:
     - target: {fileID: 2326817637777819962, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -2431,7 +2435,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 204060645}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f68fc16620088e4088ae9cd5e18c3ff, type: 3}
   m_Name: 
@@ -6104,6 +6108,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
+      propertyPath: bestPlayer
+      value: Vis 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: posPaths.Array.data[0]
       value: posit0-3
       objectReference: {fileID: 0}
@@ -6174,6 +6182,10 @@ PrefabInstance:
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
+      propertyPath: bestPlayer
+      value: Vis 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: posPaths.Array.data[0]

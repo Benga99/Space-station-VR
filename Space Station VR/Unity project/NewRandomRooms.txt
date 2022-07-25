@@ -1,0 +1,328 @@
+Participant 0:
+Room 1:  multi HEART lines
+Room 3:  multi  ECG  lines
+Room 4:  No visualization 
+Room 2: single HEART lines
+Room 5: single  ECG  lines
+
+
+Participant 1:
+Room 2:  No visualization 
+Room 5: single HEART lines
+Room 1:  multi HEART lines
+Room 4:  multi  ECG  lines
+Room 3: single  ECG  lines
+
+
+Participant 2:
+Room 5:  multi  ECG  lines
+Room 1: single  ECG  lines
+Room 3: single HEART lines
+Room 2:  No visualization 
+Room 4:  multi HEART lines
+
+
+Participant 3:
+Room 4:  multi HEART lines
+Room 2: single HEART lines
+Room 1:  No visualization 
+Room 3:  multi  ECG  lines
+Room 5: single  ECG  lines
+
+
+Participant 4:
+Room 5:  multi  ECG  lines
+Room 4:  multi HEART lines
+Room 2:  No visualization 
+Room 3: single HEART lines
+Room 1: single  ECG  lines
+
+
+Participant 5:
+Room 4: single  ECG  lines
+Room 1:  multi  ECG  lines
+Room 5:  No visualization 
+Room 2: single HEART lines
+Room 3:  multi HEART lines
+
+
+Participant 6:
+Room 5: single  ECG  lines
+Room 1:  multi  ECG  lines
+Room 3:  multi HEART lines
+Room 2: single HEART lines
+Room 4:  No visualization 
+
+
+Participant 7:
+Room 1:  multi HEART lines
+Room 3: single  ECG  lines
+Room 5: single HEART lines
+Room 2:  No visualization 
+Room 4:  multi  ECG  lines
+
+
+Participant 8:
+Room 5: single HEART lines
+Room 1:  multi HEART lines
+Room 2:  multi  ECG  lines
+Room 3:  No visualization 
+Room 4: single  ECG  lines
+
+
+Participant 9:
+Room 5:  multi HEART lines
+Room 3:  multi  ECG  lines
+Room 4: single HEART lines
+Room 1:  No visualization 
+Room 2: single  ECG  lines
+
+
+Participant 10:
+Room 5:  multi HEART lines
+Room 3:  No visualization 
+Room 2:  multi  ECG  lines
+Room 1: single  ECG  lines
+Room 4: single HEART lines
+
+
+Participant 11:
+Room 1:  multi HEART lines
+Room 5: single  ECG  lines
+Room 2:  No visualization 
+Room 4: single HEART lines
+Room 3:  multi  ECG  lines
+
+
+Participant 12:
+Room 3: single  ECG  lines
+Room 2:  multi  ECG  lines
+Room 4: single HEART lines
+Room 5:  No visualization 
+Room 1:  multi HEART lines
+
+
+Participant 13:
+Room 2: single HEART lines
+Room 3:  multi  ECG  lines
+Room 1:  No visualization 
+Room 5: single  ECG  lines
+Room 4:  multi HEART lines
+
+
+Participant 14:
+Room 5:  multi HEART lines
+Room 1: single HEART lines
+Room 2:  No visualization 
+Room 3: single  ECG  lines
+Room 4:  multi  ECG  lines
+
+
+Participant 15:
+Room 2: single  ECG  lines
+Room 5:  No visualization 
+Room 3: single HEART lines
+Room 1:  multi  ECG  lines
+Room 4:  multi HEART lines
+
+
+Participant 16:
+Room 3:  No visualization 
+Room 1: single HEART lines
+Room 5:  multi HEART lines
+Room 2: single  ECG  lines
+Room 4:  multi  ECG  lines
+
+
+Participant 17:
+Room 4:  multi  ECG  lines
+Room 3: single  ECG  lines
+Room 1: single HEART lines
+Room 2:  No visualization 
+Room 5:  multi HEART lines
+
+
+Participant 18:
+Room 3:  multi  ECG  lines
+Room 4:  multi HEART lines
+Room 5: single  ECG  lines
+Room 1: single HEART lines
+Room 2:  No visualization 
+
+
+Participant 19:
+Room 5:  No visualization 
+Room 4: single HEART lines
+Room 3: single  ECG  lines
+Room 2:  multi  ECG  lines
+Room 1:  multi HEART lines
+
+
+Participant 20:
+Room 1: single  ECG  lines
+Room 4:  multi  ECG  lines
+Room 2:  multi HEART lines
+Room 3: single HEART lines
+Room 5:  No visualization 
+
+
+Participant 21:
+Room 1:  No visualization 
+Room 4: single HEART lines
+Room 3: single  ECG  lines
+Room 2:  multi  ECG  lines
+Room 5:  multi HEART lines
+
+
+Participant 22:
+Room 1:  multi  ECG  lines
+Room 3: single  ECG  lines
+Room 2: single HEART lines
+Room 4:  multi HEART lines
+Room 5:  No visualization 
+
+
+Participant 23:
+Room 4: single HEART lines
+Room 1:  multi HEART lines
+Room 5:  No visualization 
+Room 3:  multi  ECG  lines
+Room 2: single  ECG  lines
+
+
+Participant 24:
+Room 4: single HEART lines
+Room 2: single  ECG  lines
+Room 1:  No visualization 
+Room 3:  multi  ECG  lines
+Room 5:  multi HEART lines
+
+
+Participant 25:
+Room 2: single HEART lines
+Room 3:  multi  ECG  lines
+Room 5:  No visualization 
+Room 4:  multi HEART lines
+Room 1: single  ECG  lines
+
+
+Participant 26:
+Room 5:  No visualization 
+Room 2: single HEART lines
+Room 4:  multi HEART lines
+Room 3:  multi  ECG  lines
+Room 1: single  ECG  lines
+
+
+Participant 27:
+Room 4:  multi  ECG  lines
+Room 3: single  ECG  lines
+Room 2:  No visualization 
+Room 5:  multi HEART lines
+Room 1: single HEART lines
+
+
+Participant 28:
+Room 3:  No visualization 
+Room 4: single  ECG  lines
+Room 1:  multi HEART lines
+Room 5:  multi  ECG  lines
+Room 2: single HEART lines
+
+
+Participant 29:
+Room 4:  No visualization 
+Room 3: single HEART lines
+Room 2:  multi  ECG  lines
+Room 5: single  ECG  lines
+Room 1:  multi HEART lines
+
+
+Participant 30:
+Room 2: single  ECG  lines
+Room 5:  No visualization 
+Room 3:  multi HEART lines
+Room 1: single HEART lines
+Room 4:  multi  ECG  lines
+
+
+Participant 31:
+Room 4:  No visualization 
+Room 2: single  ECG  lines
+Room 1:  multi  ECG  lines
+Room 5: single HEART lines
+Room 3:  multi HEART lines
+
+
+Participant 32:
+Room 3:  multi  ECG  lines
+Room 1: single  ECG  lines
+Room 2:  multi HEART lines
+Room 4: single HEART lines
+Room 5:  No visualization 
+
+
+Participant 33:
+Room 5: single  ECG  lines
+Room 3:  multi  ECG  lines
+Room 2:  No visualization 
+Room 4: single HEART lines
+Room 1:  multi HEART lines
+
+
+Participant 34:
+Room 5: single  ECG  lines
+Room 2:  multi  ECG  lines
+Room 4:  No visualization 
+Room 3: single HEART lines
+Room 1:  multi HEART lines
+
+
+Participant 35:
+Room 1: single HEART lines
+Room 5:  No visualization 
+Room 2:  multi  ECG  lines
+Room 3:  multi HEART lines
+Room 4: single  ECG  lines
+
+
+Participant 36:
+Room 3:  multi  ECG  lines
+Room 1: single HEART lines
+Room 2: single  ECG  lines
+Room 5:  multi HEART lines
+Room 4:  No visualization 
+
+
+Participant 37:
+Room 2: single HEART lines
+Room 3:  multi  ECG  lines
+Room 4: single  ECG  lines
+Room 5:  multi HEART lines
+Room 1:  No visualization 
+
+
+Participant 38:
+Room 5: single HEART lines
+Room 4:  multi  ECG  lines
+Room 1:  No visualization 
+Room 3:  multi HEART lines
+Room 2: single  ECG  lines
+
+
+Participant 39:
+Room 5:  multi HEART lines
+Room 4:  No visualization 
+Room 3: single  ECG  lines
+Room 1:  multi  ECG  lines
+Room 2: single HEART lines
+
+
+Participant 40:
+Room 3: single HEART lines
+Room 5:  multi HEART lines
+Room 2:  multi  ECG  lines
+Room 4:  No visualization 
+Room 1: single  ECG  lines
+
+

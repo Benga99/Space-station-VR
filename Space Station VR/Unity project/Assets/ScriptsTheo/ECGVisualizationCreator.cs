@@ -15,6 +15,8 @@ public class ECGVisualizationCreator : MonoBehaviour
 
     public bool vis0, vis1, vis2, vis3;
 
+    public string bestPlayer;
+
     private List<Vector3> positionData0 = new List<Vector3>();
     private List<Vector3> positionData1 = new List<Vector3>();
     private List<Vector3> positionData2 = new List<Vector3>();
@@ -32,11 +34,14 @@ public class ECGVisualizationCreator : MonoBehaviour
     private List<(float, float)> HeartRateData3 = new List<(float, float)>();
 
     bool readyPosition = false, readyECGClean = false;
-
+    CultureInfo culture;
 
     // Start is called before the first frame update
     void Start()
     {
+        culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+        culture.NumberFormat.NumberDecimalSeparator = ",";
+
         if (vis0)
         {
             openPositionFile0(posPaths[0], 0);
@@ -242,7 +247,7 @@ public class ECGVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData0.Add(float.Parse(line));
+                ECGCleanData0.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -256,7 +261,7 @@ public class ECGVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData1.Add(float.Parse(line));
+                ECGCleanData1.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -270,7 +275,7 @@ public class ECGVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData2.Add(float.Parse(line));
+                ECGCleanData2.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -284,7 +289,7 @@ public class ECGVisualizationCreator : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                ECGCleanData3.Add(float.Parse(line));
+                ECGCleanData3.Add(float.Parse(line, culture));
             }
         }
         readyECGClean = true;
@@ -301,7 +306,7 @@ public class ECGVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData0.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData0.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -318,7 +323,7 @@ public class ECGVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData1.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData1.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -335,7 +340,7 @@ public class ECGVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData2.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData2.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -352,7 +357,7 @@ public class ECGVisualizationCreator : MonoBehaviour
                 var line = reader.ReadLine();
                 var spl = line.Split(';');
 
-                HeartRateData3.Add((float.Parse(spl[0]), float.Parse(spl[1])));
+                HeartRateData3.Add((float.Parse(spl[0], culture), float.Parse(spl[1], culture)));
 
                 reader.ReadLine();
             }
@@ -421,17 +426,6 @@ public class ECGVisualizationCreator : MonoBehaviour
         localECG.transform.LeanScale(Vector3.zero, 10);
     }
 
-    private IEnumerator setForward(Vector3 actualDir, Vector3 dir)
-    {
-        float i = 0;
-        while (i < 1)
-        {
-            ECG.transform.forward = Vector3.Lerp(actualDir, dir, i);
-            i += Time.deltaTime * 20;
-            yield return new WaitForEndOfFrame();
-        }
-
-    }
 
     private Vector3 StringToVector3(string sVector)
     {
