@@ -2339,7 +2339,7 @@ PrefabInstance:
       objectReference: {fileID: 2011215170}
     - target: {fileID: 1794012894, guid: 66ce2124e15231946b091cb567002e6c, type: 3}
       propertyPath: participantID
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819960, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -2419,7 +2419,7 @@ PrefabInstance:
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: participantId
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -6105,7 +6105,7 @@ PrefabInstance:
       objectReference: {fileID: 1362711242}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: bestPlayer
@@ -6165,15 +6165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis1
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis3
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: Heart
@@ -6181,7 +6181,7 @@ PrefabInstance:
       objectReference: {fileID: 1485739077}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: bestPlayer
@@ -20631,6 +20631,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8256134651489076907, guid: b36ae705698ae3d42ac43899d888e02e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1246822234137420708, guid: b36ae705698ae3d42ac43899d888e02e,
         type: 3}
       propertyPath: m_IsActive
       value: 1
