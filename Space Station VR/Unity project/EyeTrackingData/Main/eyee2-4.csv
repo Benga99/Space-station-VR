@@ -1,0 +1,40 @@
+SpaceVideFront;15; seconds
+SF_Door;20; seconds
+Computer;55; seconds
+Walls;6; seconds
+WallTVs;1; seconds
+TVRight;7; seconds
+TVCenter;7; seconds
+Metal_box;1; seconds
+Lock;0; seconds
+safe;12; seconds
+Floorready;24; seconds
+door;5; seconds
+HandColliderRight(Clone);11; seconds
+HandColliderLeft(Clone);3; seconds
+pokretlo;2; seconds
+PizzaSliceprefab;1; seconds
+plate;1; seconds
+OldExtinguisher;1; seconds
+PineapllePrefab (4);2; seconds
+card (1);0; seconds
+frame;0; seconds
+Cables;0; seconds
+Fridge;11; seconds
+Fridge_door;2; seconds
+TVLeft;5; seconds
+Chair;9; seconds
+PineapllePrefab (5);1; seconds
+SwitchBoxDoorStatic;0; seconds
+Poster;15; seconds
+Whisky_Bottle;1; seconds
+SandwichPrefab;1; seconds
+SodaCanPrefab;2; seconds
+PineapllePrefab (3);2; seconds
+ShinRamen;0; seconds
+card;1; seconds
+ApplePrefab;0; seconds
+ScrollHint1;11; seconds
+TVMessage;6; seconds
+Collider;3; seconds
+EndLevelZone;5; seconds

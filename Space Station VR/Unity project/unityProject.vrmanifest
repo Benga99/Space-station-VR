@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.spacestationvr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\ru94wuw\\Desktop\\SpaceStation ayi\\SpaceProject\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\ru94wuw\\Desktop\\Space-station-VR-Git\\Space Station VR\\Unity project\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "SpaceStationVR [Testing]"
