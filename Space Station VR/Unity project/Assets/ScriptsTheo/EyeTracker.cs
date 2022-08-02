@@ -94,6 +94,9 @@ public class EyeTracker : MonoBehaviour
         helpers.Add("hint1 used", helperCard.showCard1.ToString());
         helpers.Add("hint2 used", helperCard.showCard2.ToString());
         helpers.Add("hint3 used", helperCard.showCard3.ToString());
+        helpers.Add("hint4 used", helperCard.showCard4.ToString());
+        helpers.Add("hint5 used", helperCard.showCard5.ToString());
+        helpers.Add("hint6 used", helperCard.showCard6.ToString());
         helpers.Add("total time passed", $"{(int)(totalTimePassed / 60)}:{((int)(totalTimePassed % 60)).ToString("00")} minutes" );
 
 

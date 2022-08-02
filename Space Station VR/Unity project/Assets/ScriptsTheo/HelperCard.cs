@@ -60,17 +60,17 @@ public class HelperCard : MonoBehaviour
         }
         if (showCard4 && !card4revealed)
         {
-            card3revealed = true;
+            card4revealed = true;
             StartCoroutine(showCard(HelpCard4));
         }
         if (showCard5 && !card5revealed)
         {
-            card3revealed = true;
+            card5revealed = true;
             StartCoroutine(showCard(HelpCard5));
         }
         if (showCard6 && !card6revealed)
         {
-            card3revealed = true;
+            card6revealed = true;
             StartCoroutine(showCard(HelpCard6));
         }
     }
@@ -80,15 +80,18 @@ public class HelperCard : MonoBehaviour
     {
         card.SetActive(true);
         card.transform.localScale = new Vector3(0.3333f, 0.01f, 0.3333f);
-        card.transform.LeanMoveLocal(finalPosition, 3f).setEaseInOutCubic();
-        yield return new WaitForSeconds(2.5f);
+        card.transform.LeanMoveLocal(finalPosition, 2f).setEaseInOutCubic();
+        yield return new WaitForSeconds(1.5f);
 
 
         while(card.transform.localEulerAngles.y % 181 < 180)
         {
-            card.transform.Rotate(0, 1, 0);
+            card.transform.Rotate(0, 3, 0);
             yield return new WaitForEndOfFrame();
         }
         card.transform.LeanScaleY(0.3333f, 1f).setEaseInOutBounce();
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Canceled");
+        LeanTween.cancel(this.gameObject);
     }
 }
