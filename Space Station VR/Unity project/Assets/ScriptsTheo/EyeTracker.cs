@@ -76,8 +76,11 @@ public class EyeTracker : MonoBehaviour
                 }
             }
         }
+        if (!playerPositionsEveryFrame.ContainsKey(totalTimePassed))
+        {
+            playerPositionsEveryFrame.Add(totalTimePassed, (HeadFollow.transform.position, HeadFollow.transform.eulerAngles));
 
-        playerPositionsEveryFrame.Add(totalTimePassed, (HeadFollow.transform.position, HeadFollow.transform.eulerAngles));
+        }
 
         if(time > 0.1f)
         {
