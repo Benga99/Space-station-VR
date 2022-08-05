@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -18,12 +19,14 @@ public class EyeTracker : MonoBehaviour
 
     RaycastHit hit;
     Ray ray;
+    CultureInfo culture;
 
     Dictionary<string, float> objectsTracked = new Dictionary<string, float>();
     Dictionary<string, string> helpers = new Dictionary<string, string>();
 
 
     List<Vector3> playerPositions = new List<Vector3>();
+    Dictionary<float, (Vector3, Vector3)> playerPositionsEveryFrame = new Dictionary<float, (Vector3, Vector3)>();
 
     float time = 0;
     float totalTimePassed = 0;
@@ -31,14 +34,19 @@ public class EyeTracker : MonoBehaviour
     string filepathEYE;
     string filepathPOS;
     string filepathHIN;
+    string filepathPOSFRAME; 
 
     private void Start()
     {
+        culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+        culture.NumberFormat.NumberDecimalSeparator = ",";
+
         helperCard = FindObjectOfType<HelperCard>();
         filepathEYE = path + day + "eyee" + participantID + "-" + roomID + ".csv";
         filepathPOS = path + day + "posit" + participantID + "-" + roomID + ".csv";
         filepathHIN = path + day + "hints" + participantID + "-" + roomID + ".csv";
-        if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
+        filepathPOSFRAME = path + day + "posF" + participantID + "-" + roomID + ".csv";
+        if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN) || File.Exists(filepathPOSFRAME))
         {
             Debug.LogError("Participant log files already exists ID " + participantID + "-" + roomID);
 #if UNITY_EDITOR
@@ -69,6 +77,7 @@ public class EyeTracker : MonoBehaviour
             }
         }
 
+        playerPositionsEveryFrame.Add(totalTimePassed, (HeadFollow.transform.position, HeadFollow.transform.eulerAngles));
 
         if(time > 0.1f)
         {
@@ -85,6 +94,9 @@ public class EyeTracker : MonoBehaviour
         helpers.Add("hint1 used", helperCard.showCard1.ToString());
         helpers.Add("hint2 used", helperCard.showCard2.ToString());
         helpers.Add("hint3 used", helperCard.showCard3.ToString());
+        helpers.Add("hint4 used", helperCard.showCard4.ToString());
+        helpers.Add("hint5 used", helperCard.showCard5.ToString());
+        helpers.Add("hint6 used", helperCard.showCard6.ToString());
         helpers.Add("total time passed", $"{(int)(totalTimePassed / 60)}:{((int)(totalTimePassed % 60)).ToString("00")} minutes" );
 
 
@@ -92,14 +104,15 @@ public class EyeTracker : MonoBehaviour
 
         String csv2 = String.Join(Environment.NewLine, playerPositions.Select(d => $"{d.ToString()}"));
         String csv3 = String.Join(Environment.NewLine, helpers.Select(d => $"{d.Key};{d.Value}"));
-        String csv = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key};{(int)d.Value};{" seconds"}"));
+        String csv  = String.Join(Environment.NewLine, objectsTracked.Select(d => $"{d.Key};{(int)d.Value};{" seconds"}"));
+        String csv4 = String.Join(Environment.NewLine, playerPositionsEveryFrame.Select(d => $"{d.Key.ToString("0.0000",culture)};{d.Value.Item1};{d.Value.Item2}"));
 
         if (!Directory.Exists(path + day))
         {
             Directory.CreateDirectory(path + day);
         }
 
-        if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN))
+        if (File.Exists(filepathEYE) || File.Exists(filepathPOS) || File.Exists(filepathHIN) || File.Exists(filepathPOSFRAME))
         {
 
         }
@@ -108,6 +121,7 @@ public class EyeTracker : MonoBehaviour
             File.WriteAllText(filepathPOS, csv2);
             File.WriteAllText(filepathHIN, csv3);
             File.WriteAllText(filepathEYE, csv);
+            File.WriteAllText(filepathPOSFRAME, csv4);
         }
         //OpenAllEyeTracking();
     }
@@ -144,4 +158,5 @@ public class EyeTracker : MonoBehaviour
         File.WriteAllText($"./EyeTrackingData/Test/finalEye.csv", csv4);
 
     }
+
 }

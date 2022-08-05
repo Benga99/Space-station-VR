@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00016585538, g: 0.00016732918, b: 0.00015547883,
+  m_IndirectSpecularColor: {r: 0.00016593389, g: 0.00016708818, b: 0.00015515383,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 7631047302682125613, guid: ab30ca14642ca61478f0df12cd957156,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab30ca14642ca61478f0df12cd957156, type: 3}
@@ -2404,7 +2404,7 @@ PrefabInstance:
     - target: {fileID: 2326817637777819962, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -7911,6 +7911,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 111172, guid: 710e4b3092fcbe24784ae45030ba0033,
     type: 3}
   m_PrefabInstance: {fileID: 2035944135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1038271130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4133319155131071966, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967149283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1038271131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8620663540796076273, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967149283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1038271132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 457923667507907212, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967149283}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039998846
 GameObject:
@@ -21291,11 +21309,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HelpCard1: {fileID: 1174338589}
-  HelpCard2: {fileID: 1174338588}
-  HelpCard3: {fileID: 1174338587}
+  HelpCard2: {fileID: 1038271132}
+  HelpCard3: {fileID: 1174338588}
+  HelpCard4: {fileID: 1038271131}
+  HelpCard5: {fileID: 1174338587}
+  HelpCard6: {fileID: 1038271130}
   showCard1: 0
   showCard2: 0
   showCard3: 0
+  showCard4: 0
+  showCard5: 0
+  showCard6: 0
 --- !u!4 &1927112705
 Transform:
   m_ObjectHideFlags: 0
@@ -22012,6 +22036,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
+      propertyPath: m_Name
+      value: ScrollHint5
+      objectReference: {fileID: 0}
+    - target: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457923667507907212, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint2
+      objectReference: {fileID: 0}
+    - target: {fileID: 457923667507907212, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -22019,6 +22058,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 764405736530368440, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "Unlock the safe with \nthe numbers: first,\_total \nnumber of pineapples
+        = 3, \nthe second number is the \nsum of the numbers on the \nback of the
+        pineapples = 10."
+      objectReference: {fileID: 0}
+    - target: {fileID: 764405736530368440, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 764405736530368442, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 941550886146920502, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1076045861184262528, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -22028,7 +22089,22 @@ PrefabInstance:
     - target: {fileID: 1126678241673839417, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_Text
-      value: "You don't \nlike pizza?!"
+      value: "Is there a \nplace for the\nfire extinguisher?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126678241673839419, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177583132159392211, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 1177583132159392211, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
       objectReference: {fileID: 0}
     - target: {fileID: 1706980313117963038, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -22055,15 +22131,63 @@ PrefabInstance:
       propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DeactivateRigidbodyConstraints
       objectReference: {fileID: 0}
+    - target: {fileID: 3409573907855838849, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 3409573907855838849, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609546538211600228, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3637468263956539943, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_Text
       value: "Where to plug \nin the USB?"
       objectReference: {fileID: 0}
+    - target: {fileID: 3863268307805397224, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863268307805397226, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "Put the fire extinguisher on \nthe red part of the  cables \nright
+        of the fridge. Find the \nnote under the pizza and \nchange the state of
+        the \nswitches of the electricity \nbox (left from the fridge \nattached
+        to the wall) \naccording to the note: \nUp Down Up Up"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863268307805397226, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 3886706947746360745, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133319155131071966, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133319155131071966, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint3
       objectReference: {fileID: 0}
     - target: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -22079,6 +22203,21 @@ PrefabInstance:
         type: 3}
       propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DeactivateRigidbodyConstraints
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821085988525323516, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 6821085988525323516, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990340528974721154, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7388178079872055052, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -22105,6 +22244,38 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620663540796076273, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620663540796076273, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891185389334425029, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "Take the USB from the\nsafe. You need to plug \nin the USB into the
+        right \npart of the Computer, \nwhere the 3 ports are \nlocated. It is enough
+        \nto hold the USB close to it."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891185389334425029, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891185389334425031, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000847910656535115, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013786455312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}

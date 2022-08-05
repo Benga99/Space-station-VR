@@ -10,14 +10,26 @@ public class HelperCard : MonoBehaviour
     private GameObject HelpCard2;
     [SerializeField]
     private GameObject HelpCard3;
+    [SerializeField]
+    private GameObject HelpCard4;
+    [SerializeField]
+    private GameObject HelpCard5;
+    [SerializeField]
+    private GameObject HelpCard6;
 
     public bool showCard1 = false;
     public bool showCard2 = false;
     public bool showCard3 = false;
+    public bool showCard4 = false;
+    public bool showCard5 = false;
+    public bool showCard6 = false;
 
     private bool card1revealed = false;
     private bool card2revealed = false;
     private bool card3revealed = false;
+    private bool card4revealed = false;
+    private bool card5revealed = false;
+    private bool card6revealed = false;
 
     private Vector3 finalPosition = new Vector3(0f, 0f, 0.32f);
     private Vector3 finalRotation = new Vector3(0, 90, 0);
@@ -46,6 +58,21 @@ public class HelperCard : MonoBehaviour
             card3revealed = true;
             StartCoroutine(showCard(HelpCard3));
         }
+        if (showCard4 && !card4revealed)
+        {
+            card4revealed = true;
+            StartCoroutine(showCard(HelpCard4));
+        }
+        if (showCard5 && !card5revealed)
+        {
+            card5revealed = true;
+            StartCoroutine(showCard(HelpCard5));
+        }
+        if (showCard6 && !card6revealed)
+        {
+            card6revealed = true;
+            StartCoroutine(showCard(HelpCard6));
+        }
     }
 
 
@@ -53,15 +80,18 @@ public class HelperCard : MonoBehaviour
     {
         card.SetActive(true);
         card.transform.localScale = new Vector3(0.3333f, 0.01f, 0.3333f);
-        card.transform.LeanMoveLocal(finalPosition, 3f).setEaseInOutCubic();
-        yield return new WaitForSeconds(2.5f);
+        card.transform.LeanMoveLocal(finalPosition, 2f).setEaseInOutCubic();
+        yield return new WaitForSeconds(1.5f);
 
 
         while(card.transform.localEulerAngles.y % 181 < 180)
         {
-            card.transform.Rotate(0, 1, 0);
+            card.transform.Rotate(0, 3, 0);
             yield return new WaitForEndOfFrame();
         }
         card.transform.LeanScaleY(0.3333f, 1f).setEaseInOutBounce();
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Canceled");
+        LeanTween.cancel(this.gameObject);
     }
 }

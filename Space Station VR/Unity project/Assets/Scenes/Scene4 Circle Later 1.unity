@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00016585538, g: 0.00016732918, b: 0.00015547883,
+  m_IndirectSpecularColor: {r: 0.00016593389, g: 0.00016708818, b: 0.00015515383,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
@@ -5053,8 +5053,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
+      propertyPath: m_Name
+      value: ScrollHint5
+      objectReference: {fileID: 0}
+    - target: {fileID: 244225952992058893, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457923667507907212, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint2
+      objectReference: {fileID: 0}
+    - target: {fileID: 457923667507907212, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 764405736530368440, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "You can find a card \non the chair. Swipe \nit on the computer \nand
+        play the reaction \ntime game. You need \nto push the controller \nfast enough
+        3x."
+      objectReference: {fileID: 0}
+    - target: {fileID: 764405736530368440, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 764405736530368442, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022
       objectReference: {fileID: 0}
     - target: {fileID: 1076045861184262528, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -5065,6 +5097,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "Push the \nbuttons."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177583132159392211, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 1177583132159392211, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
       objectReference: {fileID: 0}
     - target: {fileID: 1706980313117963038, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -5091,10 +5133,51 @@ PrefabInstance:
       propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DeactivateRigidbodyConstraints
       objectReference: {fileID: 0}
+    - target: {fileID: 3409573907855838849, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 3409573907855838849, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
+      objectReference: {fileID: 0}
     - target: {fileID: 3637468263956539943, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: m_Text
       value: "So much fake\n news on those \nTVs..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863268307805397224, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863268307805397226, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "The buttons on the \nTV frames need to \nbe pushed. After this, \na
+        button near the exit \ndoor will appear. Press \nthis one as well."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863268307805397226, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133319155131071966, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133319155131071966, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint3
       objectReference: {fileID: 0}
     - target: {fileID: 4520360362721589011, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
@@ -5107,6 +5190,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1648074039}
     - target: {fileID: 4846611254535532085, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateRigidbodyConstraints
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821085988525323516, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648074039}
+    - target: {fileID: 6821085988525323516, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DeactivateRigidbodyConstraints
@@ -5136,6 +5229,33 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8620663540796076273, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollHint4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620663540796076273, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891185389334425029, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_Text
+      value: "Take the key out of \nthe computer, open\nthe box on the safe, \nand
+        look at the note. \nPush the black buttons \nplaced on the bottom\nof the
+        TV frames."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891185389334425029, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891185389334425031, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013786455312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
     - {fileID: 8506049010216060895, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -5161,6 +5281,24 @@ GameObject:
 --- !u!1 &454931167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7658790080848177720, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 454931163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &454931168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4133319155131071966, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 454931163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &454931169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8620663540796076273, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 454931163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &454931170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 457923667507907212, guid: dc06161b6d97feb419f45f03b62e14b9,
     type: 3}
   m_PrefabInstance: {fileID: 454931163}
   m_PrefabAsset: {fileID: 0}
@@ -5968,7 +6106,7 @@ PrefabInstance:
     - target: {fileID: 7631047302682125613, guid: ab30ca14642ca61478f0df12cd957156,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab30ca14642ca61478f0df12cd957156, type: 3}
@@ -18870,11 +19008,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HelpCard1: {fileID: 454931167}
-  HelpCard2: {fileID: 454931166}
-  HelpCard3: {fileID: 454931165}
+  HelpCard2: {fileID: 454931170}
+  HelpCard3: {fileID: 454931166}
+  HelpCard4: {fileID: 454931169}
+  HelpCard5: {fileID: 454931165}
+  HelpCard6: {fileID: 454931168}
   showCard1: 0
   showCard2: 0
   showCard3: 0
+  showCard4: 0
+  showCard5: 0
+  showCard6: 0
 --- !u!4 &1565197783
 Transform:
   m_ObjectHideFlags: 0
@@ -22154,7 +22298,7 @@ PrefabInstance:
     - target: {fileID: 2326817637777819962, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
