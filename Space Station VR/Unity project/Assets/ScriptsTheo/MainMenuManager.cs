@@ -64,7 +64,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        if (!e.target.CompareTag("UI")) { return; }
+        //if (!e.target.CompareTag("UI")) { return; }
         switch (e.target.name)
         {
             case "StartButton":
@@ -128,7 +128,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
-        if (!e.target.CompareTag("UI")) { return; }
+        //if (!e.target.("UI")) { return; }
         switch (e.target.name)
         {
             case "StartButton":
@@ -184,7 +184,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
-        if (!e.target.CompareTag("UI")) { return; }
+        //if (!e.target.CompareTag("UI")) { return; }
         switch (e.target.name)
         {
             case "StartButton":
@@ -199,7 +199,7 @@ public class MainMenuManager : MonoBehaviour
                 break;
 
             case "SettingsButton":
-                settingsButton.GetComponent<Image>().color = Color.green;
+                settingsButton.GetComponent<Image>().color = Color.white;
                 break;
 
             case "ExitButton":
