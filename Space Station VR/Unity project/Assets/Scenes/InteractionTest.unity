@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 123135628}
   m_Layer: 5
   m_Name: Room4Button
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 338293660}
   m_Layer: 5
   m_Name: ExitButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,7 +1666,7 @@ GameObject:
   - component: {fileID: 340020063}
   m_Layer: 5
   m_Name: StartPanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1834,6 +1834,7 @@ MonoBehaviour:
   room4Button: {fileID: 123135623}
   backToStartButton: {fileID: 1524643366}
   backfromHTPToStartButton: {fileID: 1131044270}
+  player: {fileID: 229977257}
 --- !u!4 &368471667
 Transform:
   m_ObjectHideFlags: 0
@@ -1864,7 +1865,7 @@ GameObject:
   - component: {fileID: 372062800}
   m_Layer: 5
   m_Name: Room1Button
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2243,7 +2244,7 @@ GameObject:
   - component: {fileID: 563681929}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2345,7 +2346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2784314}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2738,7 +2739,7 @@ GameObject:
   - component: {fileID: 728494931}
   m_Layer: 5
   m_Name: SettingsButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3249,7 +3250,7 @@ GameObject:
   - component: {fileID: 880699402}
   m_Layer: 5
   m_Name: HowToPlayButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4434,7 +4435,7 @@ GameObject:
   - component: {fileID: 1131044272}
   m_Layer: 5
   m_Name: BackFromHTPToStartButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4908,7 +4909,7 @@ GameObject:
   - component: {fileID: 1275451615}
   m_Layer: 5
   m_Name: StartButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5159,7 +5160,7 @@ GameObject:
   - component: {fileID: 1313645926}
   m_Layer: 5
   m_Name: Room3Button
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5780,7 +5781,7 @@ GameObject:
   - component: {fileID: 1524643371}
   m_Layer: 5
   m_Name: BackToStartButton
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5914,7 +5915,7 @@ GameObject:
   - component: {fileID: 1555458029}
   m_Layer: 5
   m_Name: Text (Legacy)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6219,7 +6220,7 @@ GameObject:
   - component: {fileID: 1594192862}
   m_Layer: 5
   m_Name: HowToPlayPanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6356,7 +6357,7 @@ GameObject:
   - component: {fileID: 1638203642}
   m_Layer: 5
   m_Name: ChooseRoomsPanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6721,7 +6722,7 @@ GameObject:
   - component: {fileID: 1901357901}
   m_Layer: 5
   m_Name: Room2Button
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

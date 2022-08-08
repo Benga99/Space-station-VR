@@ -27,8 +27,10 @@ public class MainMenuManager : MonoBehaviour
     public GameObject room3Button;
     public GameObject room4Button;
     public GameObject backToStartButton;
-
     public GameObject backfromHTPToStartButton;
+
+    [Header("Player")]
+    public GameObject player;
 
 
     // Start is called before the first frame update
@@ -123,6 +125,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void LoadScene(int buildIndex)
     {
+        Destroy(player);
         SceneManager.LoadScene(buildIndex);
     }
 

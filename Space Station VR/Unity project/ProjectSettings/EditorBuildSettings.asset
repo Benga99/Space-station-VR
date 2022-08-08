@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 8868dadcc78008f4d8cb2c4f1bdc456b
+    path: Assets/Scenes/InteractionTest.unity
+    guid: 0615e6d843a90944a868b352fac84335
   - enabled: 1
     path: Assets/Scenes/Scene1 EKG Beggining.unity
     guid: 74549dfc479464b45ae9b4b61d285f66
