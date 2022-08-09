@@ -15,6 +15,8 @@ public class HintsManagerCanvas : MonoBehaviour
     public GameObject hintButton;
     public GameObject restartButton;
     public GameObject leaveButton;
+    public GameObject lowerPlayerButton;
+    public GameObject upperPlayerButton;
 
     [Header("Player")]
     public GameObject player;
@@ -87,6 +89,14 @@ public class HintsManagerCanvas : MonoBehaviour
             Destroy(player);
             SceneManager.LoadScene(0);
         }
+        else if(e.target.name == "LowerPlayerButton")
+        {
+
+        }
+        else if(e.target.name == "UpperPlayerButton")
+        {
+
+        }
 
     }
 
@@ -116,6 +126,14 @@ public class HintsManagerCanvas : MonoBehaviour
             activateLasers();
             leaveButton.GetComponent<Image>().color = Color.green;
         }
+        else if (e.target.name == "LowerPlayerButton")
+        {
+
+        }
+        else if (e.target.name == "UpperPlayerButton")
+        {
+
+        }
 
     }
 
@@ -139,6 +157,14 @@ public class HintsManagerCanvas : MonoBehaviour
         else if (e.target.name == "LeaveButton")
         {
             leaveButton.GetComponent<Image>().color = Color.white;
+        }
+        else if (e.target.name == "LowerPlayerButton")
+        {
+
+        }
+        else if (e.target.name == "UpperPlayerButton")
+        {
+
         }
 
     }
@@ -182,7 +208,17 @@ public class HintsManagerCanvas : MonoBehaviour
         }
         card.transform.LeanScaleY(0.3333f, 1f).setEaseInOutBounce();
         yield return new WaitForSeconds(2f);
-        Debug.Log("Canceled");
+        //Debug.Log("Canceled");
         LeanTween.cancel(this.gameObject);
+    }
+
+    private void playerDown()
+    {
+        player.transform.LeanMoveY(player.transform.position.y - 0.2f, 0f);
+    }
+
+    private void playerUp()
+    {
+        player.transform.LeanMoveY(player.transform.position.y + 0.2f, 0f);
     }
 }
