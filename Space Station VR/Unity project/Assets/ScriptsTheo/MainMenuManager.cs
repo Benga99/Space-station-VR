@@ -38,8 +38,8 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
-        player.LoadPlayer();
+        playerSave = FindObjectOfType<Player>();
+        playerSave.LoadPlayer();
 
         if (howToPlayButtonPressedFromSave)
         {
@@ -93,8 +93,8 @@ public class MainMenuManager : MonoBehaviour
                     startButton.GetComponent<BoxCollider>().size = new Vector3(400, 140, 50);
 
                     howToPlayButtonPressedFromSave = true;
-                    player.howToPlayButtonPressed = true;
-                    player.SavePlayer();
+                    playerSave.howToPlayButtonPressed = true;
+                    playerSave.SavePlayer();
                 }
                 
                 break;
