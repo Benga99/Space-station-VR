@@ -27,12 +27,14 @@ public class MainMenuManager : MonoBehaviour
     public GameObject room3Button;
     public GameObject room4Button;
     public GameObject backToStartButton;
-
     public GameObject backfromHTPToStartButton;
 
     public bool howToPlayButtonPressedFromSave = false;
+    [Header("Player")]
+    public GameObject player;
 
-    private Player player;
+
+    private Player playerSave;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +75,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        if (!e.target.CompareTag("UI")) { return; }
+        //if (!e.target.CompareTag("UI")) { return; }
         switch (e.target.name)
         {
             case "StartButton":
@@ -141,12 +143,13 @@ public class MainMenuManager : MonoBehaviour
 
     private void LoadScene(int buildIndex)
     {
+        Destroy(player);
         SceneManager.LoadScene(buildIndex);
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
-        if (!e.target.CompareTag("UI")) { return; }
+        //if (!e.target.("UI")) { return; }
         switch (e.target.name)
         {
             case "StartButton":
@@ -202,7 +205,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
-        if (!e.target.CompareTag("UI")) { return; }
+        //if (!e.target.CompareTag("UI")) { return; }
         switch (e.target.name)
         {
             case "StartButton":
@@ -217,7 +220,7 @@ public class MainMenuManager : MonoBehaviour
                 break;
 
             case "SettingsButton":
-                settingsButton.GetComponent<Image>().color = Color.green;
+                settingsButton.GetComponent<Image>().color = Color.white;
                 break;
 
             case "ExitButton":

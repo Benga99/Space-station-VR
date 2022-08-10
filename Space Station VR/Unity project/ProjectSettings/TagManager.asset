@@ -19,6 +19,7 @@ TagManager:
   - Sphere
   - Chess
   - Soda
+  - UI
   layers:
   - Default
   - TransparentFX
