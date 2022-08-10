@@ -30,11 +30,20 @@ public class MainMenuManager : MonoBehaviour
 
     public GameObject backfromHTPToStartButton;
 
+    public bool howToPlayButtonPressedFromSave = false;
 
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
+        player.LoadPlayer();
+
+        if (howToPlayButtonPressedFromSave)
+        {
+            startButton.GetComponent<Button>().interactable = true;
+            startButton.GetComponent<BoxCollider>().size = new Vector3(400, 140, 50);
+        }
     }
 
     // Update is called once per frame
@@ -75,8 +84,17 @@ public class MainMenuManager : MonoBehaviour
             case "HowToPlayButton":
                 HowToPlayPanel.SetActive(true);
                 StartPanel.SetActive(false);
-                startButton.GetComponent<Button>().interactable = true;
-                startButton.GetComponent<BoxCollider>().size = new Vector3(400, 140, 50);
+
+                if (!howToPlayButtonPressedFromSave)
+                {
+                    startButton.GetComponent<Button>().interactable = true;
+                    startButton.GetComponent<BoxCollider>().size = new Vector3(400, 140, 50);
+
+                    howToPlayButtonPressedFromSave = true;
+                    player.howToPlayButtonPressed = true;
+                    player.SavePlayer();
+                }
+                
                 break;
 
             case "SettingsButton":
