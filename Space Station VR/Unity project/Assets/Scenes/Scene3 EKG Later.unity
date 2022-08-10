@@ -2339,7 +2339,7 @@ PrefabInstance:
       objectReference: {fileID: 2011215170}
     - target: {fileID: 1794012894, guid: 66ce2124e15231946b091cb567002e6c, type: 3}
       propertyPath: participantID
-      value: 25
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819960, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -2419,7 +2419,7 @@ PrefabInstance:
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: participantId
-      value: 25
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -6105,19 +6105,19 @@ PrefabInstance:
       objectReference: {fileID: 1362711242}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis1
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis3
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: bestPlayer
@@ -6177,15 +6177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis1
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: vis3
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: Heart
