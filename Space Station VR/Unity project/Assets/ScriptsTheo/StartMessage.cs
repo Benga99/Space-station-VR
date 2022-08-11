@@ -13,6 +13,7 @@ public class StartMessage : MonoBehaviour
     public AudioSource audioK;
     public string message;
     public CanvasGroup messageCG;
+    public int SceneNumber;
 
     public SteamVR_Action_Boolean grabPinch; //Grab Pinch is the trigger, select from inspecter
     public SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;//which controller
@@ -112,5 +113,13 @@ public class StartMessage : MonoBehaviour
         //EndMessageCG.alpha = 1;
         EndMessageCanvas.GetComponent<Text>().fontSize = 100;
         StartCoroutine(writeMessageEnd("You won!! - You can take off your headset now".ToCharArray()));
+
+        SteamScript sScript = FindObjectOfType<SteamScript>();
+        sScript.TryGetAchievement($"Escape Room {SceneNumber} solved!", true);
+
+
+
+        EyeTracker eye = FindObjectOfType<EyeTracker>();
+        eye.GetSteamAchievementsTimeSolved(SceneNumber);
     }
 }

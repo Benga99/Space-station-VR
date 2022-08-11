@@ -22,6 +22,10 @@ public class UFOParentRotate : MonoBehaviour
         {
             //instantiate key
             key.SetActive(true);
+
+            SteamScript sScript = FindObjectOfType<SteamScript>();
+            sScript.TryGetAchievement("UFOs are down!!!", true);
+
             //play sound
 
         }

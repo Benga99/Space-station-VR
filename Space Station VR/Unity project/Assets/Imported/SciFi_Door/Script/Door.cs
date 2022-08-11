@@ -31,7 +31,9 @@ public class Door : MonoBehaviour {
 				hovercar.gameObject.SetActive(true);
 				StartCoroutine(hovercar.Floating());
 				//go to the car and leave
-				startMessageScript.onFinishEscapeRoom();
+
+				//TODO STEAM
+				//startMessageScript.onFinishEscapeRoom();
 			}
 			
 		}

@@ -19,4 +19,21 @@ public class SteamScript : MonoBehaviour
     {
         
     }
+
+    public bool TryGetAchievement(string achievementName, bool condition)
+    {
+        if (SteamManager.Initialized && condition)
+        {
+            SteamUserStats.GetAchievement(achievementName, out bool achievementAlreadyCompleted);
+
+            if (!achievementAlreadyCompleted)
+            {
+                SteamUserStats.SetAchievement(achievementName);
+                SteamUserStats.StoreStats();
+                return true;
+            }
+        }
+        return false;
+
+    }
 }
