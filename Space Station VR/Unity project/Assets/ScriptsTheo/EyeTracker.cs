@@ -102,7 +102,6 @@ public class EyeTracker : MonoBehaviour
         helpers.Add("hint6 used", helperCard.showCard6.ToString());
         helpers.Add("total time passed", $"{(int)(totalTimePassed / 60)}:{((int)(totalTimePassed % 60)).ToString("00")} minutes" );
 
-
         
 
         String csv2 = String.Join(Environment.NewLine, playerPositions.Select(d => $"{d.ToString()}"));
@@ -160,6 +159,15 @@ public class EyeTracker : MonoBehaviour
         String csv4 = String.Join(Environment.NewLine, allTracking.Select(d => $"{d.Key};{(int)d.Value};{" seconds"}"));
         File.WriteAllText($"./EyeTrackingData/Test/finalEye.csv", csv4);
 
+    }
+
+    public void GetSteamAchievementsTimeSolved(int sceneN)
+    {
+        SteamScript sScript = FindObjectOfType<SteamScript>();
+        sScript.TryGetAchievement($"Escape Room {sceneN} solved in less than 10 minutes!", totalTimePassed <= 10);
+        sScript.TryGetAchievement($"Escape Room {sceneN} solved in less than 7 minutes!", totalTimePassed <= 7);
+        sScript.TryGetAchievement($"Escape Room {sceneN} solved in less than 5 minutes!", totalTimePassed <= 5);
+        sScript.TryGetAchievement($"Professional Player! Escape Room {sceneN} solved in less than 3 minutes!", totalTimePassed <= 3);
     }
 
 }
