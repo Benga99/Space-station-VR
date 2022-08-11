@@ -13702,7 +13702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712109, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: bestPlayer
@@ -13778,7 +13778,7 @@ PrefabInstance:
       objectReference: {fileID: 912749994}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165428019712110, guid: 3f2a149566de2aa4bb213da68d6f84da, type: 3}
       propertyPath: bestPlayer
@@ -32060,7 +32060,7 @@ PrefabInstance:
       objectReference: {fileID: 454835831}
     - target: {fileID: 1794012894, guid: 66ce2124e15231946b091cb567002e6c, type: 3}
       propertyPath: participantID
-      value: 29
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2326817637777819960, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
@@ -32140,7 +32140,7 @@ PrefabInstance:
     - target: {fileID: 2326817637777819963, guid: 66ce2124e15231946b091cb567002e6c,
         type: 3}
       propertyPath: participantId
-      value: 29
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ce2124e15231946b091cb567002e6c, type: 3}

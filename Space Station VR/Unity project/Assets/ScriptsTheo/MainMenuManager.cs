@@ -34,11 +34,11 @@ public class MainMenuManager : MonoBehaviour
     public GameObject player;
 
 
-    private Player playerSave;
+    private Playerr playerSave;
     // Start is called before the first frame update
     void Start()
     {
-        playerSave = FindObjectOfType<Player>();
+        playerSave = FindObjectOfType<Playerr>();
         playerSave.LoadPlayer();
 
         if (howToPlayButtonPressedFromSave)

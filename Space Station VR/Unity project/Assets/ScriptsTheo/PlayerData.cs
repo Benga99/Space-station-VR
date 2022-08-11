@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     public bool howToPlayButtonPressed;
-    public PlayerData(Player player)
+    public PlayerData(Playerr player)
     {
         howToPlayButtonPressed = player.howToPlayButtonPressed;
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Player : MonoBehaviour
+public class Playerr : MonoBehaviour
 {
     [SerializeField]
     public bool howToPlayButtonPressed;
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        var list = FindObjectsOfType<Player>();
+        var list = FindObjectsOfType<Playerr>();
         //instance = this;
         if (list.Length > 1)
         {
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 
     public void LoadPlayer()
     {
+        Debug.Log("Player Loaded!");
         MM = FindObjectOfType<MainMenuManager>();
 
         PlayerData data = SaveSystem.LoadPlayer();
